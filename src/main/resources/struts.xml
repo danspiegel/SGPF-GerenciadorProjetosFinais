@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+ "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+ "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+ <constant name="struts.enable.DynamicMethodInvocation"
+ value="false" />
+ <constant name="struts.devMode" value="false" />
+ <constant name="struts.custom.i18n.resources" value="messages" />
+
+ <package name="default" namespace="/" extends="json-default">
+
+	 <!-- ########## ALUNO INÍCIO ########## -->
+	  
+	 <action name="cadastrarAluno" class="AlunoAction" method="cadastrar">
+			<result>/webapp/pages/cadastrar_aluno.jsp</result>
+	 </action> 
+	 
+	 <action name="iniciar" class="AlunoAction" method="iniciar">
+			<result>/webapp/pages/login.jsp</result>
+	 </action>
+	  
+	 <action name="alunoValidar" class="br.com.projetofinal.action.AlunoAction" method="validarUsuario">
+		<result name="retornoAjax" type="json">
+	 		<param name="root">retornoAjax</param>
+	 	</result>
+	 </action>
+	 
+	 <!-- ########## ALUNO FIM ########## -->
+	 
+ </package>
+</struts>
