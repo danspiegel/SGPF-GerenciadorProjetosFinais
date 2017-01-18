@@ -1,12 +1,12 @@
-package br.com.projetofinal.facade;
+package br.com.gerenciadorprojetosfinais.facade;
 
 import java.sql.SQLException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.projetofinal.dao.AlunoDao;
-import br.com.projetofinal.vo.AlunoVO;
+import br.com.gerenciadorprojetosfinais.dao.AlunoDao;
+import br.com.gerenciadorprojetosfinais.vo.AlunoVO;
 
 @Service
 public class AlunoServiceFacadeImpl implements AlunoServiceFacade {

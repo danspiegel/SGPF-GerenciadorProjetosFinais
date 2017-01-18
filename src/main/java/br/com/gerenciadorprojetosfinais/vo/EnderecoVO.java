@@ -1,4 +1,4 @@
-package br.com.projetofinal.vo;
+package br.com.gerenciadorprojetosfinais.vo;
 
 import java.io.Serializable;
 

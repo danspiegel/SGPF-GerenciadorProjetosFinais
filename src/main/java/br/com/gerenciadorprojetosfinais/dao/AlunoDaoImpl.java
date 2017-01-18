@@ -1,14 +1,16 @@
-package br.com.projetofinal.dao;
+package br.com.gerenciadorprojetosfinais.dao;
 
 import java.sql.SQLException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import br.com.projetofinal.vo.AlunoVO;
+import br.com.gerenciadorprojetosfinais.vo.AlunoVO;
 
 @Repository
 public class AlunoDaoImpl extends BaseDao implements AlunoDao {
@@ -18,19 +20,21 @@ public class AlunoDaoImpl extends BaseDao implements AlunoDao {
 	
 	//--> Campos da tabela de Alunos
 	
-	private static final String ID              = "id";
-	private static final String MATRICULA       = "matricula";
-	private static final String SENHA           = "senha";
-	private static final String NOME            = "nome";
-	private static final String SOBRENOME       = "sobrenome";
-	private static final String CPF             = "cpf";
-	private static final String EMAIL           = "email";
-	private static final String ID_CURSO        = "id_curso";
-	private static final String ID_ENDERECO     = "id_endereco";
+	protected static final String ID              = "id";
+	protected static final String MATRICULA       = "matricula";
+	protected static final String SENHA           = "senha";
+	protected static final String NOME            = "nome";
+	protected static final String SOBRENOME       = "sobrenome";
+	protected static final String CPF             = "cpf";
+	protected static final String EMAIL           = "email";
+	protected static final String ID_CURSO        = "id_curso";
+	protected static final String ID_ENDERECO     = "id_endereco";
+	
+	@Autowired
+	NamedParameterJdbcTemplate jdbcTemplate;
 	
 	/**
 	 * {@inheritDoc}
-	 * @throws SQLException 
 	 */
 	public boolean validarUsuario(AlunoVO vo) throws SQLException{
 		
@@ -52,7 +56,7 @@ public class AlunoDaoImpl extends BaseDao implements AlunoDao {
 			sql.append(SENHA + DOIS_PONTOS + IGUAL + SENHA);
 			
 			List<Map<String, Object>> resultSet = getJdbcTemplate().queryForList(sql.toString(), params);
-			Iterator iterator = resultSet.iterator();
+			Iterator<Map<String, Object>> iterator = resultSet.iterator();
 			
 			if (iterator.hasNext()){
 				
@@ -68,14 +72,14 @@ public class AlunoDaoImpl extends BaseDao implements AlunoDao {
 				
 				return true;
 			}
-		
+
 		}
 		catch(Exception e){
 			throw new SQLException(e);
 		}
 		
 		return false;
-		
+	
 	}
 	
 }

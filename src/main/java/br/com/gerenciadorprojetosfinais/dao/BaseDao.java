@@ -1,4 +1,4 @@
-package br.com.projetofinal.dao;
+package br.com.gerenciadorprojetosfinais.dao;
 
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;

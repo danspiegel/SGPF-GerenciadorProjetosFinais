@@ -1,8 +1,8 @@
-package br.com.projetofinal.facade;
+package br.com.gerenciadorprojetosfinais.facade;
 
 import java.sql.SQLException;
 
-import br.com.projetofinal.vo.AlunoVO;
+import br.com.gerenciadorprojetosfinais.vo.AlunoVO;
 
 public interface AlunoServiceFacade {
 

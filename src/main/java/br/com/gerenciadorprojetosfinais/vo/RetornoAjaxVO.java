@@ -1,4 +1,4 @@
-package br.com.projetofinal.vo;
+package br.com.gerenciadorprojetosfinais.vo;
 
 public class RetornoAjaxVO {
 

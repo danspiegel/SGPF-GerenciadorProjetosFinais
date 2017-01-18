@@ -1,11 +1,11 @@
-package br.com.projetofinal.action;
+package br.com.gerenciadorprojetosfinais.action;
 
 import java.util.Map;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import br.com.projetofinal.vo.RetornoAjaxVO;
+import br.com.gerenciadorprojetosfinais.vo.RetornoAjaxVO;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;

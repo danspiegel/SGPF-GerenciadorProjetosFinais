@@ -1,8 +1,9 @@
-package br.com.projetofinal.action;
+package br.com.gerenciadorprojetosfinais.action;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,10 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import br.com.projetofinal.facade.AlunoServiceFacade;
-import br.com.projetofinal.vo.AlunoVO;
-import br.com.projetofinal.vo.ComboVO;
-import br.com.projetofinal.vo.RetornoAjaxVO;
+import br.com.gerenciadorprojetosfinais.facade.AlunoServiceFacade;
+import br.com.gerenciadorprojetosfinais.vo.AlunoVO;
+import br.com.gerenciadorprojetosfinais.vo.ComboVO;
+import br.com.gerenciadorprojetosfinais.vo.RetornoAjaxVO;
 
 @Controller
 @Scope("request")
@@ -25,7 +26,7 @@ public class AlunoAction extends BaseAction {
 	private static final Logger LOGGER = LoggerFactory.getLogger(AlunoAction.class);
 	
 	@Autowired
-	private AlunoServiceFacade facade;
+	private AlunoServiceFacade alunoFacade;
 	private AlunoVO vo;
 	List<ComboVO> listaUniversidades;
 	
@@ -47,10 +48,18 @@ public class AlunoAction extends BaseAction {
 	public String validarUsuario(){
 		
 		retornoAjax = new RetornoAjaxVO();
+		Map<String, Object> sessao = getSession();
 		
 		try{
 			
-			if (facade.validarUsuario(vo)){
+			if (alunoFacade.validarUsuario(vo)){
+				
+				sessao.put("alunoId", vo.getId());
+				sessao.put("alunoMatricula", vo.getMatricula());
+				sessao.put("alunoNome", vo.getNome());
+				sessao.put("alunoSobrenome", vo.getSobrenome());
+				sessao.put("alunoCpf", vo.getCpf());
+				
 				retornoAjax.setTipoRetornado(SUCCESS);
 				retornoAjax.setObjetoRetornado(vo);
 			}
