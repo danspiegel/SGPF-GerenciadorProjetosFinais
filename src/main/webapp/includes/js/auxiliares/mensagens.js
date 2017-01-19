@@ -41,4 +41,14 @@
 		
 	});
 	
+	$.fn.extend({
+		
+		esconderMensagem: function(id){
+			
+			$(id).hide();
+			
+		}
+		
+	});
+	
 })(jQuery);

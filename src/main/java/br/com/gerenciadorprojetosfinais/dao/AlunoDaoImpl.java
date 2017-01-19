@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -32,6 +33,9 @@ public class AlunoDaoImpl extends BaseDao implements AlunoDao {
 	
 	@Autowired
 	NamedParameterJdbcTemplate jdbcTemplate;
+	
+	@Autowired
+	EnderecoDao enderecoDao;
 	
 	/**
 	 * {@inheritDoc}
@@ -80,6 +84,52 @@ public class AlunoDaoImpl extends BaseDao implements AlunoDao {
 		
 		return false;
 	
+	}
+	
+	public void incluir(AlunoVO vo) throws SQLException {
+		
+		try{
+			
+			UUID idEndereco = UUID.randomUUID();
+			
+			vo.getEndereco().setId(idEndereco.toString());
+			
+			MapSqlParameterSource params = new MapSqlParameterSource();
+			params.addValue(MATRICULA, vo.getMatricula());
+			params.addValue(NOME, vo.getNome());
+			params.addValue(SOBRENOME, vo.getSobrenome());
+			params.addValue(CPF, vo.getCpf());
+			params.addValue(EMAIL, vo.getEmail());
+			params.addValue(SENHA, vo.getSenha());
+			params.addValue(ID_CURSO, vo.getCurso().getId());
+			params.addValue(ID_ENDERECO, idEndereco.toString());
+			
+			StringBuilder sql = new StringBuilder();
+			sql.append(INSERT + ALUNOS);
+			sql.append(PARENTESE_ESQ);
+			sql.append(MATRICULA + VIRGULA + NOME + VIRGULA + SOBRENOME + VIRGULA + CPF + VIRGULA + EMAIL + VIRGULA);
+			sql.append(SENHA + VIRGULA + ID_CURSO);
+			sql.append(PARENTESE_DIR);
+			sql.append(VALUES);
+			sql.append(PARENTESE_ESQ);
+			sql.append(DOIS_PONTOS + MATRICULA + VIRGULA);
+			sql.append(DOIS_PONTOS + NOME + VIRGULA);
+			sql.append(DOIS_PONTOS + SOBRENOME + VIRGULA);
+			sql.append(DOIS_PONTOS + CPF + VIRGULA);
+			sql.append(DOIS_PONTOS + EMAIL + VIRGULA);
+			sql.append(DOIS_PONTOS + ID_CURSO + VIRGULA);
+			sql.append(DOIS_PONTOS + ID_ENDERECO);
+			sql.append(PARENTESE_DIR);
+			
+			enderecoDao.incluir(vo.getEndereco());
+			
+			getJdbcTemplate().update(sql.toString(), params);
+			
+		}
+		catch(Exception e){
+			throw new SQLException(e);
+		}
+		
 	}
 	
 }

@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import br.com.gerenciadorprojetosfinais.facade.AlunoServiceFacade;
+import br.com.gerenciadorprojetosfinais.facade.UniversidadeServiceFacade;
 import br.com.gerenciadorprojetosfinais.vo.AlunoVO;
 import br.com.gerenciadorprojetosfinais.vo.ComboVO;
 import br.com.gerenciadorprojetosfinais.vo.RetornoAjaxVO;
@@ -27,6 +28,8 @@ public class AlunoAction extends BaseAction {
 	
 	@Autowired
 	private AlunoServiceFacade alunoFacade;
+	@Autowired
+	private UniversidadeServiceFacade universidadeFacade;
 	private AlunoVO vo;
 	List<ComboVO> listaUniversidades;
 	
@@ -36,6 +39,7 @@ public class AlunoAction extends BaseAction {
 		
 		try{
 			
+			universidadeFacade.carregarUniversidades(listaUniversidades);
 			return SUCCESS;
 		}
 		catch(Exception e){

@@ -15,6 +15,12 @@
 	    <script src="../includes/js/jquery-3.1.1.min.js"></script>
 	    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 		<script src="../includes/js/jquery.js" type="text/javascript"></script>
+		
+		<!-- Imports de JS de controle -->
+		<script type="text/javascript" src="../includes/js/alunos/alunos_auxiliares.js"></script>
+		<script type="text/javascript" src="../includes/js/alunos/alunos_manter.js"></script>
+		<script type="text/javascript" src="../includes/js/alunos/alunos_ready.js"></script>
+		
 	</head>
 	<body>
 	    <div class="container">
@@ -24,9 +30,7 @@
 	            		<div class="input-group-addon">
 	            			<span class="fa fa-user"></span>
 	            		</div>
-	            		<select id="id_universidade" class="form-control" name="vo.universidade.id" required autofocus>
-	            			<option value="-1">Selecione...</option>
-	            		</select>
+	            		<s:select id="id_universidade" name="vo.universidade.id"  list="listaUniversidades" listKey="id" listValue="descricao" headerValue="Selecione..." headerKey="-1"/>	
 	                </div>
 	                <br/>
 	            	<div class="input-group">
