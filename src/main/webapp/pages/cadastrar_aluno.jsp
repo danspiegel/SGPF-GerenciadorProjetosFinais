@@ -19,7 +19,7 @@
 	<body>
 	    <div class="container">
 	        <div class="card card-container">
-	            <form>
+	            <form id="frm_cadastrarAluno">
 	            	<div class="input-group">
 	            		<div class="input-group-addon">
 	            			<span class="fa fa-user"></span>
