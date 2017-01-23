@@ -13,21 +13,29 @@
 
 	 <!-- ########## ALUNO INÍCIO ########## -->
 	  
-	 <action name="cadastrarAluno" class="AlunoAction" method="cadastrar">
-			<result>/webapp/pages/cadastrar_aluno.jsp</result>
+	 <action name="cadastrarAluno" class="br.com.gerenciadorprojetosfinais.action.AlunoAction" method="cadastrar">
+			<result>/webapp/pages/aluno_cadastrar_manter.jsp</result>
 	 </action> 
 	 
-	 <action name="iniciar" class="AlunoAction" method="iniciar">
+	 <action name="iniciarAlunos" class="br.com.gerenciadorprojetosfinais.action.AlunoAction" method="iniciar">
 			<result>/webapp/pages/login.jsp</result>
 	 </action>
 	  
-	 <action name="alunoValidar" class="br.com.projetofinal.action.AlunoAction" method="validarUsuario">
+	 <action name="alunoValidar" class="br.com.gerenciadorprojetosfinais.action.AlunoAction" method="validarUsuario">
 		<result name="retornoAjax" type="json">
 	 		<param name="root">retornoAjax</param>
 	 	</result>
 	 </action>
 	 
 	 <!-- ########## ALUNO FIM ########## -->
+	 
+	 <!-- ########## UNIVERSIDADE INÍCIO ########### -->
+
+	 <action name="iniciarUniversidades" class="br.com.gerenciadorprojetosfinais.action.UniversidadeAction" method="iniciar">
+			<result>/webapp/pages/universidade_cadastrar_manter.jsp</result>
+	 </action>
+
+	 <!-- ########## UNIVERSIDADE FIM ##########  -->
 	 
  </package>
 </struts>

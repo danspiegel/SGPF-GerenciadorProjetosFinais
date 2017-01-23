@@ -11,7 +11,9 @@
 	 */
 	$(document).ready(function(){
 	
-		
+		$('#bt_confirmar').click(function(){
+			$(this).validarFiltro();
+		});
 	
 	});
 	
