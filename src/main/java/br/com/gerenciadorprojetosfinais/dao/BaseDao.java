@@ -1,15 +1,11 @@
 package br.com.gerenciadorprojetosfinais.dao;
 
-import javax.annotation.PostConstruct;
-import javax.sql.DataSource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
-import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class BaseDao extends JdbcDaoSupport {
+public class BaseDao {
 
 	//--> Constantes do SQL
 	

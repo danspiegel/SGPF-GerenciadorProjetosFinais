@@ -5,9 +5,11 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.stereotype.Repository;
 
 import br.com.gerenciadorprojetosfinais.vo.ComboVO;
 
+@Repository
 public class UniversidadeDaoImpl extends BaseDao implements UniversidadeDao {
 
 	//--> Campo com nome da tabela de Universidades

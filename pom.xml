@@ -156,5 +156,14 @@
     	<version>1.7.6</version>
 	</dependency>
 	<!-- FIM SLF4J API -->
+	
+	<!-- INICIO POSTGRESQL 9.3 -->
+	<dependency>
+	    <groupId>org.postgresql</groupId>
+	    <artifactId>postgresql</artifactId>
+	    <version>9.3-1104-jdbc41</version>
+	</dependency>
+	<!-- FIM POSTGRESQL 9.3 -->
+	
   </dependencies>
 </project>
