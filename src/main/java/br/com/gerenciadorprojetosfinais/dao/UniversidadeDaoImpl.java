@@ -4,6 +4,8 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+
 import br.com.gerenciadorprojetosfinais.vo.ComboVO;
 
 public class UniversidadeDaoImpl extends BaseDao implements UniversidadeDao {
@@ -32,7 +34,7 @@ public class UniversidadeDaoImpl extends BaseDao implements UniversidadeDao {
 			// FROM
 			sql.append(FROM + UNIVERSIDADES);
 			
-			List<Map<String, Object>> resultSet = getJdbcTemplate().queryForList(sql.toString());
+			List<Map<String, Object>> resultSet = jdbcTemplate.queryForList(sql.toString(), new MapSqlParameterSource());
 			
 			for (Map<String, Object> resultado: resultSet){
 				

@@ -47,6 +47,8 @@ public class BaseDao extends JdbcDaoSupport {
 	@Autowired
 	NamedParameterJdbcTemplate jdbcTemplate;
 	
+	/*
+	 
 	@Autowired
 	private DataSource dataSource;
 
@@ -55,4 +57,5 @@ public class BaseDao extends JdbcDaoSupport {
 		setDataSource(dataSource);
 	}
 	
+	*/
 }

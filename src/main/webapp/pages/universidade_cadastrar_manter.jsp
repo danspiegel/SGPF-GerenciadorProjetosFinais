@@ -11,7 +11,7 @@
 	<title>SGPF - Cadastro de Universidade</title>
 	
     <script src="../includes/js/jquery-3.1.1.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="../includes/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 	<link href="../includes/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="../includes/css/cadastro_universidade.css" rel="stylesheet" type="text/css">
 	<link href="../font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">

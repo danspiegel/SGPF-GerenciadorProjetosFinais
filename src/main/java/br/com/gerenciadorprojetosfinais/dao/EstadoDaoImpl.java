@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import br.com.gerenciadorprojetosfinais.vo.ComboVO;
@@ -34,7 +36,7 @@ public class EstadoDaoImpl extends BaseDao implements EstadoDao {
 			sql.append(SELECT + ID + VIRGULA + SIGLA);
 			sql.append(FROM + ESTADOS);
 			
-			List<Map<String, Object>> resultSet = getJdbcTemplate().queryForList(sql.toString());
+			List<Map<String, Object>> resultSet = jdbcTemplate.queryForList(sql.toString(), new MapSqlParameterSource());
 			List<ComboVO> lista = new ArrayList<ComboVO>();
 			
 			for(Map<String, Object> resultado: resultSet){

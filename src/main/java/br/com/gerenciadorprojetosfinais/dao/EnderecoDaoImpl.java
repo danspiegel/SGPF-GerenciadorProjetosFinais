@@ -49,7 +49,7 @@ public class EnderecoDaoImpl extends BaseDao implements EnderecoDao {
 			sql.append(DOIS_PONTOS + ID_ESTADO);
 			sql.append(PARENTESE_DIR);
 			
-			getJdbcTemplate().update(sql.toString(), params);
+			jdbcTemplate.update(sql.toString(), params);
 			
 		}
 		catch(Exception e){

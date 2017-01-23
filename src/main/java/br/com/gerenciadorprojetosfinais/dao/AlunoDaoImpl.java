@@ -59,7 +59,7 @@ public class AlunoDaoImpl extends BaseDao implements AlunoDao {
 			sql.append(MATRICULA + DOIS_PONTOS + IGUAL + MATRICULA + AND);
 			sql.append(SENHA + DOIS_PONTOS + IGUAL + SENHA);
 			
-			List<Map<String, Object>> resultSet = getJdbcTemplate().queryForList(sql.toString(), params);
+			List<Map<String, Object>> resultSet = jdbcTemplate.queryForList(sql.toString(), params);
 			Iterator<Map<String, Object>> iterator = resultSet.iterator();
 			
 			if (iterator.hasNext()){
@@ -123,7 +123,7 @@ public class AlunoDaoImpl extends BaseDao implements AlunoDao {
 			
 			enderecoDao.incluir(vo.getEndereco());
 			
-			getJdbcTemplate().update(sql.toString(), params);
+			jdbcTemplate.update(sql.toString(), params);
 			
 		}
 		catch(Exception e){
@@ -149,7 +149,7 @@ public class AlunoDaoImpl extends BaseDao implements AlunoDao {
 			sql.append(campo);
 			sql.append(IGUAL + DOIS_PONTOS + VALOR);
 			
-			return getJdbcTemplate().queryForInt(sql.toString(), params);
+			return jdbcTemplate.queryForObject(sql.toString(), params, Integer.class);
 		
 		}
 		catch(Exception e){
