@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+import br.com.gerenciadorprojetosfinais.exception.BusinessException;
 import br.com.gerenciadorprojetosfinais.facade.AlunoServiceFacade;
 import br.com.gerenciadorprojetosfinais.facade.UniversidadeServiceFacade;
 import br.com.gerenciadorprojetosfinais.vo.AlunoVO;
@@ -77,7 +78,12 @@ public class AlunoAction extends BaseAction {
 		catch(SQLException e){
 			LOGGER.error(e.getMessage());
 			retornoAjax.setTipoRetornado(ERROR);
-			retornoAjax.setExceptionRetornada(getText("msg.aluno.usuario.invalido") + e.getMessage());
+			retornoAjax.setExceptionRetornada(getText("msg.aluno.usuario.erro") + e.getMessage());
+		}
+		catch(BusinessException e){
+			LOGGER.error(e.getMessage());
+			retornoAjax.setTipoRetornado(ERROR);
+			retornoAjax.setExceptionRetornada(e.getMessage());
 		}
 		
 		return RETORNO_AJAX;

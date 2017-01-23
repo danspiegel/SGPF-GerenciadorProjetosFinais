@@ -4,7 +4,6 @@ public class RetornoAjaxVO {
 
 	private String tipoRetornado;
 	private Object objetoRetornado;
-	private int tipoException;
 	private String exceptionRetornada;
 	private String pagina;
 	
@@ -19,12 +18,6 @@ public class RetornoAjaxVO {
 	}
 	public void setObjetoRetornado(Object objetoRetornado) {
 		this.objetoRetornado = objetoRetornado;
-	}
-	public int getTipoException() {
-		return tipoException;
-	}
-	public void setTipoException(int tipoException) {
-		this.tipoException = tipoException;
 	}
 	public String getExceptionRetornada() {
 		return exceptionRetornada;

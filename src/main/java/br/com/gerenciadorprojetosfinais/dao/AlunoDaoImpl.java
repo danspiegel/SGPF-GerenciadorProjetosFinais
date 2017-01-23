@@ -21,18 +21,18 @@ public class AlunoDaoImpl extends BaseDao implements AlunoDao {
 	
 	//--> Campos da tabela de Alunos
 	
-	protected static final String ID              = "id";
-	protected static final String MATRICULA       = "matricula";
-	protected static final String SENHA           = "senha";
-	protected static final String NOME            = "nome";
-	protected static final String SOBRENOME       = "sobrenome";
-	protected static final String CPF             = "cpf";
-	protected static final String EMAIL           = "email";
-	protected static final String ID_CURSO        = "id_curso";
-	protected static final String ID_ENDERECO     = "id_endereco";
+	private static final String ID              = "id";
+	private static final String MATRICULA       = "matricula";
+	private static final String SENHA           = "senha";
+	private static final String NOME            = "nome";
+	private static final String SOBRENOME       = "sobrenome";
+	private static final String CPF             = "cpf";
+	private static final String EMAIL           = "email";
+	private static final String ID_CURSO        = "id_curso";
+	private static final String ID_ENDERECO     = "id_endereco";
 	
-	@Autowired
-	NamedParameterJdbcTemplate jdbcTemplate;
+	//--> Campo genérico
+	private static final String VALOR             = "valor";
 	
 	@Autowired
 	EnderecoDao enderecoDao;
@@ -125,6 +125,32 @@ public class AlunoDaoImpl extends BaseDao implements AlunoDao {
 			
 			getJdbcTemplate().update(sql.toString(), params);
 			
+		}
+		catch(Exception e){
+			throw new SQLException(e);
+		}
+		
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	public Integer contar(String valor, String campo) throws SQLException{
+		
+		try{
+		
+			MapSqlParameterSource params = new MapSqlParameterSource();
+			params.addValue(VALOR, valor);
+			
+			StringBuilder sql = new StringBuilder();
+			
+			sql.append(SELECT_COUNT + FROM + ALUNOS);
+			sql.append(WHERE);
+			sql.append(campo);
+			sql.append(IGUAL + DOIS_PONTOS + VALOR);
+			
+			return getJdbcTemplate().queryForInt(sql.toString(), params);
+		
 		}
 		catch(Exception e){
 			throw new SQLException(e);

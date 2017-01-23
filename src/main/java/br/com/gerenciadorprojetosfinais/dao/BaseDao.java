@@ -4,6 +4,7 @@ import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
 
@@ -42,6 +43,9 @@ public class BaseDao extends JdbcDaoSupport {
 	protected static final String INNER_JOIN                    = " INNER JOIN ";
 	protected static final String ON                            = " ON ";
 	protected static final String MAX                           = " MAX";
+	
+	@Autowired
+	NamedParameterJdbcTemplate jdbcTemplate;
 	
 	@Autowired
 	private DataSource dataSource;

@@ -14,4 +14,13 @@ public interface AlunoDao {
 	 */
 	public boolean validarUsuario(AlunoVO vo) throws SQLException;
 	
+	/**
+	 * Método responsável por contar quantos registros existem no campo informado de acordo com o valor informado.
+	 * @param valor String
+	 * @param campo String
+	 * @return Integer
+	 * @throws SQLException
+	 */
+	public Integer contar(String valor, String campo) throws SQLException;
+	
 }
