@@ -77,4 +77,30 @@ public class UniversidadeAction extends BaseAction {
 		return RETORNO_AJAX;
 		
 	}
+	
+	/**
+	 * Método responsável por incluir as universidades.
+	 * @return String
+	 */
+	public String incluir(){
+		
+		retornoAjax = new RetornoAjaxVO();
+		
+		try{
+			
+			universidadeFacade.incluir(vo);
+			retornoAjax.setTipoRetornado(SUCCESS);
+			retornoAjax.setObjetoRetornado(getText("msg.universidade.incluir.sucesso"));
+			
+		}
+		catch(Exception e){
+			LOGGER.error(e.getMessage());
+			retornoAjax.setTipoRetornado(ERROR);
+			retornoAjax.setExceptionRetornada(getText("msg.universidade.incluir.erro") + e.getMessage());
+		}
+		
+		return RETORNO_AJAX;
+		
+	}
+	
 }

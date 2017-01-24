@@ -3,6 +3,7 @@ package br.com.gerenciadorprojetosfinais.dao;
 import java.sql.SQLException;
 
 import br.com.gerenciadorprojetosfinais.vo.AlunoVO;
+import br.com.gerenciadorprojetosfinais.vo.UniversidadeVO;
 
 public interface AlunoDao {
 
@@ -22,5 +23,12 @@ public interface AlunoDao {
 	 * @throws SQLException
 	 */
 	public Integer contar(String valor, String campo) throws SQLException;
+	
+	/**
+	 * Método responsável por incluir os alunos.
+	 * @param vo AlunoVO
+	 * @throws SQLException
+	 */
+	public void incluir(AlunoVO vo) throws SQLException;
 	
 }

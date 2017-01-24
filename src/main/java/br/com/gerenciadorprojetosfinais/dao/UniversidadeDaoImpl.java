@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
@@ -23,6 +24,9 @@ public class UniversidadeDaoImpl extends BaseDao implements UniversidadeDao {
 	private static final String NOME_FANTASIA     = "nomefantasia";
 	private static final String CNPJ              = "cnpj";
 	private static final String ID_RESPONSAVEL    = "id_responsavel";
+	
+	@Autowired
+	EnderecoDao enderecoDao;
 	
 	/**
 	 * {@inheritDoc}
@@ -60,6 +64,9 @@ public class UniversidadeDaoImpl extends BaseDao implements UniversidadeDao {
 		
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 */
 	public void incluir(UniversidadeVO vo) throws SQLException{
 		
 		try{
@@ -83,6 +90,8 @@ public class UniversidadeDaoImpl extends BaseDao implements UniversidadeDao {
 			sql.append(PARENTESE_ESQ);
 			sql.append(DOIS_PONTOS + RAZAO_SOCIAL + VIRGULA + DOIS_PONTOS + NOME_FANTASIA + VIRGULA + DOIS_PONTOS + CNPJ);
 			sql.append(PARENTESE_DIR);
+			
+			enderecoDao.incluir(vo.getEndereco());
 			
 			jdbcTemplate.update(sql.toString(), params);
 			

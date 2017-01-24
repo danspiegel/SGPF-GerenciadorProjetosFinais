@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.gerenciadorprojetosfinais.dao.UniversidadeDao;
 import br.com.gerenciadorprojetosfinais.vo.ComboVO;
+import br.com.gerenciadorprojetosfinais.vo.UniversidadeVO;
 
 @Service
 public class UniversidadeServiceFacadeImpl implements UniversidadeServiceFacade {
@@ -20,6 +21,13 @@ public class UniversidadeServiceFacadeImpl implements UniversidadeServiceFacade 
 	 */
 	public List<ComboVO> carregarUniversidades(List<ComboVO> listaUniversidades) throws SQLException{
 		return  dao.carregarUniversidades(listaUniversidades);
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	public void incluir(UniversidadeVO vo) throws SQLException {
+		dao.incluir(vo);
 	}
 	
 }

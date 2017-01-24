@@ -86,6 +86,9 @@ public class AlunoDaoImpl extends BaseDao implements AlunoDao {
 	
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 */
 	public void incluir(AlunoVO vo) throws SQLException {
 		
 		try{
