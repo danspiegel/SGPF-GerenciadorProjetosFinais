@@ -17,6 +17,17 @@
 				
 				success: function(retornoAjax){
 					
+					if (retornoAjax.tipoRetornado == "success"){
+						$(this).exibirMensagem({mensagem:retornoAjax.objetoRetornado,
+                                                classe_mensagem:'alert alert-success',
+                                                id_mensagem:'#mensagens'});
+					}
+					else{
+						$(this).exibirMensagem({mensagem:retornoAjax.exceptionRetornada,
+		                                        classe_mensagem:'alert alert-danger',
+		                                        id_mensagem:'#mensagens'});
+					}
+					
 				},
 				
 				timeout: 10000,
@@ -25,7 +36,7 @@
 					
 					$(this).exibirMensagem({mensagem:("Ocorreu um erro interno. " + XMLHttpRequest.responseText),
 						                    classe_mensagem:'alert alert-danger',
-						                    id_mensagem:'#msg_retorno_cliente'});
+						                    id_mensagem:'#mensagens'});
 					
 				}
 				

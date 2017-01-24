@@ -14,6 +14,8 @@
 		$('#bt_confirmar').click(function(){
 			$(this).validarFiltro();
 		});
+		
+		$(this).listarEstados();
 	
 	});
 	

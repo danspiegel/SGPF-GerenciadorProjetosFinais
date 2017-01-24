@@ -25,6 +25,9 @@
 	<body>
 	    <div class="container">
 	        <div class="card card-container">
+	        
+	        	<div id="mensagens"></div>
+	        	
 	            <form id="frm_cadastrarAluno">
 	            	<div class="input-group">
 	            		<div class="input-group-addon">
@@ -32,36 +35,47 @@
 	            		</div>
 	            		<s:select id="id_universidade" name="vo.universidade.id"  list="listaUniversidades" listKey="id" listValue="descricao" headerValue="Selecione..." headerKey="-1"/>	
 	                </div>
+	                
 	                <br/>
+	                
 	            	<div class="input-group">
 	            		<div class="input-group-addon">
 	            			<span class="fa fa-address-card"></span>
 	            		</div>
 	                	<input id="id_matricula" class="form-control" name="vo.matricula" type="text" placeholder="Matrícula" required autofocus>
 	                </div>
+	                
 	                <br/>
+	                
 	                <div class="input-group">
 	            		<div class="input-group-addon">
 	            			<span class="fa fa-user"></span>
 	            		</div>
 	                	<input id="id_cpf" class="form-control" name="vo.cpf" type="text" placeholder="CPF" required autofocus>
 	                </div>
+	                
 	                <br/>
+	                
 	                <div class="input-group">
 	            		<div class="input-group-addon">
 	            			<span class="fa fa-envelope"></span>
 	            		</div>
 	                	<input id="id_email" class="form-control" name="vo.email" type="text" placeholder="Email" required autofocus>
 	                </div>
+	                
 	                <br/>
+	                
 	                <div class="input-group">
 	                	<div class="input-group-addon">
 	            			<span class="fa fa-lock"></span>
 	            		</div>
 	                	<input id="id_senha" class="form-control" name="vo.senha" type="password" placeholder="Senha" required>
 	                </div>
+	                
 	                <br/>
+	                
 	                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Confirmar</button>
+	                
 	            </form>
 	        </div>
 	    </div>

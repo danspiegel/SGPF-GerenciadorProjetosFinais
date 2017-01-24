@@ -91,7 +91,6 @@ public class AlunoDaoImpl extends BaseDao implements AlunoDao {
 		try{
 			
 			UUID idEndereco = UUID.randomUUID();
-			
 			vo.getEndereco().setId(idEndereco.toString());
 			
 			MapSqlParameterSource params = new MapSqlParameterSource();

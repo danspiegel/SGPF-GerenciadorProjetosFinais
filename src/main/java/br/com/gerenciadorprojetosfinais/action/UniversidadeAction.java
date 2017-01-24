@@ -12,7 +12,7 @@ import org.springframework.stereotype.Controller;
 import br.com.gerenciadorprojetosfinais.facade.EstadoServiceFacade;
 import br.com.gerenciadorprojetosfinais.facade.UniversidadeServiceFacade;
 import br.com.gerenciadorprojetosfinais.vo.ComboVO;
-import br.com.gerenciadorprojetosfinais.vo.EstadoVO;
+import br.com.gerenciadorprojetosfinais.vo.RetornoAjaxVO;
 import br.com.gerenciadorprojetosfinais.vo.UniversidadeVO;
 
 @Controller
@@ -31,6 +31,10 @@ public class UniversidadeAction extends BaseAction {
 	private UniversidadeVO vo;
 	List<ComboVO> listaEstados;
 	
+	/**
+	 * Método que carrega as combos ao entrar na página.
+	 * @return String
+	 */
 	public String iniciar(){
 		
 		listaEstados = new ArrayList<ComboVO>();
@@ -45,6 +49,32 @@ public class UniversidadeAction extends BaseAction {
 			return ERROR;
 			
 		}
+		
+	}
+	
+	/**
+	 * Método responsável por retornar a lista de estados.
+	 * @return String
+	 */
+	public String listarEstados(){
+		
+		retornoAjax = new RetornoAjaxVO();
+		listaEstados = new ArrayList<ComboVO>();
+		
+		try{
+			
+			listaEstados = estadoFacade.carregarEstados();
+			retornoAjax.setTipoRetornado(SUCCESS);
+			retornoAjax.setObjetoRetornado(listaEstados);
+			
+		}
+		catch(Exception e){
+			LOGGER.error(e.getMessage());
+			retornoAjax.setTipoRetornado(ERROR);
+			retornoAjax.setExceptionRetornada(getText("msg.estado.carregar.erro") + e.getMessage());
+		}
+		
+		return RETORNO_AJAX;
 		
 	}
 }

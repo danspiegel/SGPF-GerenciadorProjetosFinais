@@ -116,4 +116,15 @@
 		
 	});
 	
+	/**
+	 * Função: $(document).ready(function()
+	 * Tipo: jQuery
+	 * Objetivo: Os codigos dentro desta funcao serao executados quando todos os elementos da pagina tiverem sido carregados.
+	 */
+	$(document).ready(function(){
+		
+		$('#id_cnpjUniversidade').mask("99.999.999/9999-99");
+		
+	});
+	
 })(jQuery);

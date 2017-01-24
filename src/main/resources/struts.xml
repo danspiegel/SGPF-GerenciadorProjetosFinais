@@ -32,7 +32,13 @@
 	 <!-- ########## UNIVERSIDADE INÍCIO ########### -->
 
 	 <action name="iniciarUniversidades" class="br.com.gerenciadorprojetosfinais.action.UniversidadeAction" method="iniciar">
-			<result>/webapp/pages/universidade_cadastrar_manter.jsp</result>
+			<result name="success">pages/universidade_cadastrar_manter.jsp</result>
+	 </action>
+	 
+	 <action name="listarEstados" class="br.com.gerenciadorprojetosfinais.action.UniversidadeAction" method="listarEstados">
+		<result name="retornoAjax" type="json">
+	 		<param name="root">retornoAjax</param>
+	 	</result>
 	 </action>
 
 	 <!-- ########## UNIVERSIDADE FIM ##########  -->
