@@ -2,6 +2,12 @@ package br.com.gerenciadorprojetosfinais.vo;
 
 import java.io.Serializable;
 
+/**
+ * Classe VO de País
+ * 
+ * @author daniel.spiegel
+ *
+ */
 public class PaisVO implements Serializable {
 
 	private static final long serialVersionUID = 8401204189357088225L;

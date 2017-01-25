@@ -102,5 +102,39 @@ public class UniversidadeAction extends BaseAction {
 		return RETORNO_AJAX;
 		
 	}
+
+	//--> Getters e Setters
 	
+	public UniversidadeServiceFacade getUniversidadeFacade() {
+		return universidadeFacade;
+	}
+
+	public void setUniversidadeFacade(UniversidadeServiceFacade universidadeFacade) {
+		this.universidadeFacade = universidadeFacade;
+	}
+
+	public EstadoServiceFacade getEstadoFacade() {
+		return estadoFacade;
+	}
+
+	public void setEstadoFacade(EstadoServiceFacade estadoFacade) {
+		this.estadoFacade = estadoFacade;
+	}
+
+	public UniversidadeVO getVo() {
+		return vo;
+	}
+
+	public void setVo(UniversidadeVO vo) {
+		this.vo = vo;
+	}
+
+	public List<ComboVO> getListaEstados() {
+		return listaEstados;
+	}
+
+	public void setListaEstados(List<ComboVO> listaEstados) {
+		this.listaEstados = listaEstados;
+	}
+
 }

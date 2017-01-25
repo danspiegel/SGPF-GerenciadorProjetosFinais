@@ -2,6 +2,12 @@ package br.com.gerenciadorprojetosfinais.vo;
 
 import java.io.Serializable;
 
+/**
+ * Classe VO de Estado
+ * 
+ * @author daniel.spiegel
+ *
+ */
 public class EstadoVO implements Serializable {
 
 	private static final long serialVersionUID = -6006004430112522504L;

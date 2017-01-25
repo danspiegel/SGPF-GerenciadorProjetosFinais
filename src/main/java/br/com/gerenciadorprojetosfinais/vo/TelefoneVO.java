@@ -2,6 +2,12 @@ package br.com.gerenciadorprojetosfinais.vo;
 
 import java.io.Serializable;
 
+/**
+ * Classe VO de Telefone
+ * 
+ * @author daniel.spiegel
+ *
+ */
 public class TelefoneVO implements Serializable {
 
 	private static final long serialVersionUID = 1698948147621821283L;

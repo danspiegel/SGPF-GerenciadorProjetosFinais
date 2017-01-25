@@ -32,7 +32,7 @@
 
 	<div class="container" id="container-login">
 	
-		<form id="frm_inclUniversidade" class="form-signin">
+		<form id="frm_inclUniversidade" class="form-signin" width="60%">
         
         	<!-- ***** MENSAGEM INÍCIO ***** -->
   			<div id="mensagens" style="display:none;"></div>
@@ -56,7 +56,7 @@
 			</div>
 						
             <div class="form-group has-feedback">
-            	<input id="bt_confirmar" class="btn btn-primary btn-lg btn-block login-button" type="submit" value="Confirmar"/>
+            	<input id="bt_confirmar" class="btn btn-primary btn-lg btn-block login-button" type="button" value="Confirmar"/>
             </div>
             
         </form>

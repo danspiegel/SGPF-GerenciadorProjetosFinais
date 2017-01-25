@@ -12,87 +12,87 @@
 			var count = 0;
 			
 			if ($('#id_razaoSocialUniversidade').val() == ""){
-				mensagens[count++] = 'A razão social é obrigatório.'
+				mensagens[count++] = 'A razao social e obrigatoria.'
 			}
 			
 			if ($('#id_nomeFantasiaUniversidade').val() == ""){
-				mensagens[count++] = 'O nome fantasia é obrigatório';
+				mensagens[count++] = 'O nome fantasia e obrigatorio';
 			}
 			
 			if ($('#id_cnpjUniversidade').val() == ""){
-				mensagens[count++] = 'O CNPJ é obrigatório.';
+				mensagens[count++] = 'O CNPJ e obrigatorio.';
 			}
 			
 			if ($('#id_logradouroUniversidade').val() == ""){
-				mensagens[count++] = 'O logradouro da Universidade é obrigatório.';
+				mensagens[count++] = 'O logradouro da Universidade e obrigatorio.';
 			}
 			
 			if ($('#id_cepUniversidade').val() == ""){
-				mensagens[count++] = 'O CEP da Universidade é obrigatório.';
+				mensagens[count++] = 'O CEP da Universidade e obrigatorio.';
 			}
 			
 			if ($('#id_bairroUniversidade').val() == ""){
-				mensagens[count++] = 'O bairro da Universidade é obrigatório.';
+				mensagens[count++] = 'O bairro da Universidade e obrigatorio.';
 			}
 			
 			if ($('#id_cidadeUniversidade').val() == ""){
-				mensagens[count++] = 'A cidade da Universidade é obrigatória.';
+				mensagens[count++] = 'A cidade da Universidade e obrigatoria.';
 			}
 
 			if ($('#id_estadoUniversidade').val() == ""){
-				mensagens[count++] = 'A UF da Universidade é obrigatória.';
+				mensagens[count++] = 'A UF da Universidade e obrigatoria.';
 			}
 			
 			if ($('#id_dddUniversidade').val() == ""){
-				mensagens[count++] = 'O DDD da Universidade é obrigatório.';
+				mensagens[count++] = 'O DDD da Universidade e obrigatorio.';
 			}
 			
 			if ($('#id_telefoneUniversidade').val() == ""){
-				mensagens[count++] = 'O telefone da Universidade é obrigatório.'
+				mensagens[count++] = 'O telefone da Universidade e obrigatorio.'
 			}
 			
 			if ($('#id_matriculaResponsavel').val() == ""){
-				mensagens[count++] = 'O matrícula do responsável é obrigatório.';
+				mensagens[count++] = 'O matrícula do responsável e obrigatorio.';
 			}
 			
 			if ($('#id_nomeResponsavel').val() == ""){
-				mensagens[count++] = 'O nome do responsável é obrigatório.';
+				mensagens[count++] = 'O nome do responsável e obrigatorio.';
 			}
 			
 			if ($('#id_sobrenomeResponsavel').val() == ""){
-				mensagens[count++] = 'O sobrenome do responsável é obrigatório.';
+				mensagens[count++] = 'O sobrenome do responsável e obrigatorio.';
 			}
 			
 			if ($('#id_cpfResponsavel').val() == ""){
-				mensagens[count++] = 'O CPF do responsável é obrigatório.';
+				mensagens[count++] = 'O CPF do responsável e obrigatorio.';
 			}
 			
 			if ($('#id_emailResponsavel').val() == ""){
-				mensagens[count++] = 'O email do responsável é obrigatório.';
+				mensagens[count++] = 'O email do responsável e obrigatorio.';
 			}
 			
 			if ($('#id_cargoResponsavel').val() == ""){
-				mensagens[count++] = 'O cargo do responsável é obrigatório.';
+				mensagens[count++] = 'O cargo do responsável e obrigatorio.';
 			}
 			
 			if ($('#id_logradouroResponsavel').val() == ""){
-				mensagens[count++] = 'O logradouro do responsável é obrigatório.';
+				mensagens[count++] = 'O logradouro do responsável e obrigatorio.';
 			}
 			
 			if ($('#id_cepResponsavel').val() == ""){
-				mensagens[count++] = 'O CEP do responsável é obrigatório.';
+				mensagens[count++] = 'O CEP do responsável e obrigatorio.';
 			}
 			
 			if ($('#id_bairroResponsavel').val() == ""){
-				mensagens[count++] = 'O bairro do responsável é obrigatório.';
+				mensagens[count++] = 'O bairro do responsável e obrigatorio.';
 			}
 			
 			if ($('#id_cidadeResponsavel').val() == ""){
-				mensagens[count++] = 'A cidade do responsável é obrigatória.';
+				mensagens[count++] = 'A cidade do responsável e obrigatoria.';
 			}
 			
 			if ($('#id_estadoResponsavel').val() == ""){
-				mensagens[count++] = 'A UF do responsável é obrigatória.';
+				mensagens[count++] = 'A UF do responsável e obrigatoria.';
 			}
 			
 			if (count > 0){
@@ -110,6 +110,9 @@
 					                     classe_mensagem: 'alert alert-danger',
 					                     id_mensagem: '#mensagens'});
 				
+			}
+			else{
+				$(this).incluirUniversidades();
 			}
 			
 		}

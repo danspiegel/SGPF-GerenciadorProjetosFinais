@@ -1,5 +1,11 @@
 package br.com.gerenciadorprojetosfinais.vo;
 
+/**
+ * Classe VO para retornar dados via Ajax
+ * 
+ * @author daniel.spiegel
+ *
+ */
 public class RetornoAjaxVO {
 
 	private String tipoRetornado;

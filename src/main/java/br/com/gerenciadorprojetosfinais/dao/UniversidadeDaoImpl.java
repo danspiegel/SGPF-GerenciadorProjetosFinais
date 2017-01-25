@@ -72,13 +72,13 @@ public class UniversidadeDaoImpl extends BaseDao implements UniversidadeDao {
 		try{
 			
 			UUID idEndereco = UUID.randomUUID();
-			vo.getResponsavel().setId(idEndereco.toString());
+			//vo.getResponsavel().setId(idEndereco.toString());
 			
 			MapSqlParameterSource params = new MapSqlParameterSource();
 			params.addValue(RAZAO_SOCIAL, vo.getRazaoSocial());
 			params.addValue(NOME_FANTASIA, vo.getNomeFantasia());
-			params.addValue(CNPJ, vo.getCnpj());
-			params.addValue(ID_RESPONSAVEL, vo.getResponsavel().getId());
+			params.addValue(CNPJ, vo.getCnpj().replaceAll("[./-]", ""));
+			//params.addValue(ID_RESPONSAVEL, vo.getResponsavel().getId());
 			
 			StringBuilder sql = new StringBuilder();
 			
@@ -91,7 +91,7 @@ public class UniversidadeDaoImpl extends BaseDao implements UniversidadeDao {
 			sql.append(DOIS_PONTOS + RAZAO_SOCIAL + VIRGULA + DOIS_PONTOS + NOME_FANTASIA + VIRGULA + DOIS_PONTOS + CNPJ);
 			sql.append(PARENTESE_DIR);
 			
-			enderecoDao.incluir(vo.getEndereco());
+			//enderecoDao.incluir(vo.getEndereco());
 			
 			jdbcTemplate.update(sql.toString(), params);
 			

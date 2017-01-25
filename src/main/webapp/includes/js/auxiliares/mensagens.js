@@ -23,7 +23,7 @@
 			
 			$(opt.id_mensagem).hide();
 			
-			//var content = '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
+			var content = '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
 			var content = '<strong>' + opt.mensagem + '</strong>';
 			
 			$(opt.id_mensagem).removeClass("alert alert-success alert-danger");
@@ -34,9 +34,11 @@
 			
 			$(opt.id_mensagem).show();
 			
+			/*
 			setTimeout(function () {
                 $(opt.id_mensagem).fadeOut();
-            }, 5000);
+            }, 15000);
+            */
 		}
 		
 	});

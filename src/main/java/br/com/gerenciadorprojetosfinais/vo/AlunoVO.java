@@ -2,6 +2,12 @@ package br.com.gerenciadorprojetosfinais.vo;
 
 import java.io.Serializable;
 
+/**
+ * Classe VO de Aluno
+ * 
+ * @author daniel.spiegel
+ *
+ */
 public class AlunoVO implements Serializable {
 
 

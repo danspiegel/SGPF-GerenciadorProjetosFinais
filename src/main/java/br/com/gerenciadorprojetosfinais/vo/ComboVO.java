@@ -2,6 +2,12 @@ package br.com.gerenciadorprojetosfinais.vo;
 
 import java.io.Serializable;
 
+/**
+ * Classe VO para carregar combobox
+ * 
+ * @author daniel.spiegel
+ *
+ */
 public class ComboVO implements Serializable {
 
 	private static final long serialVersionUID = -6978358076235461922L;
