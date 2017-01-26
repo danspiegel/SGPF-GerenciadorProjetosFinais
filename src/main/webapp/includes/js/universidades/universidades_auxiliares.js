@@ -44,7 +44,7 @@
 				mensagens[count++] = 'A cidade da Universidade &eacute; obrigat&oacute;ria.';
 			}
 
-			if ($('#id_estadoUniversidade').val() == ""){
+			if ($('#id_estadoUniversidade').val() == -1){
 				mensagens[count++] = 'A UF da Universidade &eacute; obrigat&oacute;ria.';
 			}
 			
@@ -73,6 +73,8 @@
 				
 			}
 			else{
+				
+				$(this).esconderMensagem('#mensagens');
 				
 				var $active = $('.wizard .nav-tabs li.active');
 		        $active.next().removeClass('disabled');
@@ -134,7 +136,7 @@
 				mensagens[count++] = 'A cidade do respons&aacute;vel &eacute; obrigat&oacute;ria.';
 			}
 			
-			if ($('#id_estadoResponsavel').val() == ""){
+			if ($('#id_estadoResponsavel').val() == -1){
 				mensagens[count++] = 'A UF do respons&aacute;vel &eacute; obrigat&oacute;ria.';
 			}
 			

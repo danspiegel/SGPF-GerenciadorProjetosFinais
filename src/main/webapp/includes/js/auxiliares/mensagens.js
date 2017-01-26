@@ -28,6 +28,8 @@
 			
 			$(opt.id_mensagem).removeClass("alert alert-success alert-danger");
 			
+			$(opt.id_mensagem).attr("align","center");
+			
 			$(opt.id_mensagem).addClass(opt.classe_mensagem);
 			
 			$(opt.id_mensagem).html(content);

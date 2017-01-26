@@ -134,7 +134,7 @@
 					                               
 					                            <div class="col-md-6">
 					                                <label for="username" class="cols-sm-2 control-label">Telefone</label>
-					                                <input type="text" class="form-control" name="vo.telefone.numero" id="id_numeroUniversidade" placeholder="Telefone" />
+					                                <input type="text" class="form-control" name="vo.telefone.numero" id="id_numeroUniversidade" placeholder="Telefone"/>
 					                            </div>
 					                        </div>
 					                   
