@@ -15,8 +15,8 @@ public class TelefoneVO implements Serializable {
 	//--> Atributos
 	
 	private String id;
-	private String numeroDdd;
-	private String telefone;
+	private String ddd;
+	private String numero;
 	
 	//--> Getters e Setters
 	
@@ -26,17 +26,17 @@ public class TelefoneVO implements Serializable {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getNumeroDdd() {
-		return numeroDdd;
+	public String getDdd() {
+		return ddd;
 	}
-	public void setNumeroDdd(String numeroDdd) {
-		this.numeroDdd = numeroDdd;
+	public void setDdd(String ddd) {
+		this.ddd = ddd;
 	}
-	public String getTelefone() {
-		return telefone;
+	public String getNumero() {
+		return numero;
 	}
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
+	public void setNumero(String numero) {
+		this.numero = numero;
 	}
 	
 }

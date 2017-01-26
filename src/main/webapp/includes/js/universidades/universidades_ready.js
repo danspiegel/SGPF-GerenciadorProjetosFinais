@@ -11,8 +11,12 @@
 	 */
 	$(document).ready(function(){
 	
-		$('#bt_confirmar').click(function(){
-			$(this).validarFiltro();
+		$('#btn_primeiraEtapa').click(function(){
+			$(this).validarFiltroPrimeiraEtapa();
+		});
+		
+		$('#btn_segundaEtapa').click(function(){
+			$(this).validarFiltroSegundaEtapa();
 		});
 		
 		$(this).listarEstados();

@@ -12,6 +12,7 @@ $(document).ready(function () {
         }
     });
 
+    /*
     $(".next-step").click(function (e) {
 
         var $active = $('.wizard .nav-tabs li.active');
@@ -19,6 +20,8 @@ $(document).ready(function () {
         nextTab($active);
 
     });
+    */
+    
     $(".prev-step").click(function (e) {
 
         var $active = $('.wizard .nav-tabs li.active');

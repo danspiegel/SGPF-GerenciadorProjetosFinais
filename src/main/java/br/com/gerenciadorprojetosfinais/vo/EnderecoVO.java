@@ -18,7 +18,7 @@ public class EnderecoVO implements Serializable {
 	private String logradouro;
 	private String cep;
 	private String bairro;
-	private String cidade;
+	private String municipio;
 	private EstadoVO estado;
 	
 	//--> Getters e Setters
@@ -47,17 +47,17 @@ public class EnderecoVO implements Serializable {
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
 	}
-	public String getCidade() {
-		return cidade;
-	}
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
-	}
 	public EstadoVO getEstado() {
 		return estado;
 	}
 	public void setEstado(EstadoVO estado) {
 		this.estado = estado;
+	}
+	public String getMunicipio() {
+		return municipio;
+	}
+	public void setMunicipio(String municipio) {
+		this.municipio = municipio;
 	}
 	
 }

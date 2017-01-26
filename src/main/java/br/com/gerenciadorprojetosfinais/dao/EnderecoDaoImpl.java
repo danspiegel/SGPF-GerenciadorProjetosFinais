@@ -32,7 +32,7 @@ public class EnderecoDaoImpl extends BaseDao implements EnderecoDao {
 			params.addValue(LOGRADOURO, vo.getLogradouro());
 			params.addValue(CEP, vo.getCep());
 			params.addValue(BAIRRO, vo.getBairro());
-			params.addValue(CIDADE, vo.getCidade());
+			params.addValue(CIDADE, vo.getMunicipio());
 			params.addValue(ID_ESTADO, vo.getEstado().getId());
 			
 			StringBuilder sql = new StringBuilder();

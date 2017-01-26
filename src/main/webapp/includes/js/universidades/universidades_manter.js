@@ -48,7 +48,7 @@
 			
 			var content = '';
 			
-			content += '<option value="-1">Selecione...</option>';
+			content += '<option value="-1" selected>Selecione...</option>';
 				
 			if (obj.length != 0){
 				
@@ -59,6 +59,8 @@
 			}
 			
 			$('#id_estadoUniversidade').html(content);
+			
+			$('#id_estadoResponsavel').html(content);
 			
 		}
 		
