@@ -7,7 +7,7 @@
 	/**
 	 * Função: validarFiltroPrimeiraEtapa
 	 * Tipo: jQuery
-	 * Objetivo: É utilizada para validar os campos da primeira parte do cadastro de universidades.
+	 * Objetivo: Validar os campos da primeira parte do cadastro de universidades.
 	 */
 	$.fn.extend({
 		
@@ -44,7 +44,7 @@
 				mensagens[count++] = 'A cidade da Universidade &eacute; obrigat&oacute;ria.';
 			}
 
-			if ($('#id_estadoUniversidade').val() == -1){
+			if ($('#id_estadoUniversidade').val() == "-1"){
 				mensagens[count++] = 'A UF da Universidade &eacute; obrigat&oacute;ria.';
 			}
 			
@@ -90,7 +90,7 @@
 	/**
 	 * Função: validarFiltroSegundaEtapa
 	 * Tipo: jQuery
-	 * Objetivo: É utilizada para validar os campos da segunda parte do cadastro de universidades.
+	 * Objetivo: Validar os campos da segunda parte do cadastro de universidades.
 	 */
 	$.fn.extend({
 		
@@ -136,7 +136,7 @@
 				mensagens[count++] = 'A cidade do respons&aacute;vel &eacute; obrigat&oacute;ria.';
 			}
 			
-			if ($('#id_estadoResponsavel').val() == -1){
+			if ($('#id_estadoResponsavel').val() == "-1"){
 				mensagens[count++] = 'A UF do respons&aacute;vel &eacute; obrigat&oacute;ria.';
 			}
 			

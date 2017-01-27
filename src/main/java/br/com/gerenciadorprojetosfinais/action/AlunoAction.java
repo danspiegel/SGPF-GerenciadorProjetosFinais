@@ -24,7 +24,6 @@ public class AlunoAction extends BaseAction {
 
 	private static final long serialVersionUID = 9067501493776262956L;
 
-
 	private static final Logger LOGGER = LoggerFactory.getLogger(AlunoAction.class);
 	
 	@Autowired
@@ -50,6 +49,10 @@ public class AlunoAction extends BaseAction {
 		
 	}
 	
+	/**
+	 * Método responsável pela validação do usuário no sistema.
+	 * @return String
+	 */
 	public String validarUsuario(){
 		
 		retornoAjax = new RetornoAjaxVO();

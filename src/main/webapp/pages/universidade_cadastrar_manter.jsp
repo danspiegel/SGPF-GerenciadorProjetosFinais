@@ -47,7 +47,7 @@
 				                    <li role="presentation" class="disabled" style="margin: 0% 25%">
 				                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
 				                            <span class="round-tab">
-				                                <i class="glyphicon glyphicon-pencil" style="margin: 25%"></i>
+				                                <i class="glyphicon glyphicon-user" style="margin: 25%"></i>
 				                            </span>
 				                        </a>
 				                    </li>
@@ -55,7 +55,7 @@
                 				</ul>
             				</div>
 
-				            <form role="form">
+				            <form role="form" id="frm_inclUniversidade">
 				                <div class="tab-content">
 				                
 				                	<br/>

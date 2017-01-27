@@ -4,6 +4,11 @@
  */
 (function($){
 	
+	/**
+	 * Função: listarEstados
+	 * Tipo: jQuery
+	 * Objetivo: Retornar a lista de estados.
+	 */
 	$.fn.extend({
 		
 		listarEstados: function(){
@@ -42,6 +47,11 @@
 		
 	});
 	
+	/**
+	 * Função: construirListaEstados
+	 * Tipo: jQuery
+	 * Objetivo: Construir o combobox de estados.
+	 */
 	$.fn.extend({
 		
 		construirListaEstados: function(obj){
@@ -66,6 +76,11 @@
 		
 	});
 	
+	/**
+	 * Função: incluirUniversidades
+	 * Tipo: jQuery
+	 * Objetivo: Incluir as universidades.
+	 */
 	$.fn.extend({
 		
 		incluirUniversidades: function(){

@@ -30,10 +30,6 @@
 	 <!-- ########## ALUNO FIM ########## -->
 	 
 	 <!-- ########## UNIVERSIDADE INÍCIO ########### -->
-
-	 <action name="iniciarUniversidades" class="br.com.gerenciadorprojetosfinais.action.UniversidadeAction" method="iniciar">
-			<result name="success">pages/universidade_cadastrar_manter.jsp</result>
-	 </action>
 	 
 	 <action name="listarEstados" class="br.com.gerenciadorprojetosfinais.action.UniversidadeAction" method="listarEstados">
 		<result name="retornoAjax" type="json">
@@ -48,6 +44,16 @@
 	 </action>
 
 	 <!-- ########## UNIVERSIDADE FIM ##########  -->
+	 
+	 <!-- ########## ESTADO INÍCIO ########## -->
+	 
+	 <action name="listarEstados" class="br.com.gerenciadorprojetosfinais.action.EstadoAction" method="listarEstados">
+		<result name="retornoAjax" type="json">
+	 		<param name="root">retornoAjax</param>
+	 	</result>
+	 </action>
+	 
+	 <!-- ########## ESTADO FIM  ######## -->
 	 
  </package>
 </struts>
