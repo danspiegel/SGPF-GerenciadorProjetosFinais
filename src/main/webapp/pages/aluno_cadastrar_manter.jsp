@@ -163,14 +163,7 @@
 					                                <label for="email" class="cols-sm-2 control-label">UF</label>
 													<select id="id_estadoAluno" name="vo.endereco.estado.id" class="form-control"></select>
 					                            </div>
-					                        </div>
-					                        
-					                        <div class="row">
-					                        	<div class="col-md-6">
-					                            	<label for="email" class="cols-sm-2 control-label">DDD</label>
-													<input type="text" class="form-control" name="vo.telefone.ddd" id="id_dddAluno" placeholder="DDD" maxlength="2" size="5"/>
-					                        	</div>
-					                        
+					                            
 					                            <div class="col-md-6">
 					                                <label for="email" class="cols-sm-2 control-label">Telefone</label>
 													<input type="text" class="form-control" name="vo.telefone.numero" id="id_telefoneAluno" placeholder="Telefone"/>

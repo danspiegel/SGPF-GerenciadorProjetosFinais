@@ -126,12 +126,7 @@
 					                        
 					                        <br/>
 					                        
-					                        <div class="row">
-					                            <div class="col-md-6">
-					                                <label for="username" class="cols-sm-2 control-label">DDD</label>
-													<input type="text" class="form-control" name="vo.telefone.ddd" id="id_dddUniversidade" placeholder="DDD" maxlength="2"/>
-					                            </div>
-					                               
+					                        <div class="row"> 
 					                            <div class="col-md-6">
 					                                <label for="username" class="cols-sm-2 control-label">Telefone</label>
 					                                <input type="text" class="form-control" name="vo.telefone.numero" id="id_numeroUniversidade" placeholder="Telefone"/>
@@ -230,18 +225,11 @@
 					                            </div>                         
 					                            
 					                            <div class="col-md-6">
-					                                <label for="email" class="cols-sm-2 control-label">DDD</label>
-													<input type="text" class="form-control" name="vo.responsavel.telefone.ddd" id="id_dddResponsavel" placeholder="DDD" maxlength="2" size="5"/>
-					                            </div>
-					                        </div>
-					                        
-					                        <div class="row">
-					                            <div class="col-md-6">
 					                                <label for="email" class="cols-sm-2 control-label">Telefone</label>
 													<input type="text" class="form-control" name="vo.responsavel.telefone.numero" id="id_numeroResponsavel" placeholder="Telefone"/>
 					                            </div>
 					                        </div>
-					                        
+					                         
 				                        </div>
 				                        
 				                        <br/>

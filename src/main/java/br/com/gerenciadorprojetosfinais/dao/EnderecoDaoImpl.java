@@ -10,10 +10,10 @@ import br.com.gerenciadorprojetosfinais.vo.EnderecoVO;
 @Repository
 public class EnderecoDaoImpl extends BaseDao implements EnderecoDao {
 
-	//--> Campo com o nome da tabela de Endereços
+	//--> Campo com o nome da tabela de Endereï¿½os
 	private static final String ENDERECOS      = "enderecos";
 	
-	//--> Campos da tabela de Endereços
+	//--> Campos da tabela de Endereï¿½os
 	private static final String ID             = "id";
 	private static final String LOGRADOURO     = "logradouro";
 	private static final String CEP            = "cep";
@@ -30,7 +30,7 @@ public class EnderecoDaoImpl extends BaseDao implements EnderecoDao {
 			
 			MapSqlParameterSource params = new MapSqlParameterSource();
 			params.addValue(LOGRADOURO, vo.getLogradouro());
-			params.addValue(CEP, vo.getCep());
+			params.addValue(CEP, vo.getCep().replace("-", ""));
 			params.addValue(BAIRRO, vo.getBairro());
 			params.addValue(CIDADE, vo.getMunicipio());
 			params.addValue(ID_ESTADO, vo.getEstado().getId());
