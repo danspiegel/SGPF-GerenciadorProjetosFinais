@@ -17,16 +17,13 @@ public class AlunoVO implements Serializable {
 	
 	private String id;
 	private Long matricula;
-	private String senha;
 	private String nome;
 	private String sobrenome;
 	private String cpf;
 	private String email;
-	private String idCurso;
-	private String idEndereco;
+	private String senha;
 	private CursoVO curso;
 	private EnderecoVO endereco;
-	private TelefoneVO telefone;
 	
 	//--> Getters e Setters
 	
@@ -72,18 +69,6 @@ public class AlunoVO implements Serializable {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public String getIdCurso() {
-		return idCurso;
-	}
-	public void setIdCurso(String idCurso) {
-		this.idCurso = idCurso;
-	}
-	public String getIdEndereco() {
-		return idEndereco;
-	}
-	public void setIdEndereco(String idEndereco) {
-		this.idEndereco = idEndereco;
-	}
 	public CursoVO getCurso() {
 		return curso;
 	}
@@ -95,12 +80,6 @@ public class AlunoVO implements Serializable {
 	}
 	public void setEndereco(EnderecoVO endereco) {
 		this.endereco = endereco;
-	}
-	public TelefoneVO getTelefone() {
-		return telefone;
-	}
-	public void setTelefone(TelefoneVO telefone) {
-		this.telefone = telefone;
 	}
 	
 }

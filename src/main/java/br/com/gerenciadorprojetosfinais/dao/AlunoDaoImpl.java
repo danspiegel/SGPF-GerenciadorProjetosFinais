@@ -21,17 +21,18 @@ public class AlunoDaoImpl extends BaseDao implements AlunoDao {
 	
 	//--> Campos da tabela de Alunos
 	
-	private static final String ID              = "id";
-	private static final String MATRICULA       = "matricula";
-	private static final String SENHA           = "senha";
-	private static final String NOME            = "nome";
-	private static final String SOBRENOME       = "sobrenome";
-	private static final String CPF             = "cpf";
-	private static final String EMAIL           = "email";
-	private static final String ID_CURSO        = "id_curso";
-	private static final String ID_ENDERECO     = "id_endereco";
+	private static final String ID                   = "id";
+	private static final String MATRICULA            = "matricula";
+	private static final String SENHA                = "senha";
+	private static final String NOME                 = "nome";
+	private static final String SOBRENOME            = "sobrenome";
+	private static final String CPF                  = "cpf";
+	private static final String EMAIL                = "email";
+	private static final String ID_CURSO             = "id_curso";
+	private static final String ID_ENDERECO          = "id_endereco";
+	private static final String ID_TELEFONE_PESSOA   = "id_telefone_pessoa";
 	
-	//--> Campo genérico
+	//--> Campo genï¿½rico
 	private static final String VALOR             = "valor";
 	
 	@Autowired

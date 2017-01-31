@@ -20,7 +20,7 @@ public class UniversidadeVO implements Serializable {
 	private String cnpj;
 	private FuncionarioVO responsavel;
 	private EnderecoVO endereco;
-	private TelefoneVO telefone;
+	private TelefonePessoaVO telefonePessoa;
 	
 	//--> Getters e Setters
 	
@@ -54,17 +54,17 @@ public class UniversidadeVO implements Serializable {
 	public void setEndereco(EnderecoVO endereco) {
 		this.endereco = endereco;
 	}
-	public TelefoneVO getTelefone() {
-		return telefone;
-	}
-	public void setTelefone(TelefoneVO telefone) {
-		this.telefone = telefone;
-	}
 	public FuncionarioVO getResponsavel() {
 		return responsavel;
 	}
 	public void setResponsavel(FuncionarioVO responsavel) {
 		this.responsavel = responsavel;
+	}
+	public TelefonePessoaVO getTelefonePessoa() {
+		return telefonePessoa;
+	}
+	public void setTelefonePessoa(TelefonePessoaVO telefonePessoa) {
+		this.telefonePessoa = telefonePessoa;
 	}
 	
 }

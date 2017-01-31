@@ -1,6 +1,9 @@
 package br.com.gerenciadorprojetosfinais.dao;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -19,6 +22,9 @@ public class TelefoneDaoImpl extends BaseDao implements TelefoneDao {
 	private static final String DDD         = "ddd";
 	private static final String NUMERO      = "numero";
 	
+	/**
+	 * {@inheritDoc}
+	 */
 	public UUID incluir(TelefoneVO vo) throws SQLException{
 		
 		try{
@@ -47,6 +53,27 @@ public class TelefoneDaoImpl extends BaseDao implements TelefoneDao {
 			
 			return idTelefone;
 			
+		}
+		catch(Exception e){
+			throw new SQLException(e);
+		}
+		
+	}
+	
+	public List<TelefoneVO> buscar(String id) throws SQLException{
+		
+		try{
+			
+			MapSqlParameterSource params = new MapSqlParameterSource();
+			
+			StringBuilder sql = new StringBuilder();
+			
+			List<Map<String, Object>> resultSet = jdbcTemplate.queryForList(sql.toString(), params);
+			List<TelefoneVO> lista = new ArrayList<TelefoneVO>();
+			
+			
+			return lista;
+				
 		}
 		catch(Exception e){
 			throw new SQLException(e);

@@ -19,11 +19,12 @@ public class UniversidadeDaoImpl extends BaseDao implements UniversidadeDao {
 	private static final String UNIVERSIDADES     = "universidades";
 	
 	//--> Campos da tabela de Universidades
-	private static final String ID                = "id";
-	private static final String RAZAO_SOCIAL      = "razaosocial";
-	private static final String NOME_FANTASIA     = "nomefantasia";
-	private static final String CNPJ              = "cnpj";
-	private static final String ID_RESPONSAVEL    = "id_responsavel";
+	private static final String ID                  = "id";
+	private static final String RAZAO_SOCIAL        = "razaosocial";
+	private static final String NOME_FANTASIA       = "nomefantasia";
+	private static final String CNPJ                = "cnpj";
+	private static final String ID_RESPONSAVEL      = "id_responsavel";
+	private static final String ID_TELEFONE_PESSOA  = "id_telefone_pessoa";
 	
 	@Autowired
 	EnderecoDao enderecoDao;

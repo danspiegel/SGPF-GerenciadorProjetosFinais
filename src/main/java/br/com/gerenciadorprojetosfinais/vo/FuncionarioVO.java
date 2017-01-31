@@ -3,7 +3,7 @@ package br.com.gerenciadorprojetosfinais.vo;
 import java.io.Serializable;
 
 /**
- * Classe VO de Funcionário
+ * Classe VO de Funcionï¿½rio
  *
  * @author daniel.spiegel
  *
@@ -21,8 +21,8 @@ public class FuncionarioVO implements Serializable {
 	private String cpf;
 	private String email;
 	private String cargo;
+	private String senha;
 	private EnderecoVO endereco;
-	private TelefoneVO telefone;
 	
 	//--> Getters e Setters
 	
@@ -74,11 +74,11 @@ public class FuncionarioVO implements Serializable {
 	public void setEndereco(EnderecoVO endereco) {
 		this.endereco = endereco;
 	}
-	public TelefoneVO getTelefone() {
-		return telefone;
+	public String getSenha() {
+		return senha;
 	}
-	public void setTelefone(TelefoneVO telefone) {
-		this.telefone = telefone;
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 	
 }

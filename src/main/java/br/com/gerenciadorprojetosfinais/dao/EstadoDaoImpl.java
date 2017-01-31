@@ -19,10 +19,11 @@ public class EstadoDaoImpl extends BaseDao implements EstadoDao {
 	private static final String ESTADOS   = "estados";
 	
 	//--> Campos da tabela de estados
-	private static final String ID        = "id";
-	private static final String NOME      = "nome";
-	private static final String SIGLA     = "sigla";
-	private static final String ID_PAIS   = "id_pais";
+	private static final String ID             = "id";
+	private static final String CODIGO_ESTADO  = "codigo_estado";
+	private static final String NOME           = "nome";
+	private static final String SIGLA          = "sigla";
+	private static final String ID_PAIS        = "id_pais";
 	
 	/**
 	 * {@inheritDoc}
