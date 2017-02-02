@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import br.com.gerenciadorprojetosfinais.facade.UniversidadeServiceFacade;
+import br.com.gerenciadorprojetosfinais.vo.FilialVO;
 import br.com.gerenciadorprojetosfinais.vo.RetornoAjaxVO;
-import br.com.gerenciadorprojetosfinais.vo.UniversidadeVO;
 
 @Controller
 @Scope("request")
@@ -21,10 +21,10 @@ public class UniversidadeAction extends BaseAction {
 	
 	@Autowired
 	private UniversidadeServiceFacade universidadeFacade;
-	private UniversidadeVO vo;
+	private FilialVO vo;
 	
 	/**
-	 * M�todo respons�vel por incluir as universidades.
+	 * Método responsável por incluir as universidades.
 	 * @return String
 	 */
 	public String incluir(){
@@ -33,7 +33,7 @@ public class UniversidadeAction extends BaseAction {
 		
 		try{
 			
-			universidadeFacade.incluir(vo);
+			universidadeFacade.incluirUniversidade(vo);
 			retornoAjax.setTipoRetornado(SUCCESS);
 			retornoAjax.setObjetoRetornado(getText("msg.universidade.incluir.sucesso"));
 			
@@ -58,12 +58,12 @@ public class UniversidadeAction extends BaseAction {
 		this.universidadeFacade = universidadeFacade;
 	}
 
-	public UniversidadeVO getVo() {
+	public FilialVO getVo() {
 		return vo;
 	}
 
-	public void setVo(UniversidadeVO vo) {
+	public void setVo(FilialVO vo) {
 		this.vo = vo;
 	}
-
+	
 }

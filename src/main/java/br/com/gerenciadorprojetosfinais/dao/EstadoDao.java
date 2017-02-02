@@ -8,7 +8,7 @@ import br.com.gerenciadorprojetosfinais.vo.ComboVO;
 public interface EstadoDao {
 
 	/**
-	 * MÈtodo respons·vel por carregar os combos de estados nos cadastros.
+	 * M√©todo respons√°vel por carregar os combos de estados nos cadastros.
 	 * @return List<ComboVO>
 	 * @throws SQLException
 	 */

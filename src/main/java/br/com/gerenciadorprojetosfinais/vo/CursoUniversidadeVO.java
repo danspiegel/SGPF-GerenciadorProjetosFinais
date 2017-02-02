@@ -14,22 +14,23 @@ public class CursoUniversidadeVO implements Serializable {
 	
 	//--> Atributos
 	
-	private String idCurso;
-	private String cnpjFilial;
+	private CursoVO curso;
+	private UniversidadeVO universidade;
 	
 	//--> Getters e Setters
 	
-	public String getIdCurso() {
-		return idCurso;
+	public CursoVO getCurso() {
+		return curso;
 	}
-	public void setIdCurso(String idCurso) {
-		this.idCurso = idCurso;
+	public void setCurso(CursoVO curso) {
+		this.curso = curso;
 	}
-	public String getCnpjFilial() {
-		return cnpjFilial;
+	public UniversidadeVO getUniversidade() {
+		return universidade;
 	}
-	public void setCnpjFilial(String cnpjFilial) {
-		this.cnpjFilial = cnpjFilial;
+	public void setUniversidade(UniversidadeVO universidade) {
+		this.universidade = universidade;
 	}
 
+	
 }

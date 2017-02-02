@@ -9,23 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
+import br.com.gerenciadorprojetosfinais.constantes.ConstantesEndereco;
+import br.com.gerenciadorprojetosfinais.constantes.ConstantesTelefone;
+import br.com.gerenciadorprojetosfinais.constantes.ConstantesUniversidade;
 import br.com.gerenciadorprojetosfinais.vo.ComboVO;
-import br.com.gerenciadorprojetosfinais.vo.UniversidadeVO;
+import br.com.gerenciadorprojetosfinais.vo.FilialVO;
 
 @Repository
 public class UniversidadeDaoImpl extends BaseDao implements UniversidadeDao {
 
-	//--> Campo com nome da tabela de Universidades
-	private static final String UNIVERSIDADES     = "universidades";
-	
-	//--> Campos da tabela de Universidades
-	private static final String ID                  = "id";
-	private static final String RAZAO_SOCIAL        = "razaosocial";
-	private static final String NOME_FANTASIA       = "nomefantasia";
-	private static final String CNPJ                = "cnpj";
-	private static final String ID_RESPONSAVEL      = "id_responsavel";
-	private static final String ID_TELEFONE_PESSOA  = "id_telefone_pessoa";
-	
 	@Autowired
 	EnderecoDao enderecoDao;
 	
@@ -39,9 +31,9 @@ public class UniversidadeDaoImpl extends BaseDao implements UniversidadeDao {
 			StringBuilder sql = new StringBuilder();
 			
 			// SELECT
-			sql.append(SELECT + ID + VIRGULA + NOME_FANTASIA);
+			sql.append(SELECT + ConstantesUniversidade.ID + VIRGULA + ConstantesUniversidade.NOME_FANTASIA);
 			// FROM
-			sql.append(FROM + UNIVERSIDADES);
+			sql.append(FROM + ConstantesUniversidade.UNIVERSIDADES);
 			
 			List<Map<String, Object>> resultSet = jdbcTemplate.queryForList(sql.toString(), new MapSqlParameterSource());
 			
@@ -49,8 +41,8 @@ public class UniversidadeDaoImpl extends BaseDao implements UniversidadeDao {
 				
 				ComboVO vo = new ComboVO();
 				
-				vo.setId(resultado.get(ID).toString());
-				vo.setDescricao(resultado.get(NOME_FANTASIA).toString());
+				vo.setId(resultado.get(ConstantesUniversidade.ID).toString());
+				vo.setDescricao(resultado.get(ConstantesUniversidade.NOME_FANTASIA).toString());
 				
 				listaUniversidades.add(vo);
 				
@@ -68,31 +60,41 @@ public class UniversidadeDaoImpl extends BaseDao implements UniversidadeDao {
 	/**
 	 * {@inheritDoc}
 	 */
-	public void incluir(UniversidadeVO vo) throws SQLException{
+	public void incluirUniversidade(FilialVO vo) throws SQLException{
 		
 		try{
 			
 			UUID idEndereco = UUID.randomUUID();
-			vo.getResponsavel().setId(idEndereco.toString());
+			
+			String ddd = vo.getTelefone().getNumero().replaceAll("[()-]", "").substring(0, 2);
+			String numero = vo.getTelefone().getNumero().replaceAll("[()-]", "").substring(2, 10);
 			
 			MapSqlParameterSource params = new MapSqlParameterSource();
-			params.addValue(RAZAO_SOCIAL, vo.getRazaoSocial());
-			params.addValue(NOME_FANTASIA, vo.getNomeFantasia());
-			params.addValue(CNPJ, vo.getCnpj().replaceAll("[./-]", ""));
-			params.addValue(ID_RESPONSAVEL, vo.getResponsavel().getId());
+			params.addValue(ConstantesUniversidade.RAZAO_SOCIAL, vo.getRazaoSocial());
+			params.addValue(ConstantesUniversidade.NOME_FANTASIA, vo.getNomeFantasia());
+			params.addValue(ConstantesUniversidade.CNPJ, vo.getCnpj());
+			params.addValue(ConstantesEndereco.LOGRADOURO, vo.getEndereco().getLogradouro());
+			params.addValue(ConstantesEndereco.CEP, vo.getEndereco().getCep());
+			params.addValue(ConstantesEndereco.BAIRRO, vo.getEndereco().getBairro());
+			params.addValue(ConstantesEndereco.MUNICIPIO, vo.getEndereco().getMunicipio());
+			params.addValue(ConstantesEndereco.ID_ESTADO, vo.getEndereco().getEstado().getId());
+			params.addValue(ConstantesTelefone.DDD, ddd);
+			params.addValue(ConstantesTelefone.NUMERO, numero);
+
 			
 			StringBuilder sql = new StringBuilder();
 			
-			sql.append(INSERT + UNIVERSIDADES);
+			sql.append(INSERT + ConstantesUniversidade.UNIVERSIDADES);
 			sql.append(PARENTESE_ESQ);
-			sql.append(RAZAO_SOCIAL + VIRGULA + NOME_FANTASIA + VIRGULA + CNPJ);
+			sql.append(ConstantesUniversidade.RAZAO_SOCIAL + VIRGULA + ConstantesUniversidade.NOME_FANTASIA + VIRGULA);
+			sql.append(ConstantesUniversidade.CNPJ);
 			sql.append(PARENTESE_DIR);
 			sql.append(VALUES);
 			sql.append(PARENTESE_ESQ);
-			sql.append(DOIS_PONTOS + RAZAO_SOCIAL + VIRGULA + DOIS_PONTOS + NOME_FANTASIA + VIRGULA + DOIS_PONTOS + CNPJ);
+			sql.append(DOIS_PONTOS + ConstantesUniversidade.RAZAO_SOCIAL + VIRGULA);
+			sql.append(DOIS_PONTOS + ConstantesUniversidade.NOME_FANTASIA + VIRGULA);
+			sql.append(DOIS_PONTOS + ConstantesUniversidade.CNPJ);
 			sql.append(PARENTESE_DIR);
-			
-			enderecoDao.incluir(vo.getEndereco());
 			
 			jdbcTemplate.update(sql.toString(), params);
 			

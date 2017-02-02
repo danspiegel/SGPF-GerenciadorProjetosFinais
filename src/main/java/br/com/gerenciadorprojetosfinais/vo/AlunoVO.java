@@ -16,7 +16,6 @@ public class AlunoVO implements Serializable {
 	//--> Atributos
 	
 	private String id;
-	private Long matricula;
 	private String nome;
 	private String sobrenome;
 	private String cpf;
@@ -24,6 +23,8 @@ public class AlunoVO implements Serializable {
 	private String senha;
 	private CursoVO curso;
 	private EnderecoVO endereco;
+	private MatriculaVO matricula;
+	private FilialVO filial;
 	
 	//--> Getters e Setters
 	
@@ -32,12 +33,6 @@ public class AlunoVO implements Serializable {
 	}
 	public void setId(String id) {
 		this.id = id;
-	}
-	public Long getMatricula() {
-		return matricula;
-	}
-	public void setMatricula(Long matricula) {
-		this.matricula = matricula;
 	}
 	public String getNome() {
 		return nome;
@@ -80,6 +75,18 @@ public class AlunoVO implements Serializable {
 	}
 	public void setEndereco(EnderecoVO endereco) {
 		this.endereco = endereco;
+	}
+	public MatriculaVO getMatricula() {
+		return matricula;
+	}
+	public void setMatricula(MatriculaVO matricula) {
+		this.matricula = matricula;
+	}
+	public FilialVO getFilial() {
+		return filial;
+	}
+	public void setFilial(FilialVO filial) {
+		this.filial = filial;
 	}
 	
 }

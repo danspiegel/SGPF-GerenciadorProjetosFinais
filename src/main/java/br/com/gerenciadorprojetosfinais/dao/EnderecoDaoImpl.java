@@ -5,21 +5,11 @@ import java.sql.SQLException;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
+import br.com.gerenciadorprojetosfinais.constantes.ConstantesEndereco;
 import br.com.gerenciadorprojetosfinais.vo.EnderecoVO;
 
 @Repository
 public class EnderecoDaoImpl extends BaseDao implements EnderecoDao {
-
-	//--> Campo com o nome da tabela de Endere�os
-	private static final String ENDERECOS      = "enderecos";
-	
-	//--> Campos da tabela de Endere�os
-	private static final String ID             = "id";
-	private static final String LOGRADOURO     = "logradouro";
-	private static final String CEP            = "cep";
-	private static final String BAIRRO         = "bairro";
-	private static final String CIDADE         = "cidade";
-	private static final String ID_ESTADO      = "id_estado";
 	
 	/**
 	 * {@inheritDoc}
@@ -29,24 +19,25 @@ public class EnderecoDaoImpl extends BaseDao implements EnderecoDao {
 		try{
 			
 			MapSqlParameterSource params = new MapSqlParameterSource();
-			params.addValue(LOGRADOURO, vo.getLogradouro());
-			params.addValue(CEP, vo.getCep().replace("-", ""));
-			params.addValue(BAIRRO, vo.getBairro());
-			params.addValue(CIDADE, vo.getMunicipio());
-			params.addValue(ID_ESTADO, vo.getEstado().getId());
+			params.addValue(ConstantesEndereco.LOGRADOURO, vo.getLogradouro());
+			params.addValue(ConstantesEndereco.CEP, vo.getCep().replace("-", ""));
+			params.addValue(ConstantesEndereco.BAIRRO, vo.getBairro());
+			params.addValue(ConstantesEndereco.MUNICIPIO, vo.getMunicipio());
+			params.addValue(ConstantesEndereco.ID_ESTADO, vo.getEstado().getId());
 			
 			StringBuilder sql = new StringBuilder();
-			sql.append(INSERT + ENDERECOS);
+			sql.append(INSERT + ConstantesEndereco.ENDERECOS);
 			sql.append(PARENTESE_ESQ);
-			sql.append(LOGRADOURO + VIRGULA + CEP + VIRGULA + BAIRRO + VIRGULA + CIDADE + VIRGULA + ID_ESTADO);
+			sql.append(ConstantesEndereco.LOGRADOURO + VIRGULA + ConstantesEndereco.CEP + VIRGULA);
+			sql.append(ConstantesEndereco.BAIRRO + VIRGULA + ConstantesEndereco.MUNICIPIO + VIRGULA + ConstantesEndereco.ID_ESTADO);
 			sql.append(PARENTESE_DIR);
 			sql.append(VALUES);
 			sql.append(PARENTESE_ESQ);
-			sql.append(DOIS_PONTOS + LOGRADOURO + VIRGULA);
-			sql.append(DOIS_PONTOS + CEP + VIRGULA);
-			sql.append(DOIS_PONTOS + BAIRRO + VIRGULA);
-			sql.append(DOIS_PONTOS + CIDADE + VIRGULA);
-			sql.append(DOIS_PONTOS + ID_ESTADO);
+			sql.append(DOIS_PONTOS + ConstantesEndereco.LOGRADOURO + VIRGULA);
+			sql.append(DOIS_PONTOS + ConstantesEndereco.CEP + VIRGULA);
+			sql.append(DOIS_PONTOS + ConstantesEndereco.BAIRRO + VIRGULA);
+			sql.append(DOIS_PONTOS + ConstantesEndereco.MUNICIPIO + VIRGULA);
+			sql.append(DOIS_PONTOS + ConstantesEndereco.ID_ESTADO);
 			sql.append(PARENTESE_DIR);
 			
 			jdbcTemplate.update(sql.toString(), params);

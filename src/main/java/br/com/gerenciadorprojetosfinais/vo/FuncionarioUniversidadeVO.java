@@ -8,22 +8,22 @@ public class FuncionarioUniversidadeVO implements Serializable {
 	
 	//--> Atributos
 	
-	private String idFuncionario;
-	private String cnpjFilial;
+	private FuncionarioVO funcionario;
+	private UniversidadeVO universidade;
 	
 	//--> Getters e Setters
 	
-	public String getIdFuncionario() {
-		return idFuncionario;
+	public FuncionarioVO getFuncionario() {
+		return funcionario;
 	}
-	public void setIdFuncionario(String idFuncionario) {
-		this.idFuncionario = idFuncionario;
+	public void setFuncionario(FuncionarioVO funcionario) {
+		this.funcionario = funcionario;
 	}
-	public String getCnpjFilial() {
-		return cnpjFilial;
+	public UniversidadeVO getUniversidade() {
+		return universidade;
 	}
-	public void setCnpjFilial(String cnpjFilial) {
-		this.cnpjFilial = cnpjFilial;
+	public void setUniversidade(UniversidadeVO universidade) {
+		this.universidade = universidade;
 	}
-
+	
 }

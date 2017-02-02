@@ -7,7 +7,7 @@ import br.com.gerenciadorprojetosfinais.vo.EnderecoVO;
 public interface EnderecoDao {
 
 	/**
-	 * MÈtodo respons·vel por incluir os endereÁos.
+	 * M√©todo respons√°vel por incluir os endere√ßos.
 	 * @param vo EnderecoVO
 	 * @throws SQLException
 	 */

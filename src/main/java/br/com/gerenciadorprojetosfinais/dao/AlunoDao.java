@@ -8,7 +8,7 @@ import br.com.gerenciadorprojetosfinais.vo.UniversidadeVO;
 public interface AlunoDao {
 
 	/**
-	 * MÈtodo respons·vel por validar os usu·rios do sistema.
+	 * M√©todo respons√°vel por validar os usu√°rios do sistema.
 	 * @param vo AlunoVO
 	 * @return boolean
 	 * @throws SQLException
@@ -16,7 +16,7 @@ public interface AlunoDao {
 	public boolean validarUsuario(AlunoVO vo) throws SQLException;
 	
 	/**
-	 * MÈtodo respons·vel por contar quantos registros existem no campo informado de acordo com o valor informado.
+	 * M√©todo respons√°vel por contar quantos registros existem no campo informado de acordo com o valor informado.
 	 * @param valor String
 	 * @param campo String
 	 * @return Integer
@@ -25,7 +25,7 @@ public interface AlunoDao {
 	public Integer contar(String valor, String campo) throws SQLException;
 	
 	/**
-	 * MÈtodo respons·vel por incluir os alunos.
+	 * M√©todo respons√°vel por incluir os alunos.
 	 * @param vo AlunoVO
 	 * @throws SQLException
 	 */

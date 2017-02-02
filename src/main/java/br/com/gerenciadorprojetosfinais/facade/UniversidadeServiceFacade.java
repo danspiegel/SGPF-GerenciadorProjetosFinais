@@ -4,12 +4,12 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.gerenciadorprojetosfinais.vo.ComboVO;
-import br.com.gerenciadorprojetosfinais.vo.UniversidadeVO;
+import br.com.gerenciadorprojetosfinais.vo.FilialVO;
 
 public interface UniversidadeServiceFacade {
 
 	/**
-	 * MÈtodo respons·vel por carregar o combo de Universidades.
+	 * M√©todo respons√°vel por carregar o combo de Universidades.
 	 * @param listaUniversidades List<ComboVO>
 	 * @return List<ComboVO>
 	 * @throws SQLException
@@ -17,10 +17,10 @@ public interface UniversidadeServiceFacade {
 	public List<ComboVO> carregarUniversidades(List<ComboVO> listaUniversidades) throws SQLException;
 	
 	/**
-	 * MÈtodo respons·vel por incluir as universidades.
-	 * @param vo UniversidadeVO
+	 * M√©todo respons√°vel por incluir as universidades.
+	 * @param vo FilialVO
 	 * @throws SQLException
 	 */
-	public void incluir(UniversidadeVO vo) throws SQLException;
+	public void incluirUniversidade(FilialVO vo) throws SQLException;
 	
 }

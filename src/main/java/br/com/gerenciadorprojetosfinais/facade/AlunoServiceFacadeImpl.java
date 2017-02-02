@@ -15,10 +15,13 @@ public class AlunoServiceFacadeImpl implements AlunoServiceFacade {
 	@Autowired
 	private AlunoDao dao;
 	
+	/**
+	 * {@inheritDoc}
+	 */
 	public boolean validarUsuario(AlunoVO vo) throws SQLException, BusinessException{
 		
 		if (dao.contar(vo.getCpf(), "cpf") > 0){
-			throw new BusinessException("Este CPF já está cadastrado.");
+			throw new BusinessException("Este CPF jï¿½ estï¿½ cadastrado.");
 		}
 		else{
 			return dao.validarUsuario(vo);

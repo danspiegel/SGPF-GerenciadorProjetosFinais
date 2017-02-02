@@ -1,6 +1,7 @@
 package br.com.gerenciadorprojetosfinais.vo;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Classe VO de Universidade
@@ -17,10 +18,7 @@ public class UniversidadeVO implements Serializable {
 	private String id;
 	private String razaoSocial;
 	private String nomeFantasia;
-	private String cnpj;
-	private FuncionarioVO responsavel;
-	private EnderecoVO endereco;
-	private TelefonePessoaVO telefonePessoa;
+	private List<FilialVO> listaFiliais;
 	
 	//--> Getters e Setters
 	
@@ -42,29 +40,11 @@ public class UniversidadeVO implements Serializable {
 	public void setNomeFantasia(String nomeFantasia) {
 		this.nomeFantasia = nomeFantasia;
 	}
-	public String getCnpj() {
-		return cnpj;
+	public List<FilialVO> getListaFiliais() {
+		return listaFiliais;
 	}
-	public void setCnpj(String cnpj) {
-		this.cnpj = cnpj;
-	}
-	public EnderecoVO getEndereco() {
-		return endereco;
-	}
-	public void setEndereco(EnderecoVO endereco) {
-		this.endereco = endereco;
-	}
-	public FuncionarioVO getResponsavel() {
-		return responsavel;
-	}
-	public void setResponsavel(FuncionarioVO responsavel) {
-		this.responsavel = responsavel;
-	}
-	public TelefonePessoaVO getTelefonePessoa() {
-		return telefonePessoa;
-	}
-	public void setTelefonePessoa(TelefonePessoaVO telefonePessoa) {
-		this.telefonePessoa = telefonePessoa;
+	public void setListaFiliais(List<FilialVO> listaFiliais) {
+		this.listaFiliais = listaFiliais;
 	}
 	
 }

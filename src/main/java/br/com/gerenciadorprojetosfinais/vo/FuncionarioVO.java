@@ -15,7 +15,6 @@ public class FuncionarioVO implements Serializable {
 	//--> Atributos
 	
 	private String id;
-	private Long matricula;
 	private String nome;
 	private String sobrenome;
 	private String cpf;
@@ -23,6 +22,7 @@ public class FuncionarioVO implements Serializable {
 	private String cargo;
 	private String senha;
 	private EnderecoVO endereco;
+	private MatriculaVO matricula;
 	
 	//--> Getters e Setters
 	
@@ -31,12 +31,6 @@ public class FuncionarioVO implements Serializable {
 	}
 	public void setId(String id) {
 		this.id = id;
-	}
-	public Long getMatricula() {
-		return matricula;
-	}
-	public void setMatricula(Long matricula) {
-		this.matricula = matricula;
 	}
 	public String getNome() {
 		return nome;
@@ -79,6 +73,12 @@ public class FuncionarioVO implements Serializable {
 	}
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	public MatriculaVO getMatricula() {
+		return matricula;
+	}
+	public void setMatricula(MatriculaVO matricula) {
+		this.matricula = matricula;
 	}
 	
 }
