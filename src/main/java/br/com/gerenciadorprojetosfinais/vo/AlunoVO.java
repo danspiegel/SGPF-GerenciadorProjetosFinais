@@ -15,24 +15,27 @@ public class AlunoVO implements Serializable {
 	
 	//--> Atributos
 	
-	private String id;
+	private String cpf;
 	private String nome;
 	private String sobrenome;
-	private String cpf;
+	private String nomePai;
+	private String nomeMae;
+	private String logradouro;
+	private String cep;
+	private String bairro;
+	private String municipio;
+	private EstadoVO estado;
+	private String telefone;
+	private String celular;
 	private String email;
-	private String senha;
-	private CursoVO curso;
-	private EnderecoVO endereco;
-	private MatriculaVO matricula;
-	private FilialVO filial;
 	
 	//--> Getters e Setters
 	
-	public String getId() {
-		return id;
+	public String getCpf() {
+		return cpf;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 	public String getNome() {
 		return nome;
@@ -46,47 +49,65 @@ public class AlunoVO implements Serializable {
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
 	}
-	public String getCpf() {
-		return cpf;
+	public String getNomePai() {
+		return nomePai;
 	}
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
+	public void setNomePai(String nomePai) {
+		this.nomePai = nomePai;
+	}
+	public String getNomeMae() {
+		return nomeMae;
+	}
+	public void setNomeMae(String nomeMae) {
+		this.nomeMae = nomeMae;
+	}
+	public String getLogradouro() {
+		return logradouro;
+	}
+	public void setLogradouro(String logradouro) {
+		this.logradouro = logradouro;
+	}
+	public String getCep() {
+		return cep;
+	}
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
+	public String getBairro() {
+		return bairro;
+	}
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+	public String getMunicipio() {
+		return municipio;
+	}
+	public void setMunicipio(String municipio) {
+		this.municipio = municipio;
+	}
+	public EstadoVO getEstado() {
+		return estado;
+	}
+	public void setEstado(EstadoVO estado) {
+		this.estado = estado;
+	}
+	public String getTelefone() {
+		return telefone;
+	}
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+	public String getCelular() {
+		return celular;
+	}
+	public void setCelular(String celular) {
+		this.celular = celular;
 	}
 	public String getEmail() {
 		return email;
 	}
 	public void setEmail(String email) {
 		this.email = email;
-	}
-	public String getSenha() {
-		return senha;
-	}
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-	public CursoVO getCurso() {
-		return curso;
-	}
-	public void setCurso(CursoVO curso) {
-		this.curso = curso;
-	}
-	public EnderecoVO getEndereco() {
-		return endereco;
-	}
-	public void setEndereco(EnderecoVO endereco) {
-		this.endereco = endereco;
-	}
-	public MatriculaVO getMatricula() {
-		return matricula;
-	}
-	public void setMatricula(MatriculaVO matricula) {
-		this.matricula = matricula;
-	}
-	public FilialVO getFilial() {
-		return filial;
-	}
-	public void setFilial(FilialVO filial) {
-		this.filial = filial;
 	}
 	
 }

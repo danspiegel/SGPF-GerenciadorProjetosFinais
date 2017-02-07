@@ -22,6 +22,11 @@
 	            <img id="profile-img" class="profile-img-card" src="../includes/img/avatar.png" />
 	            <p id="profile-name" class="profile-name-card"></p>
 	            <form>
+	            
+	            	<!-- ***** MENSAGEM INÍCIO ***** -->
+  					<div id="mensagens" style="display:none;"></div>
+  					<!-- ***** MENSAGEM FIM ***** -->
+	            
 	            	<div class="input-group">
 	            		<div class="input-group-addon">
 	            			<span class="fa fa-address-card"></span>

@@ -39,7 +39,7 @@ public class AlunoAction extends BaseAction {
 		
 		try{
 			
-			universidadeFacade.carregarUniversidades(listaUniversidades);
+			//universidadeFacade.carregarUniversidades(listaUniversidade);
 			return SUCCESS;
 		}
 		catch(Exception e){

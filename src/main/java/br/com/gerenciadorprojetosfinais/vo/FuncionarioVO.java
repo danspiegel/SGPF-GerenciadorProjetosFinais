@@ -14,23 +14,26 @@ public class FuncionarioVO implements Serializable {
 
 	//--> Atributos
 	
-	private String id;
+	private String cpf;
 	private String nome;
 	private String sobrenome;
-	private String cpf;
 	private String email;
 	private String cargo;
-	private String senha;
-	private EnderecoVO endereco;
-	private MatriculaVO matricula;
+	private String logradouro;
+	private String cep;
+	private String bairro;
+	private String municipio;
+	private EstadoVO estado;
+	private String telefone;
+	private String celular;
 	
 	//--> Getters e Setters
 	
-	public String getId() {
-		return id;
+	public String getCpf() {
+		return cpf;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 	public String getNome() {
 		return nome;
@@ -44,12 +47,6 @@ public class FuncionarioVO implements Serializable {
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
 	}
-	public String getCpf() {
-		return cpf;
-	}
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
 	public String getEmail() {
 		return email;
 	}
@@ -62,23 +59,47 @@ public class FuncionarioVO implements Serializable {
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
-	public EnderecoVO getEndereco() {
-		return endereco;
+	public String getLogradouro() {
+		return logradouro;
 	}
-	public void setEndereco(EnderecoVO endereco) {
-		this.endereco = endereco;
+	public void setLogradouro(String logradouro) {
+		this.logradouro = logradouro;
 	}
-	public String getSenha() {
-		return senha;
+	public String getCep() {
+		return cep;
 	}
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public void setCep(String cep) {
+		this.cep = cep;
 	}
-	public MatriculaVO getMatricula() {
-		return matricula;
+	public String getBairro() {
+		return bairro;
 	}
-	public void setMatricula(MatriculaVO matricula) {
-		this.matricula = matricula;
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+	public String getMunicipio() {
+		return municipio;
+	}
+	public void setMunicipio(String municipio) {
+		this.municipio = municipio;
+	}
+	public EstadoVO getEstado() {
+		return estado;
+	}
+	public void setEstado(EstadoVO estado) {
+		this.estado = estado;
+	}
+	public String getTelefone() {
+		return telefone;
+	}
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+	public String getCelular() {
+		return celular;
+	}
+	public void setCelular(String celular) {
+		this.celular = celular;
 	}
 	
 }

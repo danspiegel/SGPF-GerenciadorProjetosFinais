@@ -8,7 +8,7 @@ import java.util.Map;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
-import br.com.gerenciadorprojetosfinais.constantes.ConstantesEstado;
+import br.com.gerenciadorprojetosfinais.enums.EstadoEnum;
 import br.com.gerenciadorprojetosfinais.vo.ComboVO;
 
 @Repository
@@ -23,8 +23,8 @@ public class EstadoDaoImpl extends BaseDao implements EstadoDao {
 	
 			StringBuilder sql = new StringBuilder();
 			
-			sql.append(SELECT + ConstantesEstado.ID + VIRGULA + ConstantesEstado.SIGLA);
-			sql.append(FROM + ConstantesEstado.ESTADOS);
+			sql.append(SELECT + EstadoEnum.CODIGO_ESTADO.getValor() + VIRGULA + EstadoEnum.SIGLA.getValor());
+			sql.append(FROM + EstadoEnum.ESTADOS.getValor());
 			
 			List<Map<String, Object>> resultSet = jdbcTemplate.queryForList(sql.toString(), new MapSqlParameterSource());
 			List<ComboVO> lista = new ArrayList<ComboVO>();
@@ -33,8 +33,8 @@ public class EstadoDaoImpl extends BaseDao implements EstadoDao {
 				
 				ComboVO vo = new ComboVO();
 				
-				vo.setId(resultado.get(ConstantesEstado.ID).toString());
-				vo.setDescricao(resultado.get(ConstantesEstado.SIGLA).toString());
+				vo.setId(resultado.get(EstadoEnum.CODIGO_ESTADO.getValor()).toString());
+				vo.setDescricao(resultado.get(EstadoEnum.SIGLA.getValor()).toString());
 				
 				lista.add(vo);
 				

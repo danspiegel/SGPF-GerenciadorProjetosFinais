@@ -19,8 +19,8 @@ public class UniversidadeServiceFacadeImpl implements UniversidadeServiceFacade 
 	/**
 	 * {@inheritDoc}
 	 */
-	public List<ComboVO> carregarUniversidades(List<ComboVO> listaUniversidades) throws SQLException{
-		return  dao.carregarUniversidades(listaUniversidades);
+	public List<ComboVO> carregarUniversidades() throws SQLException{
+		return  dao.carregarUniversidades();
 	}
 	
 	/**

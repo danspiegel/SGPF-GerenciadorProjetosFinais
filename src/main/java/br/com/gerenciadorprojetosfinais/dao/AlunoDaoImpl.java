@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
-import br.com.gerenciadorprojetosfinais.constantes.ConstantesAluno;
+import br.com.gerenciadorprojetosfinais.enums.AlunoEnum;
 import br.com.gerenciadorprojetosfinais.vo.AlunoVO;
 
 @Repository
@@ -30,21 +30,21 @@ public class AlunoDaoImpl extends BaseDao implements AlunoDao {
 		try{
 			
 			MapSqlParameterSource params = new MapSqlParameterSource();
-			params.addValue(ConstantesAluno.MATRICULA, vo.getMatricula());
-			params.addValue(ConstantesAluno.SENHA, vo.getSenha());
+			params.addValue(AlunoEnum.MATRICULA.getValor(), vo.getMatricula());
+			params.addValue(AlunoEnum.SENHA.getValor(), vo.getSenha());
 			
 			StringBuilder sql = new StringBuilder();
 			
 			// SELECT
-			sql.append(SELECT + ConstantesAluno.ID + VIRGULA + ConstantesAluno.MATRICULA + VIRGULA);
-			sql.append(ConstantesAluno.EMAIL + VIRGULA + ConstantesAluno.NOME + VIRGULA + ConstantesAluno.SOBRENOME + VIRGULA);
-			sql.append(ConstantesAluno.CPF);
+			sql.append(SELECT + AlunoEnum.ID.getValor() + VIRGULA + AlunoEnum.MATRICULA.getValor() + VIRGULA);
+			sql.append(AlunoEnum.EMAIL.getValor() + VIRGULA + AlunoEnum.NOME.getValor() + VIRGULA + AlunoEnum.SOBRENOME.getValor() + VIRGULA);
+			sql.append(AlunoEnum.CPF.getValor());
 			// FROM
-			sql.append(FROM + ConstantesAluno.ALUNOS);
+			sql.append(FROM + AlunoEnum.ALUNOS.getValor());
 			// WHERE
 			sql.append(WHERE);
-			sql.append(ConstantesAluno.MATRICULA + DOIS_PONTOS + IGUAL + ConstantesAluno.MATRICULA + AND);
-			sql.append(ConstantesAluno.SENHA + DOIS_PONTOS + IGUAL + ConstantesAluno.SENHA);
+			sql.append(AlunoEnum.MATRICULA.getValor() + DOIS_PONTOS + IGUAL + AlunoEnum.MATRICULA.getValor() + AND);
+			sql.append(AlunoEnum.SENHA.getValor() + DOIS_PONTOS + IGUAL + AlunoEnum.SENHA.getValor());
 			
 			List<Map<String, Object>> resultSet = jdbcTemplate.queryForList(sql.toString(), params);
 			Iterator<Map<String, Object>> iterator = resultSet.iterator();
@@ -53,11 +53,11 @@ public class AlunoDaoImpl extends BaseDao implements AlunoDao {
 				
 				for (Map<String, Object> resultado: resultSet){
 					
-					vo.setId(resultado.get(ConstantesAluno.ID).toString());
-					vo.setEmail(resultado.get(ConstantesAluno.EMAIL).toString());
-					vo.setNome(resultado.get(ConstantesAluno.NOME).toString());
-					vo.setSobrenome(resultado.get(ConstantesAluno.SOBRENOME).toString());
-					vo.setCpf(resultado.get(ConstantesAluno.CPF).toString());
+					vo.setId(resultado.get(AlunoEnum.ID.getValor()).toString());
+					vo.setEmail(resultado.get(AlunoEnum.EMAIL.getValor()).toString());
+					vo.setNome(resultado.get(AlunoEnum.NOME.getValor()).toString());
+					vo.setSobrenome(resultado.get(AlunoEnum.SOBRENOME.getValor()).toString());
+					vo.setCpf(resultado.get(AlunoEnum.CPF.getValor()).toString());
 					
 				}
 				
@@ -84,36 +84,36 @@ public class AlunoDaoImpl extends BaseDao implements AlunoDao {
 			vo.getEndereco().setId(idEndereco.toString());
 			
 			MapSqlParameterSource params = new MapSqlParameterSource();
-			params.addValue(ConstantesAluno.MATRICULA, vo.getMatricula());
-			params.addValue(ConstantesAluno.NOME, vo.getNome());
-			params.addValue(ConstantesAluno.SOBRENOME, vo.getSobrenome());
-			params.addValue(ConstantesAluno.CPF, vo.getCpf());
-			params.addValue(ConstantesAluno.EMAIL, vo.getEmail());
-			params.addValue(ConstantesAluno.SENHA, vo.getSenha());
-			params.addValue(ConstantesAluno.ID_CURSO, vo.getCurso().getId());
-			params.addValue(ConstantesAluno.ID_ENDERECO, idEndereco.toString());
+			params.addValue(AlunoEnum.MATRICULA.getValor(), vo.getMatricula());
+			params.addValue(AlunoEnum.NOME.getValor(), vo.getNome());
+			params.addValue(AlunoEnum.SOBRENOME.getValor(), vo.getSobrenome());
+			params.addValue(AlunoEnum.CPF.getValor(), vo.getCpf());
+			params.addValue(AlunoEnum.EMAIL.getValor(), vo.getEmail());
+			params.addValue(AlunoEnum.SENHA.getValor(), vo.getSenha());
+			params.addValue(AlunoEnum.ID_CURSO.getValor(), vo.getCurso().getId());
 			
 			StringBuilder sql = new StringBuilder();
-			sql.append(INSERT + ConstantesAluno.ALUNOS);
+			sql.append(INSERT + AlunoEnum.ALUNOS.getValor());
 			sql.append(PARENTESE_ESQ);
-			sql.append(ConstantesAluno.MATRICULA + VIRGULA + ConstantesAluno.NOME + VIRGULA + ConstantesAluno.SOBRENOME + VIRGULA);
-			sql.append(ConstantesAluno.CPF + VIRGULA + ConstantesAluno.EMAIL);
-			sql.append(ConstantesAluno.SENHA + VIRGULA + ConstantesAluno.ID_CURSO);
+			sql.append(AlunoEnum.MATRICULA.getValor() + VIRGULA + AlunoEnum.NOME.getValor() + VIRGULA + AlunoEnum.SOBRENOME.getValor() + VIRGULA);
+			sql.append(AlunoEnum.CPF.getValor() + VIRGULA + AlunoEnum.EMAIL.getValor());
+			sql.append(AlunoEnum.SENHA.getValor() + VIRGULA + AlunoEnum.ID_CURSO.getValor());
 			sql.append(PARENTESE_DIR);
 			sql.append(VALUES);
 			sql.append(PARENTESE_ESQ);
-			sql.append(DOIS_PONTOS + ConstantesAluno.MATRICULA + VIRGULA);
-			sql.append(DOIS_PONTOS + ConstantesAluno.NOME + VIRGULA);
-			sql.append(DOIS_PONTOS + ConstantesAluno.SOBRENOME + VIRGULA);
-			sql.append(DOIS_PONTOS + ConstantesAluno.CPF + VIRGULA);
-			sql.append(DOIS_PONTOS + ConstantesAluno.EMAIL + VIRGULA);
-			sql.append(DOIS_PONTOS + ConstantesAluno.ID_CURSO + VIRGULA);
-			sql.append(DOIS_PONTOS + ConstantesAluno.ID_ENDERECO);
+			sql.append(DOIS_PONTOS + AlunoEnum.MATRICULA.getValor() + VIRGULA);
+			sql.append(DOIS_PONTOS + AlunoEnum.NOME.getValor() + VIRGULA);
+			sql.append(DOIS_PONTOS + AlunoEnum.SOBRENOME.getValor() + VIRGULA);
+			sql.append(DOIS_PONTOS + AlunoEnum.CPF.getValor() + VIRGULA);
+			sql.append(DOIS_PONTOS + AlunoEnum.EMAIL.getValor() + VIRGULA);
+			sql.append(DOIS_PONTOS + AlunoEnum.SENHA.getValor() + VIRGULA);
+			sql.append(DOIS_PONTOS + AlunoEnum.ID_CURSO.getValor());
 			sql.append(PARENTESE_DIR);
+			sql.append(RETURNING + AlunoEnum.ID.getValor());
 			
-			enderecoDao.incluir(vo.getEndereco());
+			String id = jdbcTemplate.queryForObject(sql.toString(), params, String.class);
 			
-			jdbcTemplate.update(sql.toString(), params);
+			enderecoDao.incluir(id, AlunoEnum.ALUNOS.getValor(), vo.getEndereco());
 			
 		}
 		catch(Exception e){
@@ -134,7 +134,7 @@ public class AlunoDaoImpl extends BaseDao implements AlunoDao {
 			
 			StringBuilder sql = new StringBuilder();
 			
-			sql.append(SELECT_COUNT + FROM + ConstantesAluno.ALUNOS);
+			sql.append(SELECT_COUNT + FROM + AlunoEnum.ALUNOS.getValor());
 			sql.append(WHERE);
 			sql.append(campo);
 			sql.append(IGUAL + DOIS_PONTOS + VALOR);

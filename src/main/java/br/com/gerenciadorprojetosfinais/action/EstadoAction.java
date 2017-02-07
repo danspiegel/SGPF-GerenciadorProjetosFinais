@@ -22,10 +22,10 @@ public class EstadoAction extends BaseAction {
 	
 	@Autowired
 	private EstadoServiceFacade estadoFacade;
-	List<ComboVO> listaEstados;
+	private List<ComboVO> listaEstados;
 	
 	/**
-	 * M�todo respons�vel por retornar a lista de estados.
+	 * Método responsável por retornar a lista de estados.
 	 * @return String
 	 */
 	public String listarEstados(){

@@ -10,11 +10,10 @@ public interface UniversidadeServiceFacade {
 
 	/**
 	 * Método responsável por carregar o combo de Universidades.
-	 * @param listaUniversidades List<ComboVO>
 	 * @return List<ComboVO>
 	 * @throws SQLException
 	 */
-	public List<ComboVO> carregarUniversidades(List<ComboVO> listaUniversidades) throws SQLException;
+	public List<ComboVO> carregarUniversidades() throws SQLException;
 	
 	/**
 	 * Método responsável por incluir as universidades.

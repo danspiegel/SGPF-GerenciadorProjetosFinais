@@ -30,13 +30,7 @@
 	 <!-- ########## ALUNO FIM ########## -->
 	 
 	 <!-- ########## UNIVERSIDADE INÍCIO ########### -->
-	 
-	 <action name="listarEstados" class="br.com.gerenciadorprojetosfinais.action.UniversidadeAction" method="listarEstados">
-		<result name="retornoAjax" type="json">
-	 		<param name="root">retornoAjax</param>
-	 	</result>
-	 </action>
-	 
+
 	 <action name="incluirUniversidades" class="br.com.gerenciadorprojetosfinais.action.UniversidadeAction" method="incluir">
 	 	<result name="retornoAjax" type="json">
 	 		<param name="root">retornoAjax</param>

@@ -55,7 +55,7 @@
                 				</ul>
             				</div>
 
-				            <form role="form" id="frm_inclUniversidade">
+				            <form class="form-signin" id="frm_inclUniversidade">
 				                <div class="tab-content">
 				                
 				                	<br/>
@@ -169,7 +169,7 @@
    
 					                            <div class="col-md-6">
 					                                <label for="email" class="cols-sm-2 control-label">CPF</label>
-													<input type="text" class="form-control" name="vo.responsavel.cpf" id="id_cpfResponsavel" placeholder="Nome Fantasia"/>
+													<input type="text" class="form-control" name="vo.responsavel.cpf" id="id_cpfResponsavel" placeholder="CPF"/>
 					                            </div>
 					                        </div>
 					                        
@@ -178,12 +178,12 @@
 					                        <div class="row">
 					                            <div class="col-md-6">
 					                                <label for="name" class="cols-sm-2 control-label">Email</label>
-													<input type="text" class="form-control" name="vo.responsavel.email" id="id_emailResponsavel" placeholder="Sobrenome"/>
+													<input type="text" class="form-control" name="vo.responsavel.email" id="id_emailResponsavel" placeholder="Email"/>
 					                            </div>
 	
 					                            <div class="col-md-6">
 					                                <label for="email" class="cols-sm-2 control-label">Cargo</label>
-													<input type="text" class="form-control" name="vo.responsavel.cargo" id="id_cargoResponsavel" placeholder="Nome Fantasia"/>
+													<input type="text" class="form-control" name="vo.responsavel.cargo" id="id_cargoResponsavel" placeholder="Cargo"/>
 					                            </div>
 					                        </div>
 					                        

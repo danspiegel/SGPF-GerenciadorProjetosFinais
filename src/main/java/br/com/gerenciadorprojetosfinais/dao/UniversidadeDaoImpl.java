@@ -1,6 +1,7 @@
 package br.com.gerenciadorprojetosfinais.dao;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -9,9 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
-import br.com.gerenciadorprojetosfinais.constantes.ConstantesEndereco;
-import br.com.gerenciadorprojetosfinais.constantes.ConstantesTelefone;
-import br.com.gerenciadorprojetosfinais.constantes.ConstantesUniversidade;
+import br.com.gerenciadorprojetosfinais.enums.EnderecoEnum;
+import br.com.gerenciadorprojetosfinais.enums.TelefoneEnum;
+import br.com.gerenciadorprojetosfinais.enums.UniversidadeEnum;
 import br.com.gerenciadorprojetosfinais.vo.ComboVO;
 import br.com.gerenciadorprojetosfinais.vo.FilialVO;
 
@@ -24,31 +25,32 @@ public class UniversidadeDaoImpl extends BaseDao implements UniversidadeDao {
 	/**
 	 * {@inheritDoc}
 	 */
-	public List<ComboVO> carregarUniversidades(List<ComboVO> listaUniversidades) throws SQLException{
+	public List<ComboVO> carregarUniversidades() throws SQLException{
 		
 		try{
 			
 			StringBuilder sql = new StringBuilder();
 			
 			// SELECT
-			sql.append(SELECT + ConstantesUniversidade.ID + VIRGULA + ConstantesUniversidade.NOME_FANTASIA);
+			sql.append(SELECT + UniversidadeEnum.ID.getValor() + VIRGULA + UniversidadeEnum.NOME_FANTASIA.getValor());
 			// FROM
-			sql.append(FROM + ConstantesUniversidade.UNIVERSIDADES);
+			sql.append(FROM + UniversidadeEnum.UNIVERSIDADES.getValor());
 			
 			List<Map<String, Object>> resultSet = jdbcTemplate.queryForList(sql.toString(), new MapSqlParameterSource());
+			List<ComboVO> lista = new ArrayList<ComboVO>();
 			
 			for (Map<String, Object> resultado: resultSet){
 				
 				ComboVO vo = new ComboVO();
 				
-				vo.setId(resultado.get(ConstantesUniversidade.ID).toString());
-				vo.setDescricao(resultado.get(ConstantesUniversidade.NOME_FANTASIA).toString());
+				vo.setId(resultado.get(UniversidadeEnum.ID.getValor()).toString());
+				vo.setDescricao(resultado.get(UniversidadeEnum.NOME_FANTASIA.getValor()).toString());
 				
-				listaUniversidades.add(vo);
+				lista.add(vo);
 				
 			}
 			
-			return listaUniversidades;
+			return lista;
 			
 		}
 		catch(Exception e){
@@ -64,39 +66,30 @@ public class UniversidadeDaoImpl extends BaseDao implements UniversidadeDao {
 		
 		try{
 			
-			UUID idEndereco = UUID.randomUUID();
-			
-			String ddd = vo.getTelefone().getNumero().replaceAll("[()-]", "").substring(0, 2);
-			String numero = vo.getTelefone().getNumero().replaceAll("[()-]", "").substring(2, 10);
-			
 			MapSqlParameterSource params = new MapSqlParameterSource();
-			params.addValue(ConstantesUniversidade.RAZAO_SOCIAL, vo.getRazaoSocial());
-			params.addValue(ConstantesUniversidade.NOME_FANTASIA, vo.getNomeFantasia());
-			params.addValue(ConstantesUniversidade.CNPJ, vo.getCnpj());
-			params.addValue(ConstantesEndereco.LOGRADOURO, vo.getEndereco().getLogradouro());
-			params.addValue(ConstantesEndereco.CEP, vo.getEndereco().getCep());
-			params.addValue(ConstantesEndereco.BAIRRO, vo.getEndereco().getBairro());
-			params.addValue(ConstantesEndereco.MUNICIPIO, vo.getEndereco().getMunicipio());
-			params.addValue(ConstantesEndereco.ID_ESTADO, vo.getEndereco().getEstado().getId());
-			params.addValue(ConstantesTelefone.DDD, ddd);
-			params.addValue(ConstantesTelefone.NUMERO, numero);
+			params.addValue(UniversidadeEnum.RAZAO_SOCIAL.getValor(), vo.getRazaoSocial());
+			params.addValue(UniversidadeEnum.NOME_FANTASIA.getValor(), vo.getNomeFantasia());
+			params.addValue(UniversidadeEnum.CNPJ.getValor(), vo.getCnpj());
 
 			
 			StringBuilder sql = new StringBuilder();
 			
-			sql.append(INSERT + ConstantesUniversidade.UNIVERSIDADES);
+			sql.append(INSERT + UniversidadeEnum.UNIVERSIDADES.getValor());
 			sql.append(PARENTESE_ESQ);
-			sql.append(ConstantesUniversidade.RAZAO_SOCIAL + VIRGULA + ConstantesUniversidade.NOME_FANTASIA + VIRGULA);
-			sql.append(ConstantesUniversidade.CNPJ);
+			sql.append(UniversidadeEnum.RAZAO_SOCIAL.getValor() + VIRGULA + UniversidadeEnum.NOME_FANTASIA.getValor() + VIRGULA);
+			sql.append(UniversidadeEnum.CNPJ.getValor());
 			sql.append(PARENTESE_DIR);
 			sql.append(VALUES);
 			sql.append(PARENTESE_ESQ);
-			sql.append(DOIS_PONTOS + ConstantesUniversidade.RAZAO_SOCIAL + VIRGULA);
-			sql.append(DOIS_PONTOS + ConstantesUniversidade.NOME_FANTASIA + VIRGULA);
-			sql.append(DOIS_PONTOS + ConstantesUniversidade.CNPJ);
+			sql.append(DOIS_PONTOS + UniversidadeEnum.RAZAO_SOCIAL.getValor() + VIRGULA);
+			sql.append(DOIS_PONTOS + UniversidadeEnum.NOME_FANTASIA.getValor() + VIRGULA);
+			sql.append(DOIS_PONTOS + UniversidadeEnum.CNPJ.getValor());
 			sql.append(PARENTESE_DIR);
+			sql.append(RETURNING + UniversidadeEnum.ID.getValor());
 			
-			jdbcTemplate.update(sql.toString(), params);
+			String id = jdbcTemplate.queryForObject(sql.toString(), params, String.class);
+			
+			enderecoDao.incluir(id, UniversidadeEnum.UNIVERSIDADES.getValor(), vo.getEndereco());
 			
 		}
 		catch(Exception e){

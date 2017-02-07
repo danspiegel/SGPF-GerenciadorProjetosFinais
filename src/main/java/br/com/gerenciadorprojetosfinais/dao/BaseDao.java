@@ -39,6 +39,7 @@ public class BaseDao {
 	protected static final String INNER_JOIN                    = " INNER JOIN ";
 	protected static final String ON                            = " ON ";
 	protected static final String MAX                           = " MAX";
+	protected static final String RETURNING                     = " RETURNING ";
 	
 	@Autowired
 	NamedParameterJdbcTemplate jdbcTemplate;

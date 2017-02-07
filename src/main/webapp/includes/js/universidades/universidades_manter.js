@@ -89,8 +89,8 @@
 				type: 'post',
 				cache: false,
 				dataType: 'json',
-				url: 'incluirUniversidades',
 				data: $('#frm_inclUniversidade :input').serializeArray(),
+				url: 'incluirUniversidades',
 				
 				success: function(retornoAjax){
 					

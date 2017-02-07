@@ -16,7 +16,8 @@ public class CursoVO implements Serializable {
 	
 	private String id;
 	private String codCurso;
-	private String curso;
+	private String descricao;
+	private UniversidadeVO universidade;
 	
 	//--> Getters e Setters
 	
@@ -26,17 +27,23 @@ public class CursoVO implements Serializable {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getCurso() {
-		return curso;
-	}
-	public void setCurso(String curso) {
-		this.curso = curso;
-	}
 	public String getCodCurso() {
 		return codCurso;
 	}
 	public void setCodCurso(String codCurso) {
 		this.codCurso = codCurso;
+	}
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	public UniversidadeVO getUniversidade() {
+		return universidade;
+	}
+	public void setUniversidade(UniversidadeVO universidade) {
+		this.universidade = universidade;
 	}
 	
 }

@@ -96,6 +96,9 @@
 		
 		validarFiltroSegundaEtapa: function(){
 			
+			var mensagens = new Array();
+			var count = 0;
+			
 			if ($('#id_matriculaResponsavel').val() == ""){
 				mensagens[count++] = 'O matr&iacute;cula do respons&aacute;vel &eacute; obrigat&oacute;rio.';
 			}
