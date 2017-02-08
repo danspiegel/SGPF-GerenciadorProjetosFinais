@@ -44,6 +44,8 @@
                         				</a>
                     				</li>
 
+									<!--
+
 				                    <li role="presentation" class="disabled" style="margin: 0% 25%">
 				                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
 				                            <span class="round-tab">
@@ -51,6 +53,8 @@
 				                            </span>
 				                        </a>
 				                    </li>
+				                    
+				                    -->
 				                    
                 				</ul>
             				</div>
@@ -73,73 +77,80 @@
 					                        <div class="row">
 					                            <div class="col-md-6">
 					                                <label for="name" class="cols-sm-2 control-label">Razão Social</label>
-													<input type="text" class="form-control" name="vo.razaoSocial" id="id_razaoSocialUniversidade" placeholder="Razão Social"/>
+													<input type="text" class="form-control" name="universidade.razaoSocial" id="id_razaoSocialUniversidade" placeholder="Razão Social"/>
 					                            </div>
 					                            
 					                            <div class="col-md-6">
 					                                <label for="email" class="cols-sm-2 control-label">Nome Fantasia</label>
-													<input type="text" class="form-control" name="vo.nomeFantasia" id="id_nomeFantasiaUniversidade" placeholder="Nome Fantasia"/>
+													<input type="text" class="form-control" name="universidade.nomeFantasia" id="id_nomeFantasiaUniversidade" placeholder="Nome Fantasia"/>
 					                            </div>
 					                        </div>
 					                        
 					                        <br/>
 					                        
 					                        <div class="row">
+					                        	<div class="col-md-6">
+					                                <label for="username" class="cols-sm-2 control-label">Nome da Unidade Matriz</label>
+													<input type="text" class="form-control" name="universidade.descricao" id="id_descricaoMatrizUniversidade" placeholder="Nome da Unidade Matriz"/>
+					                            </div>
+					                        
 					                            <div class="col-md-6">
 					                                <label for="username" class="cols-sm-2 control-label">CNPJ</label>
-													<input type="text" class="form-control" name="vo.cnpj" id="id_cnpjUniversidade" placeholder="CNPJ"/>
-					                            </div>
-
-					                            <div class="col-md-6">
-					                                <label for="username" class="cols-sm-2 control-label">Logradouro</label>
-													<input type="text" class="form-control" name="vo.endereco.logradouro" id="id_logradouroUniversidade" placeholder="Logradouro"/>
+													<input type="text" class="form-control" name="universidade.cnpj" id="id_cnpjUniversidade" placeholder="CNPJ"/>
 					                            </div>
 					                        </div>
 					                        
 					                        <br/>
 					                        
 					                        <div class="row">
+					                        	<div class="col-md-6">
+					                                <label for="username" class="cols-sm-2 control-label">Logradouro</label>
+													<input type="text" class="form-control" name="universidade.logradouro" id="id_logradouroUniversidade" placeholder="Logradouro"/>
+					                            </div>
+					                        
 					                            <div class="col-md-6">
 					                                <label for="username" class="cols-sm-2 control-label">CEP</label>
-													<input type="text" class="form-control" name="vo.endereco.cep" id="id_cepUniversidade" placeholder="CEP"/>
-					                            </div>
-					                            
-					                            <div class="col-md-6">
-					                                <label for="username" class="cols-sm-2 control-label">Bairro</label>
-													<input type="text" class="form-control" name="vo.endereco.bairro" id="id_bairroUniversidade" placeholder="Bairro"/>
+													<input type="text" class="form-control" name="universidade.cep" id="id_cepUniversidade" placeholder="CEP"/>
 					                            </div>
 					                        </div>
 					                        
 					                        <br/>
 					                        
 					                        <div class="row row-fluid">
+					                        	<div class="col-md-6">
+					                                <label for="username" class="cols-sm-2 control-label">Bairro</label>
+													<input type="text" class="form-control" name="universidade.bairro" id="id_bairroUniversidade" placeholder="Bairro"/>
+					                            </div>
+					                        
 					                            <div class="col-md-6">
 					                                <label for="username" class="cols-sm-2 control-label">Município</label>
-													<input type="text" class="form-control" name="vo.endereco.cidade" id="id_municipioUniversidade" placeholder="Município"/>
-					                            </div>
-           
-					                            <div class="col-md-6">
-					                                <label for="username" class="cols-sm-2 control-label">UF</label>
-													<select id="id_estadoUniversidade" name="vo.endereco.estado.id" class="form-control"></select>
+													<input type="text" class="form-control" name="universidade.municipio" id="id_municipioUniversidade" placeholder="Município"/>
 					                            </div>
 					                        </div>
 					                        
 					                        <br/>
 					                        
-					                        <div class="row"> 
+					                        <div class="row">
+					                        	<div class="col-md-6">
+					                                <label for="username" class="cols-sm-2 control-label">UF</label>
+													<select id="id_estadoUniversidade" name="universidade.estado.id" class="form-control"></select>
+					                            </div>
+					                         
 					                            <div class="col-md-6">
 					                                <label for="username" class="cols-sm-2 control-label">Telefone</label>
-					                                <input type="text" class="form-control" name="vo.telefone.numero" id="id_numeroUniversidade" placeholder="Telefone"/>
+					                                <input type="text" class="form-control" name="universidade.telefone" id="id_numeroUniversidade" placeholder="Telefone"/>
 					                            </div>
 					                        </div>
 					                   
 				                        </div>
 				                        
 				                        <ul class="list-inline pull-right">
-				                            <li><button type="button" class="btn btn-primary next-step" id="btn_primeiraEtapa">Próximo</button></li>
+				                            <li><button type="button" class="btn btn-primary next-step" id="btn_primeiraEtapa">Enviar</button></li>
 				                        </ul>
 				                        
 				                    </div>
+				                    
+				                    <!--
 				                    
 				                    <div class="tab-pane" role="tabpanel" id="step2">
 				                    
@@ -150,12 +161,12 @@
 				                            <div class="row">
 					                            <div class="col-md-6">
 					                                <label for="name" class="cols-sm-2 control-label">Matrícula</label>
-													<input type="text" class="form-control" name="vo.responsavel.matricula" id="id_matriculaResponsavel" placeholder="Matrícula"/>
+													<input type="text" class="form-control" name="universidadeFuncionario.matricula" id="id_matriculaResponsavel" placeholder="Matrícula"/>
 					                            </div>
 					                            
 					                            <div class="col-md-6">
 					                                <label for="email" class="cols-sm-2 control-label">Nome</label>
-													<input type="text" class="form-control" name="vo.responsavel.nome" id="id_nomeResponsavel" placeholder="Nome"/>
+													<input type="text" class="form-control" name="funcionario.nome" id="id_nomeResponsavel" placeholder="Nome"/>
 					                            </div>
 					                        </div>
 					                        
@@ -164,12 +175,12 @@
 					                        <div class="row">
 					                            <div class="col-md-6">
 					                                <label for="name" class="cols-sm-2 control-label">Sobrenome</label>
-													<input type="text" class="form-control" name="vo.responsavel.sobrenome" id="id_sobrenomeResponsavel" placeholder="Sobrenome"/>
+													<input type="text" class="form-control" name="funcionario.sobrenome" id="id_sobrenomeResponsavel" placeholder="Sobrenome"/>
 					                            </div>
    
 					                            <div class="col-md-6">
 					                                <label for="email" class="cols-sm-2 control-label">CPF</label>
-													<input type="text" class="form-control" name="vo.responsavel.cpf" id="id_cpfResponsavel" placeholder="CPF"/>
+													<input type="text" class="form-control" name="funcionario.cpf" id="id_cpfResponsavel" placeholder="CPF"/>
 					                            </div>
 					                        </div>
 					                        
@@ -178,12 +189,12 @@
 					                        <div class="row">
 					                            <div class="col-md-6">
 					                                <label for="name" class="cols-sm-2 control-label">Email</label>
-													<input type="text" class="form-control" name="vo.responsavel.email" id="id_emailResponsavel" placeholder="Email"/>
+													<input type="text" class="form-control" name="funcionario.email" id="id_emailResponsavel" placeholder="Email"/>
 					                            </div>
 	
 					                            <div class="col-md-6">
 					                                <label for="email" class="cols-sm-2 control-label">Cargo</label>
-													<input type="text" class="form-control" name="vo.responsavel.cargo" id="id_cargoResponsavel" placeholder="Cargo"/>
+													<input type="text" class="form-control" name="funcionario.cargo" id="id_cargoResponsavel" placeholder="Cargo"/>
 					                            </div>
 					                        </div>
 					                        
@@ -192,12 +203,12 @@
 					                        <div class="row">
 					                            <div class="col-md-6">
 					                                <label for="name" class="cols-sm-2 control-label">Logradouro</label>
-													<input type="text" class="form-control" name="vo.responsavel.endereco.logradouro" id="id_logradouroResponsavel" placeholder="Logradouro"/>
+													<input type="text" class="form-control" name="funcionario.logradouro" id="id_logradouroResponsavel" placeholder="Logradouro"/>
 					                            </div>
     
 					                            <div class="col-md-6">
 					                                <label for="email" class="cols-sm-2 control-label">CEP</label>
-													<input type="text" class="form-control" name="vo.responsavel.endereco.cep" id="id_cepResponsavel" placeholder="CEP"/>
+													<input type="text" class="form-control" name="funcionario.cep" id="id_cepResponsavel" placeholder="CEP"/>
 					                            </div>
 					                        </div>
 					                        
@@ -206,12 +217,12 @@
 					                        <div class="row">
 					                            <div class="col-md-6">
 					                                <label for="name" class="cols-sm-2 control-label">Bairro</label>
-													<input type="text" class="form-control" name="vo.responsavel.endereco.bairro" id="id_bairroResponsavel" placeholder="Bairro"/>
+													<input type="text" class="form-control" name="funcionario.bairro" id="id_bairroResponsavel" placeholder="Bairro"/>
 					                            </div>
 
 					                            <div class="col-md-6">
 					                                <label for="email" class="cols-sm-2 control-label">Município</label>
-													<input type="text" class="form-control" name="vo.responsavel.endereco.municipio" id="id_municipioResponsavel" placeholder="Município"/>
+													<input type="text" class="form-control" name="funcionario.municipio" id="id_municipioResponsavel" placeholder="Município"/>
 					                            </div>
 					                        </div>
 					                        
@@ -221,12 +232,12 @@
 					                            <div class="col-md-6">
 					                                <label for="username" class="cols-sm-2 control-label">UF</label>
 					                                <br/>
-													<select id="id_estadoResponsavel" name="vo.responsavel.endereco.estado.id" class="form-control"></select>
+													<select id="id_estadoResponsavel" name="funcionario.estado.id" class="form-control"></select>
 					                            </div>                         
 					                            
 					                            <div class="col-md-6">
 					                                <label for="email" class="cols-sm-2 control-label">Telefone</label>
-													<input type="text" class="form-control" name="vo.responsavel.telefone.numero" id="id_numeroResponsavel" placeholder="Telefone"/>
+													<input type="text" class="form-control" name="funcionario.telefone" id="id_numeroResponsavel" placeholder="Telefone"/>
 					                            </div>
 					                        </div>
 					                         
@@ -240,6 +251,8 @@
 				                        </ul>
 				                        
 				                    </div>
+				                    
+				                    -->
 				                 
 				                    <div class="clearfix"></div>
 				                </div>

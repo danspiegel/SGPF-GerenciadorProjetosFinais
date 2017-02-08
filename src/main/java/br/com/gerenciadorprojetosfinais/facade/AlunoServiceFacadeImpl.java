@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.gerenciadorprojetosfinais.dao.AlunoDao;
 import br.com.gerenciadorprojetosfinais.exception.BusinessException;
-import br.com.gerenciadorprojetosfinais.vo.AlunoVO;
+import br.com.gerenciadorprojetosfinais.vo.GraduacaoVO;
 
 @Service
 public class AlunoServiceFacadeImpl implements AlunoServiceFacade {
@@ -18,14 +18,8 @@ public class AlunoServiceFacadeImpl implements AlunoServiceFacade {
 	/**
 	 * {@inheritDoc}
 	 */
-	public boolean validarUsuario(AlunoVO vo) throws SQLException, BusinessException{
-		
-		if (dao.contar(vo.getCpf(), "cpf") > 0){
-			throw new BusinessException("Este CPF j� est� cadastrado.");
-		}
-		else{
-			return dao.validarUsuario(vo);
-		}
+	public boolean validarUsuario(GraduacaoVO vo) throws SQLException, BusinessException{
+		return dao.validarUsuario(vo);
 	}
 	
 }

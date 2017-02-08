@@ -3,17 +3,17 @@ package br.com.gerenciadorprojetosfinais.dao;
 import java.sql.SQLException;
 
 import br.com.gerenciadorprojetosfinais.vo.AlunoVO;
-import br.com.gerenciadorprojetosfinais.vo.UniversidadeVO;
+import br.com.gerenciadorprojetosfinais.vo.GraduacaoVO;
 
 public interface AlunoDao {
 
 	/**
 	 * Método responsável por validar os usuários do sistema.
-	 * @param vo AlunoVO
+	 * @param vo GraduacaoVO
 	 * @return boolean
 	 * @throws SQLException
 	 */
-	public boolean validarUsuario(AlunoVO vo) throws SQLException;
+	public boolean validarUsuario(GraduacaoVO vo) throws SQLException;
 	
 	/**
 	 * Método responsável por contar quantos registros existem no campo informado de acordo com o valor informado.

@@ -10,8 +10,9 @@ import org.springframework.stereotype.Controller;
 
 import br.com.gerenciadorprojetosfinais.facade.UniversidadeServiceFacade;
 import br.com.gerenciadorprojetosfinais.vo.ComboVO;
-import br.com.gerenciadorprojetosfinais.vo.FilialVO;
+import br.com.gerenciadorprojetosfinais.vo.FuncionarioVO;
 import br.com.gerenciadorprojetosfinais.vo.RetornoAjaxVO;
+import br.com.gerenciadorprojetosfinais.vo.UniversidadeVO;
 
 @Controller
 @Scope("request")
@@ -24,7 +25,8 @@ public class UniversidadeAction extends BaseAction {
 	
 	@Autowired
 	private UniversidadeServiceFacade universidadeFacade;
-	private FilialVO vo;
+	private UniversidadeVO universidade;
+	private FuncionarioVO funcionario;
 	private List<ComboVO> listaUniversidades;
 	
 	/**
@@ -36,8 +38,8 @@ public class UniversidadeAction extends BaseAction {
 		retornoAjax = new RetornoAjaxVO();
 		
 		try{
-			
-			universidadeFacade.incluirUniversidade(vo);
+		
+			universidadeFacade.incluirUniversidade(universidade);
 			retornoAjax.setTipoRetornado(SUCCESS);
 			retornoAjax.setObjetoRetornado(getText("msg.universidade.incluir.sucesso"));
 			
@@ -83,12 +85,28 @@ public class UniversidadeAction extends BaseAction {
 		this.universidadeFacade = universidadeFacade;
 	}
 
-	public FilialVO getVo() {
-		return vo;
+	public UniversidadeVO getUniversidade() {
+		return universidade;
 	}
 
-	public void setVo(FilialVO vo) {
-		this.vo = vo;
+	public void setUniversidade(UniversidadeVO universidade) {
+		this.universidade = universidade;
+	}
+
+	public List<ComboVO> getListaUniversidades() {
+		return listaUniversidades;
+	}
+
+	public void setListaUniversidades(List<ComboVO> listaUniversidades) {
+		this.listaUniversidades = listaUniversidades;
+	}
+
+	public FuncionarioVO getFuncionario() {
+		return funcionario;
+	}
+
+	public void setFuncionario(FuncionarioVO funcionario) {
+		this.funcionario = funcionario;
 	}
 	
 }

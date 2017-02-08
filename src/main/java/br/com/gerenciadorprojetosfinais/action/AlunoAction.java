@@ -14,8 +14,8 @@ import org.springframework.stereotype.Controller;
 import br.com.gerenciadorprojetosfinais.exception.BusinessException;
 import br.com.gerenciadorprojetosfinais.facade.AlunoServiceFacade;
 import br.com.gerenciadorprojetosfinais.facade.UniversidadeServiceFacade;
-import br.com.gerenciadorprojetosfinais.vo.AlunoVO;
 import br.com.gerenciadorprojetosfinais.vo.ComboVO;
+import br.com.gerenciadorprojetosfinais.vo.GraduacaoVO;
 import br.com.gerenciadorprojetosfinais.vo.RetornoAjaxVO;
 
 @Controller
@@ -30,7 +30,7 @@ public class AlunoAction extends BaseAction {
 	private AlunoServiceFacade alunoFacade;
 	@Autowired
 	private UniversidadeServiceFacade universidadeFacade;
-	private AlunoVO vo;
+	private GraduacaoVO vo;
 	List<ComboVO> listaUniversidades;
 	
 	public String iniciar(){
@@ -62,11 +62,9 @@ public class AlunoAction extends BaseAction {
 			
 			if (alunoFacade.validarUsuario(vo)){
 				
-				sessao.put("alunoId", vo.getId());
-				sessao.put("alunoMatricula", vo.getMatricula());
-				sessao.put("alunoNome", vo.getNome());
-				sessao.put("alunoSobrenome", vo.getSobrenome());
-				sessao.put("alunoCpf", vo.getCpf());
+				sessao.put("alunoNome", vo.getAluno().getNome());
+				sessao.put("alunoSobrenome", vo.getAluno().getSobrenome());
+				sessao.put("alunoCpf", vo.getAluno().getCpf());
 				
 				retornoAjax.setTipoRetornado(SUCCESS);
 				retornoAjax.setObjetoRetornado(vo);

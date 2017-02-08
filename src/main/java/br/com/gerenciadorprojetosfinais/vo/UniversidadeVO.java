@@ -25,7 +25,6 @@ public class UniversidadeVO implements Serializable {
 	private String bairro;
 	private String municipio;
 	private EstadoVO estado;
-	private String ddd;
 	private String telefone;
 	
 	//--> Getters e Setters
@@ -89,12 +88,6 @@ public class UniversidadeVO implements Serializable {
 	}
 	public void setEstado(EstadoVO estado) {
 		this.estado = estado;
-	}
-	public String getDdd() {
-		return ddd;
-	}
-	public void setDdd(String ddd) {
-		this.ddd = ddd;
 	}
 	public String getTelefone() {
 		return telefone;

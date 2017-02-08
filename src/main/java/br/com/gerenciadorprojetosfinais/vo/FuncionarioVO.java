@@ -1,6 +1,7 @@
 package br.com.gerenciadorprojetosfinais.vo;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Classe VO de Funcion�rio
@@ -26,6 +27,11 @@ public class FuncionarioVO implements Serializable {
 	private EstadoVO estado;
 	private String telefone;
 	private String celular;
+	private CursoVO curso;
+	private Date dataInicio;
+	private Date dataFim;
+	private Long matricula;
+	private String senha;
 	
 	//--> Getters e Setters
 	
@@ -100,6 +106,36 @@ public class FuncionarioVO implements Serializable {
 	}
 	public void setCelular(String celular) {
 		this.celular = celular;
+	}
+	public CursoVO getCurso() {
+		return curso;
+	}
+	public void setCurso(CursoVO curso) {
+		this.curso = curso;
+	}
+	public Date getDataInicio() {
+		return dataInicio;
+	}
+	public void setDataInicio(Date dataInicio) {
+		this.dataInicio = dataInicio;
+	}
+	public Date getDataFim() {
+		return dataFim;
+	}
+	public void setDataFim(Date dataFim) {
+		this.dataFim = dataFim;
+	}
+	public Long getMatricula() {
+		return matricula;
+	}
+	public void setMatricula(Long matricula) {
+		this.matricula = matricula;
+	}
+	public String getSenha() {
+		return senha;
+	}
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 	
 }

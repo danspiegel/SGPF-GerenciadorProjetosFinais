@@ -16,7 +16,7 @@ public class GraduacaoVO implements Serializable {
 	private String senha;
 	private Date dataInicio;
 	private Date dataFim;
-	private UniversidadeFuncionarioVO uf;
+	private FuncionarioVO funcionario;
 	
 	//--> Getters e Setters
 	
@@ -62,11 +62,11 @@ public class GraduacaoVO implements Serializable {
 	public void setDataFim(Date dataFim) {
 		this.dataFim = dataFim;
 	}
-	public UniversidadeFuncionarioVO getUf() {
-		return uf;
+	public FuncionarioVO getFuncionario() {
+		return funcionario;
 	}
-	public void setUf(UniversidadeFuncionarioVO uf) {
-		this.uf = uf;
+	public void setFuncionario(FuncionarioVO funcionario) {
+		this.funcionario = funcionario;
 	}
-
+	
 }

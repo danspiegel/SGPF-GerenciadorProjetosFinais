@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.gerenciadorprojetosfinais.vo.ComboVO;
-import br.com.gerenciadorprojetosfinais.vo.FilialVO;
+import br.com.gerenciadorprojetosfinais.vo.UniversidadeVO;
 
 public interface UniversidadeDao {
 
@@ -17,9 +17,9 @@ public interface UniversidadeDao {
 	
 	/**
 	 * Método responsável por incluir as universidades.
-	 * @param vo FilialVO
+	 * @param vo UniversidadeVO
 	 * @throws SQLException
 	 */
-	public void incluirUniversidade(FilialVO vo) throws SQLException;
+	public void incluirUniversidade(UniversidadeVO vo) throws SQLException;
 	
 }

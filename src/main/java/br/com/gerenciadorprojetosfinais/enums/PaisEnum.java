@@ -1,25 +1,25 @@
 package br.com.gerenciadorprojetosfinais.enums;
 
-public enum TelefoneEnum {
+public enum PaisEnum {
 
-	//--> Campo com o nome da tabela de Telefones
-	TELEFONES("telefones"),
+	//--> Campo com o nome da tabela de Países
+	PAISES("paises"),
 			
-	//--> Campos da tabela de Telefones
+	//--> Campos da tabela de Países
 	ID("id"),
-	DDD("ddd"),
-	NUMERO("numero");
+	NOME("nome"),
+	SIGLA("sigla");
 	
 	private String valor;
-	
+			
 	//--> Construtor
-	
-	TelefoneEnum(String valor){
+			
+	PaisEnum(String valor){
 		this.valor = valor;
 	}
 
 	//--> Getters e Setters
-	
+			
 	public String getValor() {
 		return valor;
 	}

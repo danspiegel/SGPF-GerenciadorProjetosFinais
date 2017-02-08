@@ -76,10 +76,13 @@
 				
 				$(this).esconderMensagem('#mensagens');
 				
+				/*
 				var $active = $('.wizard .nav-tabs li.active');
 		        $active.next().removeClass('disabled');
 		        nextTab($active);
+		        */
 				
+				$(this).incluirUniversidades();
 			}
 			
 		}
