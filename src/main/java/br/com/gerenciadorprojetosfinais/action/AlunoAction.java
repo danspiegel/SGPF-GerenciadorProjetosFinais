@@ -50,7 +50,7 @@ public class AlunoAction extends BaseAction {
 	}
 	
 	/**
-	 * M√©todo respons√°vel pela valida√ß√£o do usu√°rio no sistema.
+	 * MÈtodo respons·vel pela validaÁ„o do usu·rio no sistema.
 	 * @return String
 	 */
 	public String validarUsuario(){
@@ -62,9 +62,14 @@ public class AlunoAction extends BaseAction {
 			
 			if (alunoFacade.validarUsuario(vo)){
 				
+				sessao.put("alunoMatricula", vo.getMatricula());
 				sessao.put("alunoNome", vo.getAluno().getNome());
 				sessao.put("alunoSobrenome", vo.getAluno().getSobrenome());
 				sessao.put("alunoCpf", vo.getAluno().getCpf());
+				sessao.put("alunoCursoId", vo.getCurso().getId());
+				sessao.put("alunoCursoDescricao", vo.getCurso().getDescricao());
+				sessao.put("alunoUniversidadeId", vo.getUniversidade().getCnpj());
+				sessao.put("alunoUniversidadeDescricao", vo.getUniversidade().getDescricao());
 				
 				retornoAjax.setTipoRetornado(SUCCESS);
 				retornoAjax.setObjetoRetornado(vo);
