@@ -100,28 +100,66 @@ public class AlunoDaoImpl extends BaseDao implements AlunoDao {
 	/**
 	 * {@inheritDoc}
 	 */
-	public void incluir(AlunoVO vo) throws SQLException {
+	public void incluir(GraduacaoVO vo) throws SQLException {
 		
 		try{
 			
 			MapSqlParameterSource params = new MapSqlParameterSource();
-			params.addValue(AlunoEnum.CPF.getValor(), vo.getCpf());
-			params.addValue(AlunoEnum.NOME.getValor(), vo.getNome());
-			params.addValue(AlunoEnum.SOBRENOME.getValor(), vo.getSobrenome());
-			params.addValue(AlunoEnum.NOMEPAI.getValor(), vo.getNomePai());
-			params.addValue(AlunoEnum.NOMEMAE.getValor(), vo.getNomeMae());
-			params.addValue(AlunoEnum.LOGRADOURO.getValor(), vo.getLogradouro());
-			params.addValue(AlunoEnum.CEP.getValor(), vo.getCep());
-			params.addValue(AlunoEnum.BAIRRO.getValor(), vo.getBairro());
-			params.addValue(AlunoEnum.MUNICIPIO.getValor(), vo.getMunicipio());
-			params.addValue(AlunoEnum.ID_ESTADO.getValor(), vo.getEstado().getId());
-			params.addValue(AlunoEnum.DDD_TELEFONE.getValor(), vo.getTelefone().replaceAll("[()-]", "").substring(0, 2));
-			params.addValue(AlunoEnum.TELEFONE.getValor(), vo.getTelefone().replaceAll("[()-]", "").substring(2, 10));
-			params.addValue(AlunoEnum.DDD_CELULAR.getValor(), vo.getCelular().replaceAll("[()-]", "").substring(0, 2));
-			params.addValue(AlunoEnum.CELULAR.getValor(), vo.getCelular().replaceAll("[()-]", "").substring(2, 10));
+			params.addValue(AlunoEnum.CPF.getValor(), vo.getAluno().getCpf());
+			params.addValue(AlunoEnum.NOME.getValor(), vo.getAluno().getNome());
+			params.addValue(AlunoEnum.SOBRENOME.getValor(), vo.getAluno().getSobrenome());
+			params.addValue(AlunoEnum.NOMEPAI.getValor(), vo.getAluno().getNomePai());
+			params.addValue(AlunoEnum.NOMEMAE.getValor(), vo.getAluno().getNomeMae());
+			params.addValue(AlunoEnum.LOGRADOURO.getValor(), vo.getAluno().getLogradouro());
+			params.addValue(AlunoEnum.CEP.getValor(), vo.getAluno().getCep());
+			params.addValue(AlunoEnum.BAIRRO.getValor(), vo.getAluno().getBairro());
+			params.addValue(AlunoEnum.MUNICIPIO.getValor(), vo.getAluno().getMunicipio());
+			params.addValue(AlunoEnum.ID_ESTADO.getValor(), vo.getAluno().getEstado().getId());
+			params.addValue(AlunoEnum.DDD_TELEFONE.getValor(), vo.getAluno().getTelefone().replaceAll("[()-]", "").substring(0, 2));
+			params.addValue(AlunoEnum.TELEFONE.getValor(), vo.getAluno().getTelefone().replaceAll("[()-]", "").substring(2, 10));
+			params.addValue(AlunoEnum.DDD_CELULAR.getValor(), vo.getAluno().getCelular().replaceAll("[()-]", "").substring(0, 2));
+			params.addValue(AlunoEnum.CELULAR.getValor(), vo.getAluno().getCelular().replaceAll("[()-]", "").substring(2, 10));
+			params.addValue(GraduacaoEnum.MATRICULA.getValor(), vo.getMatricula());
+			params.addValue(GraduacaoEnum.SENHA.getValor(), vo.getSenha());
 			
 			StringBuilder sql = new StringBuilder();
 
+			sql.append(INSERT + AlunoEnum.ALUNOS.getValor());
+			sql.append(PARENTESE_ESQ);
+			sql.append(AlunoEnum.CPF.getValor() + VIRGULA);
+			sql.append(AlunoEnum.NOME.getValor() + VIRGULA);
+			sql.append(AlunoEnum.SOBRENOME.getValor() + VIRGULA);
+			sql.append(AlunoEnum.NOMEPAI.getValor() + VIRGULA);
+			sql.append(AlunoEnum.NOMEMAE.getValor() + VIRGULA);
+			sql.append(AlunoEnum.LOGRADOURO.getValor() + VIRGULA);
+			sql.append(AlunoEnum.CEP.getValor() + VIRGULA);
+			sql.append(AlunoEnum.BAIRRO.getValor() + VIRGULA);
+			sql.append(AlunoEnum.MUNICIPIO.getValor() + VIRGULA);
+			sql.append(AlunoEnum.ID_ESTADO.getValor() + VIRGULA);
+			sql.append(AlunoEnum.DDD_TELEFONE.getValor() + VIRGULA);
+			sql.append(AlunoEnum.TELEFONE.getValor() + VIRGULA);
+			sql.append(AlunoEnum.DDD_CELULAR.getValor() + VIRGULA);
+			sql.append(AlunoEnum.CELULAR.getValor() + VIRGULA);
+			sql.append(PARENTESE_DIR);
+			sql.append(VALUES);
+			sql.append(PARENTESE_ESQ);
+			sql.append(DOIS_PONTOS + AlunoEnum.CPF.getValor() + VIRGULA);
+			sql.append(DOIS_PONTOS + AlunoEnum.NOME.getValor() + VIRGULA);
+			sql.append(DOIS_PONTOS + AlunoEnum.SOBRENOME.getValor() + VIRGULA);
+			sql.append(DOIS_PONTOS + AlunoEnum.NOMEPAI.getValor() + VIRGULA);
+			sql.append(DOIS_PONTOS + AlunoEnum.NOMEMAE.getValor() + VIRGULA);
+			sql.append(DOIS_PONTOS + AlunoEnum.LOGRADOURO.getValor() + VIRGULA);
+			sql.append(DOIS_PONTOS + AlunoEnum.CEP.getValor() + VIRGULA);
+			sql.append(DOIS_PONTOS + AlunoEnum.BAIRRO.getValor() + VIRGULA);
+			sql.append(DOIS_PONTOS + AlunoEnum.MUNICIPIO.getValor() + VIRGULA);
+			sql.append(DOIS_PONTOS + AlunoEnum.ID_ESTADO.getValor() + VIRGULA);
+			sql.append(DOIS_PONTOS + AlunoEnum.DDD_TELEFONE.getValor() + VIRGULA);
+			sql.append(DOIS_PONTOS + AlunoEnum.TELEFONE.getValor() + VIRGULA);
+			sql.append(DOIS_PONTOS + AlunoEnum.DDD_CELULAR.getValor() + VIRGULA);
+			sql.append(DOIS_PONTOS + AlunoEnum.CELULAR.getValor() + VIRGULA);
+			sql.append(PARENTESE_DIR);
+			
+			jdbcTemplate.update(sql.toString(), params);
 			
 		}
 		catch(Exception e){
