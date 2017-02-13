@@ -96,9 +96,14 @@
 					
 					if (retornoAjax.tipoRetornado == "success"){
 					
+						
 						$(this).exibirMensagem({mensagem:retornoAjax.objetoRetornado,
 	    				    					classe_mensagem:'alert alert-success',
 	    				    					id_mensagem:'#mensagens'});
+	    				
+						setTimeout(function () {
+			                window.location = retornoAjax.pagina;
+			            }, 5000);
 						
 					}
 					else{

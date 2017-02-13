@@ -15,7 +15,6 @@ public class EstadoVO implements Serializable {
 	//--> Atributos
 	
 	private String id;
-	private int codEstado;
 	private String nome;
 	private String sigla;
 	private PaisVO pais;
@@ -45,12 +44,6 @@ public class EstadoVO implements Serializable {
 	}
 	public void setPais(PaisVO pais) {
 		this.pais = pais;
-	}
-	public int getCodEstado() {
-		return codEstado;
-	}
-	public void setCodEstado(int codEstado) {
-		this.codEstado = codEstado;
 	}
 	
 }

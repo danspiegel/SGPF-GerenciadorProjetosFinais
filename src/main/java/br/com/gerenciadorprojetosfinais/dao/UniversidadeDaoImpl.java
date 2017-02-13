@@ -1,5 +1,6 @@
 package br.com.gerenciadorprojetosfinais.dao;
 
+import java.math.BigInteger;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -59,16 +60,26 @@ public class UniversidadeDaoImpl extends BaseDao implements UniversidadeDao {
 		
 		try{
 			
+			Integer matriz = null;
+			
+			if (buscarMatriz(vo.getCnpj().replace("[./-]", "")) == 0){
+				matriz = 1;
+			}
+			else if (buscarMatriz(vo.getCnpj().replace("[./-]", "")) > 0){
+				matriz = 0;
+			}
+			
 			MapSqlParameterSource params = new MapSqlParameterSource();
-			params.addValue(UniversidadeEnum.CNPJ.getValor(), vo.getCnpj());
+			params.addValue(UniversidadeEnum.CNPJ.getValor(), vo.getCnpj().replaceAll("[./-]", ""));
 			params.addValue(UniversidadeEnum.RAZAO_SOCIAL.getValor(), vo.getRazaoSocial());
 			params.addValue(UniversidadeEnum.NOME_FANTASIA.getValor(), vo.getNomeFantasia());
 			params.addValue(UniversidadeEnum.DESCRICAO.getValor(), vo.getDescricao());
+			params.addValue(UniversidadeEnum.MATRIZ.getValor(), matriz);
 			params.addValue(UniversidadeEnum.LOGRADOURO.getValor(), vo.getLogradouro());
 			params.addValue(UniversidadeEnum.CEP.getValor(), vo.getCep());
 			params.addValue(UniversidadeEnum.BAIRRO.getValor(), vo.getBairro());
 			params.addValue(UniversidadeEnum.MUNICIPIO.getValor(), vo.getMunicipio());
-			params.addValue(UniversidadeEnum.ID_ESTADO.getValor(), vo.getEstado().getId());
+			params.addValue(UniversidadeEnum.ID_ESTADO.getValor(), Integer.parseInt(vo.getEstado().getId()));
 			params.addValue(UniversidadeEnum.DDD.getValor(), vo.getTelefone().replaceAll("[()-]", "").substring(0, 2));
 			params.addValue(UniversidadeEnum.TELEFONE.getValor(), vo.getTelefone().replaceAll("[()-]", "").substring(2, 10));
 			
@@ -107,6 +118,32 @@ public class UniversidadeDaoImpl extends BaseDao implements UniversidadeDao {
 			
 			jdbcTemplate.update(sql.toString(), params);	
 			 
+		}
+		catch(Exception e){
+			throw new SQLException(e);
+		}
+		
+	}
+	
+	public Integer buscarMatriz(String cnpj) throws SQLException{
+		
+		try{
+			
+			MapSqlParameterSource params = new MapSqlParameterSource();
+			params.addValue(UniversidadeEnum.CNPJ.getValor(), cnpj.replaceAll("[./-]", "").substring(0, 8));
+			params.addValue(UniversidadeEnum.MATRIZ.getValor(), 1);
+			
+			StringBuilder sql = new StringBuilder();
+			
+			sql.append(SELECT_COUNT + FROM + UniversidadeEnum.UNIVERSIDADES.getValor());
+			sql.append(WHERE);
+			sql.append(UniversidadeEnum.CNPJ.getValor() + IGUAL + DOIS_PONTOS + UniversidadeEnum.CNPJ.getValor() + AND);
+			sql.append(UniversidadeEnum.MATRIZ.getValor() + IGUAL + DOIS_PONTOS + UniversidadeEnum.MATRIZ.getValor());
+			
+			Integer resultSet = jdbcTemplate.queryForObject(sql.toString(), params, Integer.class);
+			
+			return resultSet;
+			
 		}
 		catch(Exception e){
 			throw new SQLException(e);

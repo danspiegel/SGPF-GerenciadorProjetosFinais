@@ -33,7 +33,7 @@
     			<section>
         			<div class="wizard">
             			<div class="wizard-inner">
-                			<div class="connecting-line"></div>
+                			<!--  <div class="connecting-line"></div> -->
                 				<ul class="nav nav-tabs" role="tablist">
 
                     				<li role="presentation" class="active">
@@ -261,6 +261,29 @@
     			</section>
   			</div>
 		</div>
+		
+		<!-- Modal -->
+	    <div class="modal fade" id="myModal" role="dialog">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">
+		          <img src="../includes/img/icon-success.png" />
+		          <p>Universidade cadastrada com sucesso.</p>
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	    </div>
+  
+</div>
 	
 	</body>
 </html>

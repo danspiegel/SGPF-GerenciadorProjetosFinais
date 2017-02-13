@@ -23,7 +23,7 @@ public class EstadoDaoImpl extends BaseDao implements EstadoDao {
 	
 			StringBuilder sql = new StringBuilder();
 			
-			sql.append(SELECT + EstadoEnum.CODIGO_ESTADO.getValor() + VIRGULA + EstadoEnum.SIGLA.getValor());
+			sql.append(SELECT + EstadoEnum.ID.getValor() + VIRGULA + EstadoEnum.SIGLA.getValor());
 			sql.append(FROM + EstadoEnum.ESTADOS.getValor());
 			
 			List<Map<String, Object>> resultSet = jdbcTemplate.queryForList(sql.toString(), new MapSqlParameterSource());
@@ -33,7 +33,7 @@ public class EstadoDaoImpl extends BaseDao implements EstadoDao {
 				
 				ComboVO vo = new ComboVO();
 				
-				vo.setId(resultado.get(EstadoEnum.CODIGO_ESTADO.getValor()).toString());
+				vo.setId(resultado.get(EstadoEnum.ID.getValor()).toString());
 				vo.setDescricao(resultado.get(EstadoEnum.SIGLA.getValor()).toString());
 				
 				lista.add(vo);

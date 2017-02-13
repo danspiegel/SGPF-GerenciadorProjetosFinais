@@ -26,9 +26,9 @@ public interface AlunoDao {
 	
 	/**
 	 * Método responsável por incluir os alunos.
-	 * @param vo AlunoVO
+	 * @param vo GraduacaoVO
 	 * @throws SQLException
 	 */
-	public void incluir(AlunoVO vo) throws SQLException;
+	public void incluir(GraduacaoVO vo) throws SQLException;
 	
 }

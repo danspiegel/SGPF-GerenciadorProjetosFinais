@@ -7,7 +7,6 @@ public enum EstadoEnum {
 			
 	//--> Campos da tabela de estados
 	ID("id"),
-	CODIGO_ESTADO("codigo_estado"),
 	NOME("nome"),
 	SIGLA("sigla"),
 	ID_PAIS("id_pais");
