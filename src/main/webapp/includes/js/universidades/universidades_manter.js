@@ -103,7 +103,7 @@
 	    				
 						setTimeout(function () {
 			                window.location = retornoAjax.pagina;
-			            }, 5000);
+			            }, 2000);
 						
 					}
 					else{
