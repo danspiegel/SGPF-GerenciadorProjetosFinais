@@ -18,34 +18,51 @@
 	</head>
 	<body>
 	    <div class="container">
-	        <div class="card card-container">
-	            <img id="profile-img" class="profile-img-card" src="../includes/img/avatar.png" />
-	            <p id="profile-name" class="profile-name-card"></p>
-	            <form>
+		    <div class="row">
+				<div class="col-md-4 col-md-offset-4">
+		    		<div class="panel panel-default">
+					  	<div class="panel-heading">
+					    	<h3 class="panel-title">Please sign in</h3>
+					 	</div>
+					  	<div class="panel-body">
+					    	<form accept-charset="UTF-8" role="form">
+		                    	<!-- ***** MENSAGEM INÍCIO ***** -->
+  								<div id="mensagens" style="display:none;"></div>
+  								<!-- ***** MENSAGEM FIM ***** -->
 	            
-	            	<!-- ***** MENSAGEM INÍCIO ***** -->
-  					<div id="mensagens" style="display:none;"></div>
-  					<!-- ***** MENSAGEM FIM ***** -->
+	            				<div class="input-group">
+				            		<div class="input-group-addon">
+				            			<span class="fa fa-address-card"></span>
+				            		</div>
+				                	<select id="id_universidade" name="vo.universidade.cnpj"></select>
+				                </div>
+				                
+				                <br/>
 	            
-	            	<div class="input-group">
-	            		<div class="input-group-addon">
-	            			<span class="fa fa-address-card"></span>
-	            		</div>
-	                	<input id="id_matricula" class="form-control" name="vo.matricula" type="text" placeholder="Matrícula" required autofocus>
-	                </div>
-	                <br/>
-	                <div class="input-group">
-	                	<div class="input-group-addon">
-	            			<span class="fa fa-lock"></span>
-	            		</div>
-	                	<input id="id_senha" class="form-control" name="vo.senha" type="password" placeholder="Senha" required>
-	                </div>
-	                <br/>
-	                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Entrar</button>
-	            </form>
-	            <br/>
-	            <a href="#" class="forgot-password">Esqueceu sua senha?</a>
-	        </div>
-	    </div>
+				            	<div class="input-group">
+				            		<div class="input-group-addon">
+				            			<span class="fa fa-address-card"></span>
+				            		</div>
+				                	<input id="id_matricula" class="form-control" name="vo.matricula" type="text" placeholder="Matrícula" required autofocus>
+				                </div>
+				                
+				                <br/>
+				                
+				                <div class="input-group">
+				                	<div class="input-group-addon">
+				            			<span class="fa fa-lock"></span>
+				            		</div>
+				                	<input id="id_senha" class="form-control" name="vo.senha" type="password" placeholder="Senha" required>
+				                </div>
+				                
+				                <br/>
+				                
+				                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Entrar</button>
+					      	</form>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>

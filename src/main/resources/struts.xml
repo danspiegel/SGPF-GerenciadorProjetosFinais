@@ -36,6 +36,12 @@
 	 		<param name="root">retornoAjax</param>
 	 	</result>
 	 </action>
+	 
+	 <action name="listarUniversidades" class="br.com.gerenciadorprojetosfinais.action.UniversidadeAction" method="listar">
+	 	<result name="retornoAjax" type="json">
+	 		<param name="root">retornoAjax</param>
+	 	</result>
+	 </action>
 
 	 <!-- ########## UNIVERSIDADE FIM ##########  -->
 	 
