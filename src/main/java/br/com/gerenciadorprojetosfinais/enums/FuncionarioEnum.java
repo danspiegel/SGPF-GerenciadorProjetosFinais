@@ -6,20 +6,11 @@ public enum FuncionarioEnum {
 	FUNCIONARIOS("funcionarios"),
 	
 	//--> Campos da tabela de Funcionários
-	CPF("cpf"),
+	ID("id"),
 	NOME("nome"),
 	SOBRENOME("sobrenome"),
 	EMAIL("email"),
-	CARGO("cargo"),
-	LOGRADOURO("logradouro"),
-	CEP("cep"),
-	BAIRRO("bairro"),
-	MUNICIPIO("municipio"),
-	ID_ESTADO("id_estado"),
-	DDD_TELEFONE("ddd_telefone"),
-	TELEFONE("telefone"),
-	DDD_CELULAR("ddd_celular"),
-	CELULAR("celular");
+	CARGO("cargo");
 	
 	private String valor;
 	

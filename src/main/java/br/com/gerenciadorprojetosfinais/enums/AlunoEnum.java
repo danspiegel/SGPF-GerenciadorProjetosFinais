@@ -6,20 +6,9 @@ public enum AlunoEnum {
 	ALUNOS("alunos"),
 	
 	//--> Campos da tabela de Alunos
-	CPF("cpf"),
+	ID("id"),
 	NOME("nome"),
 	SOBRENOME("sobrenome"),
-	NOMEPAI("nomepai"),
-	NOMEMAE("nomemae"),
-	LOGRADOURO("logradouro"),
-	CEP("cep"),
-	BAIRRO("bairro"),
-	MUNICIPIO("municipio"),
-	ID_ESTADO("id_estado"),
-	DDD_TELEFONE("ddd_telefone"),
-	TELEFONE("telefone"),
-	DDD_CELULAR("ddd_celular"),
-	CELULAR("celular"),
 	EMAIL("email");
 	
 	private String valor;

@@ -6,14 +6,13 @@ public enum UniversidadeFuncionarioEnum {
 	UNIVERSIDADE_FUNCIONARIO("universidade_funcionario"),
 					
 	//--> Campos da tabela de universidade_curso
-	ID("id"),
 	ID_CURSO("id_curso"),
-	CNPJ("cnpj"),
-	CPF("cpf"),
-	DT_INICIO("dt_inicio"),
-	DT_FIM("dt_fim"),
+	ID_UNIVERSIDADE("id_universidade"),
+	ID_FUNCIONARIO("id_funcionario"),
 	MATRICULA("matricula"),
-	SENHA("senha");
+	SENHA("senha"),
+	DT_INICIO("dt_inicio"),
+	DT_FIM("dt_fim");
 		
 	private String valor;
 					

@@ -6,18 +6,9 @@ public enum UniversidadeEnum {
 	UNIVERSIDADES("universidades"),
 			
 	//--> Campos da tabela de Universidades
-	CNPJ("cnpj"),
+	ID("id"),
 	RAZAO_SOCIAL("razaosocial"),
-	NOME_FANTASIA("nomefantasia"),
-	DESCRICAO("descricao"),
-	MATRIZ("matriz"),
-	LOGRADOURO("logradouro"),
-	CEP("cep"),
-	BAIRRO("bairro"),
-	MUNICIPIO("municipio"),
-	ID_ESTADO("id_estado"),
-	DDD("ddd"),
-	TELEFONE("telefone");
+	NOME_FANTASIA("nomefantasia");
 	
 	private String valor;
 	

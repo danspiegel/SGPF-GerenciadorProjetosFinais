@@ -7,13 +7,13 @@ public enum GraduacaoEnum {
 		
 	//--> Campos da tabela de Graduação
 	ID_CURSO("id_curso"),
-	CNPJ("cnpj"),
-	CPF("cpf"),
+	ID_UNIVERSIDADE("id_universidade"),
+	ID_ALUNO("id_aluno"),
+	ID_ORIENTADOR("id_orientador"),
 	MATRICULA("matricula"),
 	SENHA("senha"),
 	DT_INICIO("dt_inicio"),
-	DT_FIM("dt_fim"),
-	ID_ORIENTADOR("id_orientador");
+	DT_FIM("dt_fim");
 		
 	private String valor;
 		
