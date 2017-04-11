@@ -15,31 +15,20 @@ public class FuncionarioVO implements Serializable {
 
 	//--> Atributos
 	
-	private String cpf;
+	private String id;
 	private String nome;
 	private String sobrenome;
 	private String email;
 	private String cargo;
-	private String logradouro;
-	private String cep;
-	private String bairro;
-	private String municipio;
-	private EstadoVO estado;
-	private String telefone;
-	private String celular;
-	private CursoVO curso;
-	private Date dataInicio;
-	private Date dataFim;
-	private Long matricula;
-	private String senha;
+	private Integer perfil;
 	
 	//--> Getters e Setters
 	
-	public String getCpf() {
-		return cpf;
+	public String getId() {
+		return id;
 	}
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getNome() {
 		return nome;
@@ -65,77 +54,11 @@ public class FuncionarioVO implements Serializable {
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
-	public String getLogradouro() {
-		return logradouro;
+	public Integer getPerfil() {
+		return perfil;
 	}
-	public void setLogradouro(String logradouro) {
-		this.logradouro = logradouro;
-	}
-	public String getCep() {
-		return cep;
-	}
-	public void setCep(String cep) {
-		this.cep = cep;
-	}
-	public String getBairro() {
-		return bairro;
-	}
-	public void setBairro(String bairro) {
-		this.bairro = bairro;
-	}
-	public String getMunicipio() {
-		return municipio;
-	}
-	public void setMunicipio(String municipio) {
-		this.municipio = municipio;
-	}
-	public EstadoVO getEstado() {
-		return estado;
-	}
-	public void setEstado(EstadoVO estado) {
-		this.estado = estado;
-	}
-	public String getTelefone() {
-		return telefone;
-	}
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
-	public String getCelular() {
-		return celular;
-	}
-	public void setCelular(String celular) {
-		this.celular = celular;
-	}
-	public CursoVO getCurso() {
-		return curso;
-	}
-	public void setCurso(CursoVO curso) {
-		this.curso = curso;
-	}
-	public Date getDataInicio() {
-		return dataInicio;
-	}
-	public void setDataInicio(Date dataInicio) {
-		this.dataInicio = dataInicio;
-	}
-	public Date getDataFim() {
-		return dataFim;
-	}
-	public void setDataFim(Date dataFim) {
-		this.dataFim = dataFim;
-	}
-	public Long getMatricula() {
-		return matricula;
-	}
-	public void setMatricula(Long matricula) {
-		this.matricula = matricula;
-	}
-	public String getSenha() {
-		return senha;
-	}
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public void setPerfil(Integer perfil) {
+		this.perfil = perfil;
 	}
 	
 }

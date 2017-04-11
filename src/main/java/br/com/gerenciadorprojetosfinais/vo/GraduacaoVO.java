@@ -12,11 +12,11 @@ public class GraduacaoVO implements Serializable {
 	private CursoVO curso;
 	private UniversidadeVO universidade;
 	private AlunoVO aluno;
+	private FuncionarioVO orientador;
 	private Long matricula;
 	private String senha;
 	private Date dataInicio;
 	private Date dataFim;
-	private FuncionarioVO funcionario;
 	
 	//--> Getters e Setters
 	
@@ -37,6 +37,12 @@ public class GraduacaoVO implements Serializable {
 	}
 	public void setAluno(AlunoVO aluno) {
 		this.aluno = aluno;
+	}
+	public FuncionarioVO getOrientador() {
+		return orientador;
+	}
+	public void setOrientador(FuncionarioVO orientador) {
+		this.orientador = orientador;
 	}
 	public Long getMatricula() {
 		return matricula;
@@ -62,11 +68,5 @@ public class GraduacaoVO implements Serializable {
 	public void setDataFim(Date dataFim) {
 		this.dataFim = dataFim;
 	}
-	public FuncionarioVO getFuncionario() {
-		return funcionario;
-	}
-	public void setFuncionario(FuncionarioVO funcionario) {
-		this.funcionario = funcionario;
-	}
-	
+
 }
