@@ -1,8 +1,6 @@
 package br.com.gerenciadorprojetosfinais.action;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -14,7 +12,6 @@ import org.springframework.stereotype.Controller;
 import br.com.gerenciadorprojetosfinais.exception.BusinessException;
 import br.com.gerenciadorprojetosfinais.facade.AlunoServiceFacade;
 import br.com.gerenciadorprojetosfinais.facade.UniversidadeServiceFacade;
-import br.com.gerenciadorprojetosfinais.vo.ComboVO;
 import br.com.gerenciadorprojetosfinais.vo.GraduacaoVO;
 import br.com.gerenciadorprojetosfinais.vo.RetornoAjaxVO;
 
@@ -31,11 +28,10 @@ public class AlunoAction extends BaseAction {
 	@Autowired
 	private UniversidadeServiceFacade universidadeFacade;
 	private GraduacaoVO vo;
-	List<ComboVO> listaUniversidades;
 	
 	public String iniciar(){
 		
-		listaUniversidades = new ArrayList<ComboVO>();
+		//listaUniversidades = new ArrayList<ComboVO>();
 		
 		try{
 			
@@ -65,11 +61,8 @@ public class AlunoAction extends BaseAction {
 				sessao.put("alunoMatricula", vo.getMatricula());
 				sessao.put("alunoNome", vo.getAluno().getNome());
 				sessao.put("alunoSobrenome", vo.getAluno().getSobrenome());
-				sessao.put("alunoCpf", vo.getAluno().getCpf());
 				sessao.put("alunoCursoId", vo.getCurso().getId());
 				sessao.put("alunoCursoDescricao", vo.getCurso().getDescricao());
-				sessao.put("alunoUniversidadeId", vo.getUniversidade().getCnpj());
-				sessao.put("alunoUniversidadeDescricao", vo.getUniversidade().getDescricao());
 				
 				retornoAjax.setTipoRetornado(SUCCESS);
 				retornoAjax.setObjetoRetornado(vo);

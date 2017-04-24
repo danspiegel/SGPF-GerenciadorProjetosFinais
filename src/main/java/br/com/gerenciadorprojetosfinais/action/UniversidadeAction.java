@@ -1,7 +1,5 @@
 package br.com.gerenciadorprojetosfinais.action;
 
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +7,6 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import br.com.gerenciadorprojetosfinais.facade.UniversidadeServiceFacade;
-import br.com.gerenciadorprojetosfinais.vo.ComboVO;
 import br.com.gerenciadorprojetosfinais.vo.FuncionarioVO;
 import br.com.gerenciadorprojetosfinais.vo.RetornoAjaxVO;
 import br.com.gerenciadorprojetosfinais.vo.UniversidadeVO;
@@ -27,7 +24,6 @@ public class UniversidadeAction extends BaseAction {
 	private UniversidadeServiceFacade universidadeFacade;
 	private UniversidadeVO universidade;
 	private FuncionarioVO funcionario;
-	private List<ComboVO> listaUniversidades;
 	
 	/**
 	 * Método responsável por incluir as universidades.
@@ -61,9 +57,9 @@ public class UniversidadeAction extends BaseAction {
 		
 		try{
 			
-			listaUniversidades = universidadeFacade.carregarUniversidades();
+			///listaUniversidades = universidadeFacade.carregarUniversidades();
 			retornoAjax.setTipoRetornado(SUCCESS);
-			retornoAjax.setObjetoRetornado(listaUniversidades);
+			//retornoAjax.setObjetoRetornado(listaUniversidades);
 			
 		}
 		catch(Exception e){
@@ -92,14 +88,6 @@ public class UniversidadeAction extends BaseAction {
 
 	public void setUniversidade(UniversidadeVO universidade) {
 		this.universidade = universidade;
-	}
-
-	public List<ComboVO> getListaUniversidades() {
-		return listaUniversidades;
-	}
-
-	public void setListaUniversidades(List<ComboVO> listaUniversidades) {
-		this.listaUniversidades = listaUniversidades;
 	}
 
 	public FuncionarioVO getFuncionario() {
