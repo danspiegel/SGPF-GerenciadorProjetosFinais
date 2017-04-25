@@ -5,8 +5,9 @@
 <html>
 <head>
 
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<meta name="decorator" content="main" />
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
