@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<decorators defaultdir="/webapp/pages/decorators">
+<decorators defaultdir="/pages/decorators">
 
 	<decorator name="main" page="menu.jsp">
-		<pattern>/WEB-INF/pages/docentes/*</pattern>
+		<pattern>/pages/docentes/*</pattern>
 	</decorator>
 
 	<excludes>
