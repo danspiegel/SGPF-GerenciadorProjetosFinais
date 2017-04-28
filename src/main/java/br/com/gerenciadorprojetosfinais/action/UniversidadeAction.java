@@ -35,7 +35,7 @@ public class UniversidadeAction extends BaseAction {
 		
 		try{
 		
-			universidadeFacade.incluirUniversidade(universidade);
+			//universidadeFacade.incluirUniversidade(universidade);
 			retornoAjax.setTipoRetornado(SUCCESS);
 			retornoAjax.setObjetoRetornado(getText("msg.universidade.incluir.sucesso"));
 			retornoAjax.setPagina("../pages/login.jsp");
