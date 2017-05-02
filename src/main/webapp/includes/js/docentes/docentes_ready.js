@@ -22,6 +22,6 @@
 
     $(document).on('ajaxStop', function(){
     	$(loader).hide();
-   });
+    });
 	
 })(jQuery)
