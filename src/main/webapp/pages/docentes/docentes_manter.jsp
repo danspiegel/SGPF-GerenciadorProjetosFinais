@@ -12,6 +12,8 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 
+		<div id="mensagens" class="" style="display:none;"></div>
+
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
@@ -38,7 +40,7 @@
 					<!-- Profile Image -->
 					<div class="box box-primary">
 						<div class="box-body box-profile">
-						  <img class="profile-user-img img-responsive img-circle" src="../dist/img/avatar5.png" alt="User profile picture">
+						  <img class="profile-user-img img-responsive img-circle" src="../../includes/AdminLTE/dist/img/avatar-default.png" alt="User profile picture">
 
 						  <h3 class="profile-username text-center">Alexander Pierce</h3>
 

@@ -12,20 +12,20 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
-    <link rel="stylesheet" href="../includes/AdminLTE/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../includes/AdminLTE/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../includes/AdminLTE/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="../../includes/AdminLTE/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect.
     -->
-    <link rel="stylesheet" href="../includes/AdminLTE/dist/css/skins/skin-blue.css">
+    <link rel="stylesheet" href="../../includes/AdminLTE/dist/css/skins/skin-blue.css">
 	<!-- bootstrap datepicker -->
-	<link rel="stylesheet" href="../includes/AdminLTE/plugins/datepicker/datepicker3.css">
+	<link rel="stylesheet" href="../../includes/AdminLTE/plugins/datepicker/datepicker3.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,30 +37,30 @@
 	<!-- REQUIRED JS SCRIPTS -->
 
     <!-- jQuery 2.1.4 -->
-	<script src="../includes/AdminLTE/plugins/jQuery/jquery-2.1.4.min.js"></script>
+	<script src="../../includes/AdminLTE/plugins/jQuery/jQuery-2.1.4.min.js"></script>
 	<!-- Bootstrap 3.3.6 -->
-    <script src="../includes/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../includes/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="../includes/AdminLTE/dist/js/app.min.js"></script>
+    <script src="../../includes/AdminLTE/dist/js/app.min.js"></script>
 	<!-- bootstrap datepicker -->
-	<script src="../includes/AdminLTE/plugins/datepicker/bootstrap-datepicker.js"></script>
+	<script src="../../includes/AdminLTE/plugins/datepicker/bootstrap-datepicker.js"></script>
 	<!-- InputMask -->
-	<script src="../includes/AdminLTE/plugins/input-mask/jquery.inputmask.js"></script>
-	<script src="../includes/AdminLTE/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-	<script src="../includes/AdminLTE/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+	<script src="../../includes/AdminLTE/plugins/input-mask/jquery.inputmask.js"></script>
+	<script src="../../includes/AdminLTE/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+	<script src="../../includes/AdminLTE/plugins/input-mask/jquery.inputmask.extensions.js"></script>
 	<!-- bootstrap color picker -->
-	<script src="../includes/AdminLTE/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+	<script src="../../includes/AdminLTE/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
 	<!-- bootstrap time picker -->
-	<script src="../includes/AdminLTE/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+	<script src="../../includes/AdminLTE/plugins/timepicker/bootstrap-timepicker.min.js"></script>
 	<!-- SlimScroll 1.3.0 -->
-	<script src="../includes/AdminLTE/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+	<script src="../../includes/AdminLTE/plugins/slimScroll/jquery.slimscroll.min.js"></script>
 	<!-- iCheck 1.0.1 -->
-	<script src="../includes/AdminLTE/plugins/iCheck/icheck.min.js"></script>
+	<script src="../../includes/AdminLTE/plugins/iCheck/icheck.min.js"></script>
 	<!-- FastClick -->
-	<script src="../includes/AdminLTE/plugins/fastclick/fastclick.js"></script>
+	<script src="../../includes/AdminLTE/plugins/fastclick/fastclick.js"></script>
 	<!-- date-range-picker -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-	<script src="../includes/AdminLTE/plugins/daterangepicker/daterangepicker.js"></script>
+	<script src="../../includes/AdminLTE/plugins/daterangepicker/daterangepicker.js"></script>
 	<script src="https://use.fontawesome.com/3b4d124d12.js"></script>
 	
 	<decorator:head />
@@ -77,11 +77,11 @@
         <a class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini">
-			<!-- <img src="../Imagens/logotipo-uva-parcial.png" width="40" height="40"> -->
+			<img src="../../includes/AdminLTE/Imagens/logotipo-uva-parcial.png" width="40" height="40">
 		  </span>
           <!-- logo for regular state and mobile devices -->
 		  <span class="logo-lg">
-			<!-- <img src="../Imagens/logotipo-uva-completo.png" width="140" height="40"> -->
+			<img src="../../includes/AdminLTE/Imagens/logotipo-uva-completo.png" width="140" height="40">
 		  </span>
         </a>
 
@@ -109,22 +109,21 @@
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="../dist/img/avatar5.png" class="user-image" alt="User Image">
+                  <img src="../../includes/AdminLTE/dist/img/avatar-default.png" class="user-image" alt="User Image">
                   <span class="hidden-xs">Alexander Pierce</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
-                    <img src="../dist/img/avatar5.png" class="img-circle" alt="User Image">
+                    <img src="../../includes/AdminLTE/dist/img/avatar-default.png" class="img-circle" alt="User Image">
                     <p>
                       Alexander Pierce - Web Developer
-                      <small>Member since Nov. 2012</small>
                     </p>
                   </li>
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="../paginas/docentes_manter.html" class="btn btn-default btn-flat">Meus Dados</a>
+                      <a href="../pages/docentes/docentes_manter.jsp" class="btn btn-default btn-flat">Meus Dados</a>
                     </div>
                     <div class="pull-right">
                       <a href="#" class="btn btn-default btn-flat">Sair</a>

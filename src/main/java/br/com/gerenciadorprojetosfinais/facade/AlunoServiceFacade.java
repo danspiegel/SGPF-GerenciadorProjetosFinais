@@ -8,12 +8,10 @@ import br.com.gerenciadorprojetosfinais.vo.GraduacaoVO;
 public interface AlunoServiceFacade {
 
 	/**
-	 * M√©todo respons√°vel por validar os dados do usu√°rio.
+	 * MÈtodo respons·vel por incluir os Alunos.
 	 * @param vo GraduacaoVO
-	 * @return boolean
 	 * @throws SQLException
-	 * @throws BusinessException
 	 */
-	public boolean validarUsuario(GraduacaoVO vo) throws SQLException, BusinessException;
+	public void incluir(GraduacaoVO vo) throws SQLException;
 	
 }

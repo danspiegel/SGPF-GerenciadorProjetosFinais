@@ -11,14 +11,13 @@ import org.springframework.stereotype.Repository;
 import br.com.gerenciadorprojetosfinais.enums.AlunoEnum;
 import br.com.gerenciadorprojetosfinais.enums.CursoEnum;
 import br.com.gerenciadorprojetosfinais.enums.GraduacaoEnum;
-import br.com.gerenciadorprojetosfinais.enums.UniversidadeEnum;
-import br.com.gerenciadorprojetosfinais.vo.AlunoVO;
 import br.com.gerenciadorprojetosfinais.vo.GraduacaoVO;
+import br.com.gerenciadorprojetosfinais.vo.UsuarioVO;
 
 @Repository
 public class AlunoDaoImpl extends BaseDao implements AlunoDao {
 	
-	//--> Campo genÃ©rico
+	//--> Campo genérico
 	private static final String VALOR    = "valor";
 	
 	//--> Campos de apelido SQL
@@ -30,12 +29,11 @@ public class AlunoDaoImpl extends BaseDao implements AlunoDao {
 	/**
 	 * {@inheritDoc}
 	 */
-	public boolean validarUsuario(GraduacaoVO vo) throws SQLException{
+	public boolean validarAluno(UsuarioVO vo) throws SQLException{
 		
 		try{
 			
 			MapSqlParameterSource params = new MapSqlParameterSource();
-			params.addValue(UniversidadeEnum.UNIVERSIDADES.getValor(), vo.getUniversidade());
 			params.addValue(GraduacaoEnum.MATRICULA.getValor(), vo.getMatricula());
 			params.addValue(GraduacaoEnum.SENHA.getValor(), vo.getSenha());
 			
@@ -48,12 +46,12 @@ public class AlunoDaoImpl extends BaseDao implements AlunoDao {
 			if (iterator.hasNext()){
 				
 				for (Map<String, Object> resultado: resultSet){
-					
+					/*
 					vo.getAluno().setNome(resultado.get(A + PONTO + AlunoEnum.NOME.getValor()).toString());
 					vo.getAluno().setSobrenome(resultado.get(A + PONTO + AlunoEnum.SOBRENOME.getValor()).toString());
 					vo.getCurso().setId(resultado.get(C + PONTO + CursoEnum.ID.getValor()).toString());
 					vo.getCurso().setDescricao(resultado.get(C + PONTO + CursoEnum.DESCRICAO.getValor()).toString());				
-					
+					*/
 				}
 				
 				return true;

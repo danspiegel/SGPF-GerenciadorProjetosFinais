@@ -25,68 +25,24 @@ public class AlunoAction extends BaseAction {
 	
 	@Autowired
 	private AlunoServiceFacade alunoFacade;
-	@Autowired
-	private UniversidadeServiceFacade universidadeFacade;
+	
 	private GraduacaoVO vo;
 	
-	public String iniciar(){
-		
-		//listaUniversidades = new ArrayList<ComboVO>();
-		
-		try{
-			
-			//universidadeFacade.carregarUniversidades(listaUniversidade);
-			return SUCCESS;
-		}
-		catch(Exception e){
-			LOGGER.error(e.getMessage());
-			return ERROR;
-		}
-		
-	}
 	
-	/**
-	 * Método responsável pela validação do usuário no sistema.
-	 * @return String
-	 */
-	public String validarUsuario(){
-		
-		retornoAjax = new RetornoAjaxVO();
-		Map<String, Object> sessao = getSession();
-		
-		try{
-			
-			if (alunoFacade.validarUsuario(vo)){
-				
-				sessao.put("alunoMatricula", vo.getMatricula());
-				sessao.put("alunoNome", vo.getAluno().getNome());
-				sessao.put("alunoSobrenome", vo.getAluno().getSobrenome());
-				sessao.put("alunoCursoId", vo.getCurso().getId());
-				sessao.put("alunoCursoDescricao", vo.getCurso().getDescricao());
-				
-				retornoAjax.setTipoRetornado(SUCCESS);
-				retornoAjax.setObjetoRetornado(vo);
-			}
-			else{
-				retornoAjax.setTipoRetornado(ERROR);
-				retornoAjax.setObjetoRetornado(getText("msg.aluno.usuario.invalido"));
-				
-			}
-			
-		}
-		catch(SQLException e){
-			LOGGER.error(e.getMessage());
-			retornoAjax.setTipoRetornado(ERROR);
-			retornoAjax.setExceptionRetornada(getText("msg.aluno.usuario.erro") + e.getMessage());
-		}
-		catch(BusinessException e){
-			LOGGER.error(e.getMessage());
-			retornoAjax.setTipoRetornado(ERROR);
-			retornoAjax.setExceptionRetornada(e.getMessage());
-		}
-		
-		return RETORNO_AJAX;
-		
-	}
 	
+	//--> Getters e Setters
+	
+	public AlunoServiceFacade getAlunoFacade() {
+		return alunoFacade;
+	}
+	public void setAlunoFacade(AlunoServiceFacade alunoFacade) {
+		this.alunoFacade = alunoFacade;
+	}
+	public GraduacaoVO getVo() {
+		return vo;
+	}
+	public void setVo(GraduacaoVO vo) {
+		this.vo = vo;
+	}
+
 }

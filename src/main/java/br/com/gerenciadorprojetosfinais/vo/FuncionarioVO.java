@@ -20,7 +20,7 @@ public class FuncionarioVO implements Serializable {
 	private String sobrenome;
 	private String email;
 	private String cargo;
-	private Integer perfil;
+	private PerfilAcessoVO perfil;
 	
 	//--> Getters e Setters
 	
@@ -54,10 +54,10 @@ public class FuncionarioVO implements Serializable {
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
-	public Integer getPerfil() {
+	public PerfilAcessoVO getPerfil() {
 		return perfil;
 	}
-	public void setPerfil(Integer perfil) {
+	public void setPerfil(PerfilAcessoVO perfil) {
 		this.perfil = perfil;
 	}
 	

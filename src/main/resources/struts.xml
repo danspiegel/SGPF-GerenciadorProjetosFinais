@@ -13,15 +13,7 @@
 
 	 <!-- ########## ALUNO INÍCIO ########## -->
 	  
-	 <action name="cadastrarAluno" class="br.com.gerenciadorprojetosfinais.action.AlunoAction" method="cadastrar">
-			<result>/webapp/pages/aluno_cadastrar_manter.jsp</result>
-	 </action> 
-	 
-	 <action name="iniciarAlunos" class="br.com.gerenciadorprojetosfinais.action.AlunoAction" method="iniciar">
-			<result>/webapp/pages/login.jsp</result>
-	 </action>
-	  
-	 <action name="alunoValidar" class="br.com.gerenciadorprojetosfinais.action.AlunoAction" method="validarUsuario">
+	 <action name="usuarioValidar" class="br.com.gerenciadorprojetosfinais.action.AlunoAction" method="validarUsuario">
 		<result name="retornoAjax" type="json">
 	 		<param name="root">retornoAjax</param>
 	 	</result>

@@ -18,10 +18,6 @@ public class AlunoServiceFacadeImpl implements AlunoServiceFacade {
 	/**
 	 * {@inheritDoc}
 	 */
-	public boolean validarUsuario(GraduacaoVO vo) throws SQLException{
-		return dao.validarUsuario(vo);
-	}
-	
 	public void incluir(GraduacaoVO vo) throws SQLException{
 		
 	}

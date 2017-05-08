@@ -12,10 +12,11 @@ public class UniversidadeFuncionarioVO implements Serializable {
 	private CursoVO curso;
 	private UniversidadeVO universidade;
 	private FuncionarioVO funcionario;
-	private Long matricula;
-	private String senha;
 	private Date dataInicio;
 	private Date dataFim;
+	
+	//--> Atributo interno (não existe no banco)
+	private Integer tipoUsuario;
 	
 	//--> Getters e Setters
 	
@@ -37,18 +38,6 @@ public class UniversidadeFuncionarioVO implements Serializable {
 	public void setFuncionario(FuncionarioVO funcionario) {
 		this.funcionario = funcionario;
 	}
-	public Long getMatricula() {
-		return matricula;
-	}
-	public void setMatricula(Long matricula) {
-		this.matricula = matricula;
-	}
-	public String getSenha() {
-		return senha;
-	}
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
 	public Date getDataInicio() {
 		return dataInicio;
 	}
@@ -60,6 +49,12 @@ public class UniversidadeFuncionarioVO implements Serializable {
 	}
 	public void setDataFim(Date dataFim) {
 		this.dataFim = dataFim;
+	}
+	public Integer getTipoUsuario() {
+		return tipoUsuario;
+	}
+	public void setTipoUsuario(Integer tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
 	}
 	
 }

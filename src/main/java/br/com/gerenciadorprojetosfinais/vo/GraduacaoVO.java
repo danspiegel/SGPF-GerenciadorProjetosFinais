@@ -13,10 +13,11 @@ public class GraduacaoVO implements Serializable {
 	private UniversidadeVO universidade;
 	private AlunoVO aluno;
 	private FuncionarioVO orientador;
-	private Long matricula;
-	private String senha;
 	private Date dataInicio;
 	private Date dataFim;
+	
+	//--> Atributo interno (não existe no banco)
+	private Integer tipoUsuario;
 	
 	//--> Getters e Setters
 	
@@ -44,18 +45,6 @@ public class GraduacaoVO implements Serializable {
 	public void setOrientador(FuncionarioVO orientador) {
 		this.orientador = orientador;
 	}
-	public Long getMatricula() {
-		return matricula;
-	}
-	public void setMatricula(Long matricula) {
-		this.matricula = matricula;
-	}
-	public String getSenha() {
-		return senha;
-	}
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
 	public Date getDataInicio() {
 		return dataInicio;
 	}
@@ -68,5 +57,11 @@ public class GraduacaoVO implements Serializable {
 	public void setDataFim(Date dataFim) {
 		this.dataFim = dataFim;
 	}
-
+	public Integer getTipoUsuario() {
+		return tipoUsuario;
+	}
+	public void setTipoUsuario(Integer tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
+	}
+	
 }
