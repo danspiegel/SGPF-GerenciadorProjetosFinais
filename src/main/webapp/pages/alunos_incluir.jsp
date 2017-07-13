@@ -31,6 +31,8 @@
 	
 	<!-- JS de Controle -->
 	<script src="includes/js/auxiliares/mensagens.js"></script>
+	<script src="includes/js/auxiliares/comuns_auxiliares.js"></script>
+	<script src="includes/js/auxiliares/comuns_ready.js"></script>
 	<script src="includes/js/usuarios/usuarios_auxiliares.js"></script>
 	<script src="includes/js/usuarios/usuarios_manter.js"></script>
 	<script src="includes/js/usuarios/usuarios_ready.js"></script>
@@ -44,15 +46,25 @@
       </div><!-- /.login-logo -->
       <div class="login-box-body">
       	<div id="mensagens" class="" role="alert"></div>
-        <p class="login-box-msg">Faça login para começar a sua sessão</p>
         <form id="frmLogin" action="" method="post">
           <div class="form-group has-feedback">
-          	<label>Tipo de Usuário</label>
-            <select id="tipoUsuario" class="form-control" name="usuario.tipoUsuario">
-            	<option value="-1">Selecione...</option>
-            	<option value="0">Aluno</option>
-            	<option value="1">Professor</option>
-            </select>
+          	<label>Nome</label>
+            <input id="nome" name="usuario.aluno.aluno.nome" type="text" class="form-control" placeholder="Nome">
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback">
+          	<label>Sobrenome</label>
+            <input id="sobrenome" name="usuario.aluno.aluno.sobrenome" type="text" class="form-control" placeholder="Sobrenome">
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback">
+          	<label>Email</label>
+            <input id="email" name="usuario.aluno.aluno.email" type="text" class="form-control" placeholder="Email">
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback">
+          	<label>Curso</label>
+            <select id="idCurso" class="form-control" name="usuario.aluno.curso.id"> </select>
           </div>
           <div class="form-group has-feedback">
           	<label>Matrícula</label>
@@ -67,15 +79,13 @@
           <div class="row">
 
             <div class="col-xs-12">
-              <a id="btn_entrar" class="btn btn-primary btn-block btn-flat">Entrar</a>
+              <a id="btn_enviar" class="btn btn-primary btn-block btn-flat">Enviar</a>
             </div><!-- /.col -->
           </div>
         </form>
 
         <div class="social-auth-links text-center">
         </div><!-- /.social-auth-links -->
-
-        <a href="#">Esqueci minha senha</a>
 
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->

@@ -2,6 +2,8 @@ package br.com.gerenciadorprojetosfinais.action;
 
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -15,6 +17,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class BaseAction extends ActionSupport {
 	
 	private static final long serialVersionUID = -2595153460149736237L;
+	private static final Logger LOGGER = LoggerFactory.getLogger(BaseAction.class);
 	
 	protected static final String RETORNO_AJAX = "retornoAjax";
 	protected RetornoAjaxVO retornoAjax;

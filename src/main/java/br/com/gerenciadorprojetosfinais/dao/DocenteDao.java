@@ -9,9 +9,9 @@ public interface DocenteDao {
 	/**
 	 * Método responsável por validar os usuários do sistema.
 	 * @param vo UsuarioVO
-	 * @return boolean
+	 * @return UsuarioVO
 	 * @throws SQLException
 	 */
-	public boolean validarDocente(UsuarioVO vo) throws SQLException;
+	public UsuarioVO validarDocente(UsuarioVO vo) throws SQLException;
 	
 }

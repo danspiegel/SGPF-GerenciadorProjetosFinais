@@ -10,25 +10,16 @@ public interface AlunoDao {
 	/**
 	 * Método responsável por validar os usuários do sistema.
 	 * @param vo UsuarioVO
-	 * @return boolean
+	 * @return UsuarioVO
 	 * @throws SQLException
 	 */
-	public boolean validarAluno(UsuarioVO vo) throws SQLException;
-	
-	/**
-	 * Método responsável por contar quantos registros existem no campo informado de acordo com o valor informado.
-	 * @param valor String
-	 * @param campo String
-	 * @return Integer
-	 * @throws SQLException
-	 */
-	public Integer contar(String valor, String campo) throws SQLException;
+	public UsuarioVO validarAluno(UsuarioVO vo) throws SQLException;
 	
 	/**
 	 * Método responsável por incluir os alunos.
-	 * @param vo GraduacaoVO
+	 * @param vo UsuarioVO
 	 * @throws SQLException
 	 */
-	public void incluir(GraduacaoVO vo) throws SQLException;
+	public void incluir(UsuarioVO vo) throws SQLException;
 	
 }

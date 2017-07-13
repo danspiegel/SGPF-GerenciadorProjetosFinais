@@ -19,8 +19,8 @@
             <small></small>
           </h1>
           <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Docentes</a></li>
-            <li class="active">Meus Dados</li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Meus Dados</a></li>
+            <li class="active"></li>
           </ol>
         </section>
 		
@@ -38,11 +38,11 @@
 						<div class="box-body box-profile">
 						  <img class="profile-user-img img-responsive img-circle" src="../../includes/AdminLTE/dist/img/avatar-default.png" alt="User profile picture">
 
-						  <h3 class="profile-username text-center">Alexander Pierce</h3>
+						  <h3 id="prf_nomeAluno" class="profile-username text-center"></h3>
 
 						  <ul class="list-group list-group-unbordered">
 							<li class="list-group-item">
-							  <b>Cargo</b> <a class="pull-right"></a>
+							  <b>Curso</b> <a id="prf_cursoAluno" class="pull-right"></a>
 							</li>
 						  </ul>
 						</div>
@@ -66,24 +66,14 @@
 						
 							<form role="form">
 
-							  <div class="row">
-							
-								  <div class="col-md-6">
-									<label>Curso</label>
-									<div class="input-group">
-										<div class="input-group-addon">
-											<i class="fa fa-laptop"></i>
-										</div>
-										<input class="form-control" placeholder="" type="text" readonly>
-									</div>
-								  </div>		
+							  <div class="row">	
 								
 								  <div class="col-md-6">
 									<div class="form-group">
 									  <label>Email</label>
 									  <div class="input-group">
 										  <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-										  <input class="form-control" placeholder="" type="text" readonly>
+										  <input id="prf_emailAluno" class="form-control" type="text" readonly>
 									  </div>
 									</div>
 								  </div>
@@ -98,7 +88,7 @@
 									  <div class="input-group-addon">
 										<i class="fa fa-calendar"></i>
 									  </div>
-									  <input class="form-control pull-right" type="text" readonly>
+									  <input id="prf_dataInicioAluno" class="form-control pull-right" type="text" readonly>
 									</div><!-- /.input group -->
 								  </div>
 							  
@@ -108,7 +98,7 @@
 									  <div class="input-group-addon">
 										<i class="fa fa-calendar"></i>
 									  </div>
-									  <input class="form-control pull-right active" type="text" readonly>
+									  <input id="prf_dataFimAluno" class="form-control pull-right active" type="text" readonly>
 									</div><!-- /.input group -->
 								  </div>
 							  
@@ -154,7 +144,7 @@
                       <label>Matrícula</label>
 					  <div class="input-group">
 						  <span class="input-group-addon"><i class="fa fa-address-card"></i></span>
-						  <input class="form-control" placeholder="" type="text" readonly>
+						  <input id="prf_matriculaAluno" class="form-control" type="text" readonly>
 					  </div>
                     </div>
                   </div>
@@ -165,7 +155,7 @@
 						<div class="input-group-addon">
 							<i class="glyphicon glyphicon-lock"></i>
 						</div>
-						<input class="form-control" placeholder="" type="password" readonly>
+						<input id="prf_senhaAluno" class="form-control" type="password" readonly>
 					</div>
                   </div>
 				  

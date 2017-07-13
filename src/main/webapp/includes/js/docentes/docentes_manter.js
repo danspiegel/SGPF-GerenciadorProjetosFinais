@@ -25,7 +25,7 @@
 						
 						$(this).exibirMensagem({titulo:'Erro',
 												mensagem:retornoAjax.exceptionRetornada,
-							 					classe_mensagem:'error',
+							 					classe_mensagem:'alert alert-danger alert-dismissible',
 							 					id_mensagem:'#mensagens'});
 						
 					}
@@ -37,7 +37,7 @@
 					
 					$(this).exibirMensagem({titulo:'Erro',
 											mensagem:("Ocorreu um erro interno. " + XMLHttpRequest.responseText),
-						 					classe_mensagem:'error',
+						 					classe_mensagem:'alert alert-danger alert-dismissible',
 						 					id_mensagem:'#mensagens'});
 
 					

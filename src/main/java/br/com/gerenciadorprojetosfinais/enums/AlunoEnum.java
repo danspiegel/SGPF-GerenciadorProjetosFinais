@@ -9,7 +9,8 @@ public enum AlunoEnum {
 	ID("id"),
 	NOME("nome"),
 	SOBRENOME("sobrenome"),
-	EMAIL("email");
+	EMAIL("email"),
+	PERFIL("perfil");
 	
 	private String valor;
 	

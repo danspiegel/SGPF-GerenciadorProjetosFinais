@@ -4,30 +4,36 @@
  */
 (function($){
 	
-	/**
-	 * Função: listarEstados
-	 * Tipo: jQuery
-	 * Objetivo: Retornar a lista de estados.
-	 */
 	$.fn.extend({
 		
-		listarEstados: function(){
+		carregarUsuario: function(){
 			
 			$.ajax({
 				type: 'post',
 				cache: false,
 				dataType: 'json',
-				url: 'listarEstados',
+				url: 'carregarUsuario',
 				
 				success: function(retornoAjax){
 					
 					if (retornoAjax.tipoRetornado == "success"){
-						$(this).construirListaEstados(retornoAjax.objetoRetornado);
+						
+						$('#prf_nomeAluno').val(retornoAjax.objetoRetornado.aluno.aluno.nome + " " + retornoAjax.objetoRetornado.aluno.aluno.sobrenome);
+						$('#prf_cursoAluno').val(retornoAjax.objetoRetornado.aluno.curso.descricao);
+						$('#prf_emailAluno').val(retornoAjax.objetoRetornado.aluno.aluno.email);
+						$('#prf_dataInicioAluno').val(retornoAjax.objetoRetornado.aluno.dataInicio);
+						$('#prf_dataFimAluno').val(retornoAjax.objetoRetornado.aluno.dataFim);
+						$('#prf_matriculaAluno').val(retornoAjax.objetoRetornado.matricula);
+						$('#prf_senhaAluno').val(retornoAjax.objetoRetornado.senha);
+						
 					}
 					else{
-						$(this).exibirMensagem({mensagem:retornoAjax.exceptionRetornada,
-        					                    classe_mensagem:'alert alert-danger',
-        					                    id_mensagem:'#mensagens'});
+						
+						$(this).exibirMensagem({titulo:'Erro',
+												mensagem:retornoAjax.exceptionRetornada,
+							                    classe_mensagem:'alert alert-danger alert-dismissible',
+							                    id_mensagem:'#mensagens'});
+					
 					}
 					
 				},
@@ -36,51 +42,19 @@
 				
 				error: function(XMLHttpRequest, textStatus, errorThrown){
 					
-					$(this).exibirMensagem({mensagem:("Ocorreu um erro interno. " + XMLHttpRequest.responseText),
-	                    					classe_mensagem:'alert alert-danger',
-	                    					id_mensagem:'#mensagens'});
+					$(this).exibirMensagem({titulo:'Erro',
+											mensagem:("Ocorreu um erro interno. " + XMLHttpRequest.responseText),
+						                    classe_mensagem:'alert alert-danger alert-dismissible',
+						                    id_mensagem:'#mensagens'});
 					
 				}
+				
 			});
 			
 		}
 		
 	});
 	
-	/**
-	 * Função: construirListaEstados
-	 * Tipo: jQuery
-	 * Objetivo: Construir o combobox de estados.
-	 */
-	$.fn.extend({
-		
-		construirListaEstados: function(obj){
-			
-			var content = '';
-			
-			content += '<option value="-1" selected>Selecione...</option>';
-				
-			if (obj.length != 0){
-				
-				for (var i=0; obj.length > i; i++){
-					content += '<option value="' + obj[i].id + '">' + obj[i].descricao + '</option>';
-				}
-				
-			}
-			
-			$('#id_estadoUniversidade').html(content);
-			
-			$('#id_estadoResponsavel').html(content);
-			
-		}
-		
-	});
-	
-	/**
-	 * Função: incluirAluno
-	 * Tipo: jQuery
-	 * Objetivo: Realizar a inclusão do aluno.
-	 */
 	$.fn.extend({
 		
 		incluirAluno: function(){

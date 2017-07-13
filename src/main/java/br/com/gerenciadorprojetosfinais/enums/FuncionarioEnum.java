@@ -10,7 +10,8 @@ public enum FuncionarioEnum {
 	NOME("nome"),
 	SOBRENOME("sobrenome"),
 	EMAIL("email"),
-	CARGO("cargo");
+	CARGO("cargo"),
+	PERFIL("perfil");
 	
 	private String valor;
 	

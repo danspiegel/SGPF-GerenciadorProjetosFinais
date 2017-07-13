@@ -11,15 +11,7 @@
 	 */
 	$(document).ready(function(){
 	
-		$('#btn_primeiraEtapa').click(function(){
-			$(this).validarFiltroPrimeitaEtapa();
-		});
-		
-		$('#btn_segundaEtapa').click(function(){
-			$(this).validarFiltroSegundaEtapa();
-		});
-		
-		$(this).listarEstados();
+
 	
 	});
 	

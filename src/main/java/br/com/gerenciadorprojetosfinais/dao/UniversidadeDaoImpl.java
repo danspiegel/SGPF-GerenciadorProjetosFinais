@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import br.com.gerenciadorprojetosfinais.vo.UniversidadeVO;
 
 @Repository
-public class UniversidadeDaoImpl extends BaseDao implements UniversidadeDao {
+public class UniversidadeDaoImpl extends BaseDaoImpl implements UniversidadeDao {
 	
 	/**
 	 * {@inheritDoc}
@@ -24,7 +24,7 @@ public class UniversidadeDaoImpl extends BaseDao implements UniversidadeDao {
 			
 			
 			
-			List<Map<String, Object>> resultSet = jdbcTemplate.queryForList(sql.toString(), new MapSqlParameterSource());
+			List<Map<String, Object>> resultSet = getNamedParameterJdbcTemplate().queryForList(sql.toString(), new MapSqlParameterSource());
 			List<UniversidadeVO> lista = new ArrayList<UniversidadeVO>();
 			
 			for (Map<String, Object> resultado: resultSet){
@@ -55,7 +55,7 @@ public class UniversidadeDaoImpl extends BaseDao implements UniversidadeDao {
 			StringBuilder sql = new StringBuilder();
 			
 			
-			jdbcTemplate.update(sql.toString(), params);	
+			getNamedParameterJdbcTemplate().update(sql.toString(), params);	
 			 
 		}
 		catch(Exception e){
@@ -72,7 +72,7 @@ public class UniversidadeDaoImpl extends BaseDao implements UniversidadeDao {
 			
 			StringBuilder sql = new StringBuilder();
 			
-			Integer resultSet = jdbcTemplate.queryForObject(sql.toString(), params, Integer.class);
+			Integer resultSet = getNamedParameterJdbcTemplate().queryForObject(sql.toString(), params, Integer.class);
 			
 			return resultSet;
 			

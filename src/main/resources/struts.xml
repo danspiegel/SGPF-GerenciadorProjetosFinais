@@ -11,41 +11,33 @@
 
  <package name="default" namespace="/" extends="json-default">
 
-	 <!-- ########## ALUNO INÍCIO ########## -->
+	<!-- ########### PÁGINAS INÍCIO ########## -->
+	
+	<action name="login">
+		<result>/pages/login/login.jsp</result>
+	</action>
+	
+	<action name="perfilDocente">
+		<result>pages/docentes/docentes_manter.jsp</result>
+	</action>
+	
+	<!-- ########### PÁGINAS FIM ############ -->
+
+	 <!-- ########## USUARIO INÍCIO ########## -->
 	  
-	 <action name="usuarioValidar" class="br.com.gerenciadorprojetosfinais.action.AlunoAction" method="validarUsuario">
+	 <action name="validarUsuario" class="br.com.gerenciadorprojetosfinais.action.UsuarioAction" method="validarUsuario">
 		<result name="retornoAjax" type="json">
 	 		<param name="root">retornoAjax</param>
 	 	</result>
 	 </action>
 	 
-	 <!-- ########## ALUNO FIM ########## -->
-	 
-	 <!-- ########## UNIVERSIDADE INÍCIO ########### -->
-
-	 <action name="incluirUniversidades" class="br.com.gerenciadorprojetosfinais.action.UniversidadeAction" method="incluir">
-	 	<result name="retornoAjax" type="json">
-	 		<param name="root">retornoAjax</param>
-	 	</result>
-	 </action>
-	 
-	 <action name="listarUniversidades" class="br.com.gerenciadorprojetosfinais.action.UniversidadeAction" method="listar">
-	 	<result name="retornoAjax" type="json">
-	 		<param name="root">retornoAjax</param>
-	 	</result>
-	 </action>
-
-	 <!-- ########## UNIVERSIDADE FIM ##########  -->
-	 
-	 <!-- ########## ESTADO INÍCIO ########## -->
-	 
-	 <action name="listarEstados" class="br.com.gerenciadorprojetosfinais.action.EstadoAction" method="listarEstados">
+	 <action name="carregarUsuario" class="br.com.gerenciadorprojetosfinais.action.UsuarioAction" method="carregarUsuario">
 		<result name="retornoAjax" type="json">
 	 		<param name="root">retornoAjax</param>
 	 	</result>
 	 </action>
 	 
-	 <!-- ########## ESTADO FIM  ######## -->
+	 <!-- ########## USUARIO FIM ########## -->
 	 
  </package>
 </struts>
